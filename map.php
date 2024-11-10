@@ -138,8 +138,11 @@ console.log(curLocation[0]);
    map = L.map('MapLocation').setView(curLocation, 6);
 
   L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' }).
-  addTo(map);
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', 
+    maxNativeZoom:19,
+    maxZoom:25
+  })
+    .addTo(map);
    
   
 
