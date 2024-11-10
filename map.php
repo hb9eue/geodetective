@@ -1,27 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html  >
 
 <head>
   <meta charset="UTF-8">
   
 
-    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+  <title>Geodetective Location Picker</title>
 
-    <meta name="apple-mobile-web-app-title" content="CodePen">
-
-    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
-
-    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111" />
-
-
-
-  
-    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
-
-
-  <title>Leaflet Draggable Marker Example</title>
-
-    <link rel="canonical" href="https://codepen.io/asfktz/pen/EORaza">
+   
   
   
   <link rel='stylesheet' href='https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css'>
@@ -171,7 +157,17 @@ console.log(curLocation[0]);
     $("#Latitude").val(position.lat);
     $("#Longitude").val(position.lng).keyup();
   }
+  )
+  map.on('click', function(e){
+    //var marker = new L.marker(e.latlng).addTo(map);
 
+    var position = e.latlng;
+    marker.setLatLng(position, {
+      draggable: 'true' }).
+    bindPopup(position).update();
+    $("#Latitude").val(position.lat);
+    $("#Longitude").val(position.lng).keyup();
+    }
 
 );
 
