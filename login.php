@@ -21,6 +21,7 @@ if(password_verify($password, $datensatz['password']) && $username==$datensatz['
     //echo 'Passwort stimmt!';
     $_SESSION['userid'] = $datensatz['id'];
     $_SESSION['role'] = $datensatz['role'];
+    $_SESSION['eventid'] = 1;
     header('location: main.php');
      exit(1);
 } 

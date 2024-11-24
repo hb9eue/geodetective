@@ -95,7 +95,7 @@ session_start();
 
 
 
-      $target_dir = "uploads/";
+      $target_dir ="uploads/";
       
       //echo basename($_FILES["uploadedimage"]["name"]);
       $target_file = $target_dir . basename($_FILES["uploadedimage"]["name"]);
@@ -104,8 +104,6 @@ session_start();
       $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
       // Check if image file is a actual image or fake image
       
-       
-       
         //$check = getimagesize($_FILES["uploadedimage"]["tmp_name"]);
         //if($check !== false) {
           //echo "File is an image - " . $check["mime"] . ".";
@@ -115,24 +113,44 @@ session_start();
         //  $uploadOk = 0;
         //}
         //print_r ($_FILES);
-        echo $_FILES["uploadedimage"]["name"];
+        
         $json=triphoto_getGPS($_FILES["uploadedimage"]["tmp_name"]);
         
         $koordinaten = json_decode($json);
         
         $lat=$koordinaten->latitude;
         $lon=$koordinaten->longitude;
+
+        //TODO: GPSdaten aus uploadedimage entfernen und zu blob konvertieren
+        
+
          echo'<br>';     
-        //check if coordionates are present
-        if ($lat>0) {
-            echo 'lat:'.$lat;
-            echo'<br>';
-            echo 'lon:'.$lon;      
+        
+        
+echo $target_file;
+          //Bild speichern
+          if (move_uploaded_file($_FILES["uploadedimage"]["tmp_name"], $target_file)) {
+            echo'hier';
+               $conn->query("INSERT INTO image (eventid,filename,userid,lat,lon) VALUES ('".$_SESSION['eventid']."', '".$_FILES["uploadedimage"]["name"]."', '".$_SESSION['userid']."', '".$lat."', '".$lon."')");
+          } else {
+            echo'Fehler';
+          }
 
+//und kontext merken in session dann weiter zum Bild editieren
+
+$_SESSION['imageid'] = $conn->insert_id;
+$_SESSION['lat'] = $lat;
+$_SESSION['lon'] = $lon;
+//check if coordinates are present
+if ($lat>0) {
+header("location: editimage.php");
+exit(1);
+   
         }else{
-          //locationpicker
-          echo "nix zu sehen";
-
+          //Wenn keine Koordinaten, dann locationpicker
+            
+        header("location: map.php");
+        exit(1);
         }
         
        
