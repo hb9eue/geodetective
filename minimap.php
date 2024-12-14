@@ -1,92 +1,11 @@
-
- 
-<?php
-session_start();
-/*
- * Created on 05.04.2007
- * updated: 27.10.2024
- * author: Ralf LÜsebrink
-*/
- # Werte auf Entwicklungssystem einstellen!
- $server = "localhost";  // MySQL-Server
- $user   = "root";       // MySQL-Nutzer
- $pass   = "iwa2sql!";           // MySQL-Kennwort
- $dbase  = "geodetective";  // Standarddatenbank
-
-
-$conn = mysqli_connect($server, $user, $pass,$dbase);
-
- if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-  
-  //Alle GET Variablen einlesen
-  //while(list($key, $val) = each($_GET)){$$key=$val;};
-  
-  //Alle POST Variablen einlesen
-  //while(list($key, $val) = each($_POST)){$$key=$val;};
-  foreach($_GET as $key => $val){$$key=$val;}
-  foreach($_POST as $key => $val) {echo $key;$$key=$val;}
-
-  
-
-  /*
-  foreach($_POST as $rvar)
-  {
-    key($_POST).' ';
-    echo $rvar.'<br>';
-   $rvarkey=key($_POST);
-   $$rvarkey=$rvar;
-  
-  }
-  foreach($_GET as $gvar)
-  {
-    echo $gvar.'<br>';
-   $gvarkey=key($_GET);
-   $$gvarkey=$gvar;
- 
-  }
-*/
-  ?>
-  
-  
-  
-  
-
-  
-  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//DE">
-  <html>
-  <head>
-  <meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minimap mit Beschreibung</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"/>
-
-  <title>JOTA-JOTI Geodetective</title>
-  <meta http-equiv="content-type" content= "text/html; iso-8859-1">
-  <meta name="robots" content= "INDEX,FOLLOW">
-  <meta http-equiv="content-language" content= "de">
-  <meta name="keywords" content= "JOTA, JOTI, Pfadfinder, Scouts, Spiel, ">
-  <meta name="author" content= "Ralf Lüsebrink">
-  <meta name="publisher" content= "Ralf Lüsebrink">
-  <link rev="made" content= "rnh@gmx.net">
-  <meta name="copyright" content= "Ralf Lüsebrink">
-  <meta name="audience" content= "Alle">
-  <meta name="page-type" content= "Spiel für Pfadfinder">
-  <meta name="page-topic" content= "Spiel zum JOTA">
-  <meta name="revisit after" content= "7 days">
-  <META NAME="Description" CONTENT="Jamboree in the Air and Internet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="SHORTCUT ICON" href="favicon.ico">
-  
-  
-  
-  
-  
-  
-  <style type="text/css">
-  
-  <style>
+    <style>
         /* Grundlegendes Layout und Styling */
         body {
             font-family: Arial, sans-serif;
@@ -102,8 +21,8 @@ $conn = mysqli_connect($server, $user, $pass,$dbase);
         }
 
         .map-container {
-            width: 50%;
-            max-width: 300px;
+            width: 100%;
+            max-width: 600px;
             height: 300px;
             margin-top: 20px;
             border: 2px solid #ccc;
@@ -159,66 +78,23 @@ $conn = mysqli_connect($server, $user, $pass,$dbase);
             }
         }
     </style>
-  
-  
+</head>
+<body>
 
-  
-  
-  </head>
-  
-  
-  
-  <body>  
-<?php   
-   $sql="SELECT * FROM image WHERE id='".$_SESSION['imageid']."'";
-   $result = $conn->query($sql);
-
-   $datensatz = $result->fetch_assoc();
-$filename=$datensatz['filename'];
-$lat=$datensatz['lat'];
-$lon=$datensatz['lon'];
-   ?>
-
-
-
-
-
-
-
-<center>
-
-
-<img src="uploads/<?=$filename;?>" style="width: 100%;max-width: 600px;
-            height: 300px;
-            margin-top: 20px;
-            border: 2px solid #ccc;">
-
-
-    
-    <form action="checkeditimage.php" method="post">
-    
+    <!-- Karte -->
     <div id="map" class="map-container"></div>
 
     <!-- Steuerungselemente -->
     <div class="controls">
-       
-        <button type="submit" name="reposition">Koordinaten anpasssen</button>
+        <button id="adjust-position-button">Position anpassen</button>
         <input type="text" id="image-description" placeholder="Bildbeschreibung" />
-        <button type="submit" name="save">Speichern</button>
     </div>
 
-    
-    
-    
-    
-    
-    
-    
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
     <script>
         // Initiale Koordinaten (Latitude, Longitude)
-        let lat = <?=$lat;?>  // Beispiel: Berlin
-        let lon = <?=$lon;?> 
+        let lat = 52.5200;  // Beispiel: Berlin
+        let lon = 13.4050;
 
         // Initialisiere die Karte
         const map = L.map('map').setView([lat, lon], 13);
@@ -251,7 +127,5 @@ $lon=$datensatz['lon'];
             console.log('Bildbeschreibung: ', event.target.value);
         });
     </script>
-
-<?php
-  include("./templateunten.php");
-  ?>
+</body>
+</html>
