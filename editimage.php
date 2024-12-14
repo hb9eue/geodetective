@@ -203,7 +203,12 @@ $lon=$datensatz['lon'];
     <div class="controls">
        
         <button type="submit" name="reposition">Koordinaten anpasssen</button>
-        <input type="text" id="image-description" placeholder="Bildbeschreibung" />
+        <input type="text" name="imagedescription" placeholder="Bildbeschreibung" />
+        <?php
+         if($msg!='') {
+         echo'<span style="color:red;">'.$msg.'<br></span>';
+       }
+       ?>   
         <button type="submit" name="save">Speichern</button>
     </div>
 

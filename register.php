@@ -17,8 +17,7 @@ Du bist noch nicht registriert. Bitte fülle das Formular aus um dich zu registr
         <input type="password" name="password" placeholder="Passwort" required>
         <input type="password" name="password2" placeholder="Passwort wiederholen" required> 
         <?php
-       
-       if($msg!='') {
+         if($msg!='') {
          echo'<span style="color:red;">'.$msg.'<br></span>';
        }
        ?>      
