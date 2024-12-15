@@ -12,7 +12,7 @@ if(isset($spielen)) {
 }
 
 if(isset($einreichen)) {
-    header('location: submitimage.php');
+    header('location: mypictures.php');
      exit(1);
 }
 if(isset($ergebnisse)) {

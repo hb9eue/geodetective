@@ -26,7 +26,7 @@ $conn = mysqli_connect($server, $user, $pass,$dbase);
   //Alle POST Variablen einlesen
   //while(list($key, $val) = each($_POST)){$$key=$val;};
   foreach($_GET as $key => $val){$$key=$val;}
-  foreach($_POST as $key => $val) {echo $key;$$key=$val;}
+  foreach($_POST as $key => $val) {$$key=$val;}
 
   
 
@@ -169,14 +169,29 @@ $conn = mysqli_connect($server, $user, $pass,$dbase);
   
   
   <body>  
-<?php   
-   $sql="SELECT * FROM image WHERE id='".$_SESSION['imageid']."'";
+<?php 
+
+$imageid=$_SESSION['imageid'];
+
+if (isset($chosenimage)) {
+    
+    $imageid=$_POST['chosenimage'];
+    $_SESSION['imageid']=$imageid;
+}
+
+
+   $sql="SELECT * FROM image WHERE id='".$imageid."'";
+   
    $result = $conn->query($sql);
 
    $datensatz = $result->fetch_assoc();
 $filename=$datensatz['filename'];
 $lat=$datensatz['lat'];
 $lon=$datensatz['lon'];
+$_SESSION['lat']=$lat;
+$_SESSION['lon']=$lon;
+
+$beschreibung=$datensatz['description']
    ?>
 
 
@@ -188,8 +203,8 @@ $lon=$datensatz['lon'];
 <center>
 
 
-<img src="uploads/<?=$filename;?>" style="width: 100%;max-width: 600px;
-            height: 300px;
+<img src="uploads/<?=$filename;?>" style="width: 100%;max-width: 300px;
+            
             margin-top: 20px;
             border: 2px solid #ccc;">
 
@@ -203,11 +218,13 @@ $lon=$datensatz['lon'];
     <div class="controls">
        
         <button type="submit" name="reposition">Koordinaten anpasssen</button>
-        <input type="text" name="imagedescription" placeholder="Bildbeschreibung" />
+        <br>Bildbeschreibung:<br>
+        <input type="text" name="imagedescription" placeholder="Bildbeschreibung" value="<?=$beschreibung;?>"/>
         <?php
          if($msg!='') {
          echo'<span style="color:red;">'.$msg.'<br></span>';
        }
+       
        ?>   
         <button type="submit" name="save">Speichern</button>
     </div>
@@ -222,7 +239,7 @@ $lon=$datensatz['lon'];
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
     <script>
         // Initiale Koordinaten (Latitude, Longitude)
-        let lat = <?=$lat;?>  // Beispiel: Berlin
+        let lat = <?=$lat;?>  
         let lon = <?=$lon;?> 
 
         // Initialisiere die Karte

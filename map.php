@@ -1,3 +1,11 @@
+<?php
+
+include("./templateoben.php");  
+
+if (isset($_SESSION['lat'])) {$lat=$_SESSION['lat'];} else {$lat=0;};
+if (isset($_SESSION['lon'])) {$lon=$_SESSION['lon'];}else {$lon=0;};
+?>
+
 <!DOCTYPE html>
 <html  >
 
@@ -87,6 +95,7 @@ body {
       </section>
     </div>
     <form action="checkmappicker.php" method="post" enctype="multipart/form-data">
+
     
     <div class="row" style="text-align: center;">
       <section class="col col-3">
@@ -127,13 +136,15 @@ $(function () {
   // use below if you have a model
   // var curLocation = [@Model.Location.Latitude, @Model.Location.Longitude];
 
+  if(<?=$lat?>>0){curLocation = [<?=$lat?>, <?=$lon?>];} 
+
   if (curLocation[0] == 0 && curLocation[1] == 0) {
     curLocation = [50.857820, 9.833093];
   }
 
- 
-console.log("hier");
-console.log(curLocation[0]);
+  
+
+
 
    map = L.map('MapLocation').setView(curLocation, 6);
 
@@ -187,8 +198,8 @@ console.log(curLocation[0]);
 if(!navigator.geolocation) {
         console.log("Your browser doesn't support geolocation feature!")
     } else {
-        
-        navigator.geolocation.getCurrentPosition(getPosition);
+      if(<?=$lat?>==0){
+        navigator.geolocation.getCurrentPosition(getPosition);}
         
     
     }
