@@ -69,12 +69,14 @@ body {
 }
 
 .example-container input {
-  width: 45%;
+  
   
   margin: 0.5em 0;
   padding: 0.5em;
-  border: 1px solid #569ae3;
+  border: 1px solid #000;
 }
+
+
 </style>
 
   <script>
@@ -96,8 +98,7 @@ body {
     
     <form action="checkmappicker.php" method="post" enctype="multipart/form-data">
     <center>
-    Klicke auf die Karte um die Koordinaten festzulegen.
-    
+    Klicke auf die Karte um die Koordinaten festzulegen.<br>    
           <input id="Latitude" placeholder="Latitude" name="Location.Latitude" />
           <input id="Longitude" placeholder="Longitude" name="Location.Longitude" />
        <br>
