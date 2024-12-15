@@ -113,7 +113,7 @@ $conn = mysqli_connect($server, $user, $pass,$dbase);
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 20px;
+            margin-top: 5px;
             width: 100%;
             max-width: 600px;
             padding: 10px;
@@ -133,8 +133,7 @@ $conn = mysqli_connect($server, $user, $pass,$dbase);
 
         .controls button {
             padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
+           
             border: none;
             border-radius: 4px;
             margin-top: 10px;
@@ -215,21 +214,18 @@ $beschreibung=$datensatz['description']
 
     <!-- Steuerungselemente -->
     <div class="controls">
-       
-        
+    <button type="submit" name="reposition">Koordinaten anpasssen</button>        
         <br>Bildbeschreibung:<br>
         <!--<input type="text" name="imagedescription" placeholder="Bildbeschreibung" value="<?=$beschreibung;?>"/>-->
-        <textarea id="text" name="imagedescription" rows="3" cols="40">
-        <?=trim($beschreibung);?>
-        </textarea>
+        <textarea id="text" name="imagedescription" rows="3" cols="40"><?=trim($beschreibung);?></textarea>
         <?php
          if($msg!='') {
          echo'<span style="color:red;">'.$msg.'<br></span>';
        }
        
        ?>   
-        <button type="submit" name="reposition">Koordinaten anpasssen</button>
-        <button type="submit" name="save">Speichern</button>
+        
+        <button type="submit" name="save">Bildbeschreibung Speichern</button>
     </div>
 
     
