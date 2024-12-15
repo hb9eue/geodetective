@@ -119,8 +119,7 @@ $conn = mysqli_connect($server, $user, $pass,$dbase);
             padding: 10px;
             box-sizing: border-box;
             background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 8px;
+            
         }
 
         .controls input {
@@ -203,7 +202,7 @@ $beschreibung=$datensatz['description']
 <center>
 
 
-<img src="uploads/<?=$filename;?>" style="width: 100%;max-width: 300px;
+<img src="uploads/<?=$filename;?>" style="max-height: 200px;
             
             margin-top: 20px;
             border: 2px solid #ccc;">
@@ -217,15 +216,19 @@ $beschreibung=$datensatz['description']
     <!-- Steuerungselemente -->
     <div class="controls">
        
-        <button type="submit" name="reposition">Koordinaten anpasssen</button>
+        
         <br>Bildbeschreibung:<br>
-        <input type="text" name="imagedescription" placeholder="Bildbeschreibung" value="<?=$beschreibung;?>"/>
+        <!--<input type="text" name="imagedescription" placeholder="Bildbeschreibung" value="<?=$beschreibung;?>"/>-->
+        <textarea id="text" name="imagedescription" rows="3" cols="40">
+        <?=trim($beschreibung);?>
+        </textarea>
         <?php
          if($msg!='') {
          echo'<span style="color:red;">'.$msg.'<br></span>';
        }
        
        ?>   
+        <button type="submit" name="reposition">Koordinaten anpasssen</button>
         <button type="submit" name="save">Speichern</button>
     </div>
 

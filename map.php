@@ -45,8 +45,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: helvetica;
-  font-size: 16px;
-  padding: 1.5em;
+  font-size: 10px;
+  padding: 0.0em;
   -webkit-box-shadow: 1px 5px 5px 0px rgba(0,0,0,0.15);
   -moz-box-shadow: 1px 5px 5px 0px rgba(0,0,0,0.15);
   box-shadow: 1px 5px 5px 0px rgba(0,0,0,0.15);
@@ -69,7 +69,7 @@ body {
 }
 
 .example-container input {
-  width: 20%;
+  width: 45%;
   
   margin: 0.5em 0;
   padding: 0.5em;
@@ -88,38 +88,26 @@ body {
 <body translate="no">
  <div class="example-container">
 
-  <section class="col col-10">
-    <div class="row">
-      <section class="col col-6" >
-        <div id="MapLocation" ></div>
-      </section>
-    </div>
-    <form action="checkmappicker.php" method="post" enctype="multipart/form-data">
-
+  
     
-    <div class="row" style="text-align: center;">
-      <section class="col col-3">
-        <label class="input">
+     
+ <div id="MapLocation" ></div>
+     
+    
+    <form action="checkmappicker.php" method="post" enctype="multipart/form-data">
+    <center>
+    Klicke auf die Karte um die Koordinaten festzulegen.
+    
           <input id="Latitude" placeholder="Latitude" name="Location.Latitude" />
-          <!-- @Html.TextBoxFor(m => m.Location.Latitude, new {id = "Latitude", placeholder = "Latitude"}) -->
-        </label>
-      </section>
-      <section class="col col-3">
-        <label class="input">
           <input id="Longitude" placeholder="Longitude" name="Location.Longitude" />
-          <!-- @Html.TextBoxFor(m => m.Location.Longitude, new {id = "Longitude", placeholder = "Longitude"}) -->
-        </label>
-      </section>
-      <section class="col col-3">
-        <label class="input">
-        <input type="submit" value="Upload" />
-          
-        </label>
-      </section>
-    </div>
+       <br>
+        <input type="submit" id="ok" name="ok" value="Koordinaten speichern" />
+        <input type="submit" id="abbrechen" name="abbrechen" value="Abbrechen" />
+</center>      
+       
 </form>
-  </section>
-</div>
+ 
+
 </div>
   <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 <script src='https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js'></script>
@@ -136,7 +124,12 @@ $(function () {
   // use below if you have a model
   // var curLocation = [@Model.Location.Latitude, @Model.Location.Longitude];
 
-  if(<?=$lat?>>0){curLocation = [<?=$lat?>, <?=$lon?>];} 
+  if(<?=$lat?>>0){curLocation = [<?=$lat?>, <?=$lon?>];
+    $("#Latitude").val(<?=$lat?>);
+    $("#Longitude").val(<?=$lon?>);
+
+
+  } 
 
   if (curLocation[0] == 0 && curLocation[1] == 0) {
     curLocation = [50.857820, 9.833093];
