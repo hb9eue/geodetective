@@ -14,8 +14,9 @@
 
 <h1>Login</h1>
     <form action="login.php" method="post">
-        <input type="text" name="username" placeholder="Benutzername" >
+        <input type="text" name="username" placeholder="Benutzername" ><br>
         <input type="password" name="password" placeholder="Passwort" >
+        <br>
         <?php
        
         if($msg!='') {

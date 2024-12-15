@@ -98,7 +98,7 @@ body {
     
     <form action="checkmappicker.php" method="post" enctype="multipart/form-data">
     <center>
-    Klicke auf die Karte um die Koordinaten festzulegen.<br>    
+    Klicke auf die Karte um die Koordinaten festzulegen.   
           <input id="Latitude" placeholder="Latitude" name="Location.Latitude" />
           <input id="Longitude" placeholder="Longitude" name="Location.Longitude" />
        <br>
@@ -133,7 +133,14 @@ $(function () {
   } 
 
   if (curLocation[0] == 0 && curLocation[1] == 0) {
-    curLocation = [50.857820, 9.833093];
+    
+      curLocation = [50.857820, 9.833093];
+    $("#Latitude").val(curLocation[0]);
+    $("#Longitude").val(curLocation[1]);
+    
+    
+    
+    
   }
 
   
@@ -193,6 +200,7 @@ if(!navigator.geolocation) {
         console.log("Your browser doesn't support geolocation feature!")
     } else {
       if(<?=$lat?>==0){
+        console.log("jau");
         navigator.geolocation.getCurrentPosition(getPosition);}
         
     
