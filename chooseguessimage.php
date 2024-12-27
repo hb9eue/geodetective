@@ -6,14 +6,14 @@
    include("./templateoben.php");  
 
   ?>
-  
-   <form action="editimage.php" method="post">
-   Klicke auf ein Bild um es zu bearbeiten<br>
-
-
-
+   <h2>Tippabagabe</h2>
+   Bei Geodetectives geht es darum möglichst genau den Standort des Fotografen von Bildern zu
+   bestimmen. Suche dir zuerst ein Bild aus für das du den Standort erraten nöchtest:
+   
+   <form action="guess.php" method="post">
+   Klicke auf ein Bild um einen Tipp abzugeben<br>
 <?php   
-   $sql="SELECT * FROM image WHERE userid='".$_SESSION['userid']."' and eventid='".$_SESSION['eventid']."' ";
+   $sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1 ";
    
    $result = $conn->query($sql);
 

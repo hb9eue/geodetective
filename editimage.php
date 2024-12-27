@@ -1,52 +1,7 @@
 
  
 <?php
-session_start();
-/*
- * Created on 05.04.2007
- * updated: 27.10.2024
- * author: Ralf LÜsebrink
-*/
- # Werte auf Entwicklungssystem einstellen!
- $server = "localhost";  // MySQL-Server
- $user   = "root";       // MySQL-Nutzer
- $pass   = "iwa2sql!";           // MySQL-Kennwort
- $dbase  = "geodetective";  // Standarddatenbank
-
-
-$conn = mysqli_connect($server, $user, $pass,$dbase);
-
- if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-  
-  //Alle GET Variablen einlesen
-  //while(list($key, $val) = each($_GET)){$$key=$val;};
-  
-  //Alle POST Variablen einlesen
-  //while(list($key, $val) = each($_POST)){$$key=$val;};
-  foreach($_GET as $key => $val){$$key=$val;}
-  foreach($_POST as $key => $val) {$$key=$val;}
-
-  
-
-  /*
-  foreach($_POST as $rvar)
-  {
-    key($_POST).' ';
-    echo $rvar.'<br>';
-   $rvarkey=key($_POST);
-   $$rvarkey=$rvar;
-  
-  }
-  foreach($_GET as $gvar)
-  {
-    echo $gvar.'<br>';
-   $gvarkey=key($_GET);
-   $$gvarkey=$gvar;
- 
-  }
-*/
+include("./templateohne.php");  
   ?>
   
   

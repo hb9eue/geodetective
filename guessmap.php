@@ -1,27 +1,21 @@
+<?php
+
+include("./templateoben.php");  
+
+if (isset($_SESSION['lat'])) {$lat=$_SESSION['lat'];} else {$lat=0;};
+if (isset($_SESSION['lon'])) {$lon=$_SESSION['lon'];}else {$lon=0;};
+?>
+
 <!DOCTYPE html>
-<html lang="en" >
+<html  >
 
 <head>
   <meta charset="UTF-8">
   
 
-    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+  <title>Geodetective Location Picker</title>
 
-    <meta name="apple-mobile-web-app-title" content="CodePen">
-
-    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
-
-    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111" />
-
-
-
-  
-    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
-
-
-  <title>Leaflet Draggable Marker Example</title>
-
-    <link rel="canonical" href="https://codepen.io/asfktz/pen/EORaza">
+   
   
   
   <link rel='stylesheet' href='https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css'>
@@ -51,8 +45,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: helvetica;
-  font-size: 16px;
-  padding: 1.5em;
+  font-size: 10px;
+  padding: 0.0em;
   -webkit-box-shadow: 1px 5px 5px 0px rgba(0,0,0,0.15);
   -moz-box-shadow: 1px 5px 5px 0px rgba(0,0,0,0.15);
   box-shadow: 1px 5px 5px 0px rgba(0,0,0,0.15);
@@ -75,12 +69,14 @@ body {
 }
 
 .example-container input {
-  width: 20%;
+  
   
   margin: 0.5em 0;
   padding: 0.5em;
-  border: 1px solid #569ae3;
+  border: 1px solid #000;
 }
+
+
 </style>
 
   <script>
@@ -94,37 +90,25 @@ body {
 <body translate="no">
  <div class="example-container">
 
-  <section class="col col-10">
-    <div class="row">
-      <section class="col col-6" >
-        <div id="MapLocation" ></div>
-      </section>
-    </div>
-    <form action="checkmappicker.php" method="post" enctype="multipart/form-data">
+  
     
-    <div class="row" style="text-align: center;">
-      <section class="col col-3">
-        <label class="input">
+     
+ <div id="MapLocation" ></div>
+     
+    
+    <form action="checkguessmappicker.php" method="post" enctype="multipart/form-data">
+    <center>
+    Klicke auf die Karte um die Koordinaten festzulegen.   
           <input id="Latitude" placeholder="Latitude" name="Location.Latitude" />
-          <!-- @Html.TextBoxFor(m => m.Location.Latitude, new {id = "Latitude", placeholder = "Latitude"}) -->
-        </label>
-      </section>
-      <section class="col col-3">
-        <label class="input">
           <input id="Longitude" placeholder="Longitude" name="Location.Longitude" />
-          <!-- @Html.TextBoxFor(m => m.Location.Longitude, new {id = "Longitude", placeholder = "Longitude"}) -->
-        </label>
-      </section>
-      <section class="col col-3">
-        <label class="input">
-        <input type="submit" value="Upload" />
-          
-        </label>
-      </section>
-    </div>
+       <br>
+        <input type="submit" id="ok" name="ok" value="Koordinaten speichern" />
+        <input type="submit" id="abbrechen" name="abbrechen" value="Abbrechen" />
+</center>      
+       
 </form>
-  </section>
-</div>
+ 
+
 </div>
   <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 <script src='https://npmcdn.com/leaflet@0.7.7/dist/leaflet.js'></script>
@@ -132,6 +116,7 @@ body {
         var curLocation = [0, 0];
         var marker;
         var map;
+        navigator.geolocation; 
 $(function () {
   // use below if you want to specify the path for leaflet's images
   //L.Icon.Default.imagePath = '@Url.Content("~/Content/img/leaflet")';
@@ -140,19 +125,36 @@ $(function () {
   // use below if you have a model
   // var curLocation = [@Model.Location.Latitude, @Model.Location.Longitude];
 
+  if(<?=$lat?>>0){curLocation = [<?=$lat?>, <?=$lon?>];
+    $("#Latitude").val(<?=$lat?>);
+    $("#Longitude").val(<?=$lon?>);
+
+
+  } 
+
   if (curLocation[0] == 0 && curLocation[1] == 0) {
-    curLocation = [50.857820, 9.833093];
+    
+      curLocation = [50.857820, 9.833093];
+    $("#Latitude").val(curLocation[0]);
+    $("#Longitude").val(curLocation[1]);
+    
+    
+    
+    
   }
 
- 
-console.log("hier");
-console.log(curLocation[0]);
+  
+
+
 
    map = L.map('MapLocation').setView(curLocation, 6);
 
   L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' }).
-  addTo(map);
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors', 
+    maxNativeZoom:19,
+    maxZoom:25
+  })
+    .addTo(map);
    
   
 
@@ -170,7 +172,17 @@ console.log(curLocation[0]);
     $("#Latitude").val(position.lat);
     $("#Longitude").val(position.lng).keyup();
   }
+  )
+  map.on('click', function(e){
+    //var marker = new L.marker(e.latlng).addTo(map);
 
+    var position = e.latlng;
+    marker.setLatLng(position, {
+      draggable: 'true' }).
+    bindPopup(position).update();
+    $("#Latitude").val(position.lat);
+    $("#Longitude").val(position.lng).keyup();
+    }
 
 );
 
@@ -187,8 +199,9 @@ console.log(curLocation[0]);
 if(!navigator.geolocation) {
         console.log("Your browser doesn't support geolocation feature!")
     } else {
+      if(<?=$lat?>==0){
         
-        navigator.geolocation.getCurrentPosition(getPosition);
+        navigator.geolocation.getCurrentPosition(getPosition);}
         
     
     }
@@ -197,12 +210,12 @@ if(!navigator.geolocation) {
 );
 
 function getPosition(position){
-    console.log("unten");
+   
 
          
         var lat = position.coords.latitude
         var long = position.coords.longitude
-        console.log(lat);
+       
         curLocation = [lat, long];
 
         

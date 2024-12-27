@@ -200,7 +200,7 @@ if(!navigator.geolocation) {
         console.log("Your browser doesn't support geolocation feature!")
     } else {
       if(<?=$lat?>==0){
-        console.log("jau");
+        
         navigator.geolocation.getCurrentPosition(getPosition);}
         
     
@@ -210,12 +210,12 @@ if(!navigator.geolocation) {
 );
 
 function getPosition(position){
-    console.log("unten");
+    
 
          
         var lat = position.coords.latitude
         var long = position.coords.longitude
-        console.log(lat);
+        
         curLocation = [lat, long];
 
         

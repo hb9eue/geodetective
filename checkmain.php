@@ -7,7 +7,7 @@ session_start();
   
 
 if(isset($spielen)) {
-    header('location: play.php');
+    header('location: chooseguessimage.php');
      exit(1);
 }
 
