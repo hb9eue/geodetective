@@ -63,6 +63,15 @@ if (isset($chosenimage)) {
   popupAnchor: [1, -77],
   shadowSize: [0, 0]
 });
+
+var greenmarker = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
         // Referenzpunkt (z.B. Berlin)
         const referencePoint = [<?=$lat?>, <?=$lon?>]; // Latitude und Longitude von Berlin
 
@@ -75,7 +84,10 @@ if (isset($chosenimage)) {
                 if (!$first) {echo ',';}; 
                 $first=false;
                 $beschriftung=$guess['name']." (".$guess['city'].", ".$guess['country'].")";
-                //$beschriftung=$guess['username'];
+                if ($guess['userid']==$_SESSION['userid']) {
+                    $beschriftung=$beschriftung."*";
+                }
+
                 echo'{ name: "'.$beschriftung.'", lat: '.$guess['lat'].', lng: '.$guess['lon'].' }';
 
              }
@@ -102,7 +114,13 @@ if (isset($chosenimage)) {
         const distances = markers.map(marker => {
             const markerLatLng = [marker.lat, marker.lng];
             const distance = map.distance(referencePoint, markerLatLng); // Luftlinienentfernung
-            const markerElement = L.marker(markerLatLng).addTo(map).bindPopup(marker.name);
+            var ismymarker="t"+marker.name;
+            var markerElement;
+            if (ismymarker.endsWith('*')) {
+                 markerElement = L.marker(markerLatLng, {icon: greenmarker}).addTo(map).bindPopup(marker.name);
+            } else {
+             markerElement = L.marker(markerLatLng).addTo(map).bindPopup(marker.name);
+            }
             return { ...marker, distance, element: markerElement };
         });
 
