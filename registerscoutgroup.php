@@ -35,10 +35,11 @@ session_start();
         <input type="text" name="city" placeholder="Aus welchem Ort kommt ihr?" required>
         Land:
         <select id="country" name="country" required>
-              <option value="hb9">Schweiz</option>
-              <option value="dl">Deutschland</option>
-              <option value="oe">Österreich</option>
-              <option value="lx">Luxemburg</option>
+              <option value="Schweiz">Schweiz</option>
+              <option value="Deutschland">Deutschland</option>
+              <option value="Österreich">Österreich</option>
+              <option value="Luxemburg">Luxemburg</option>
+             
         </select><br><br>
         <input type="text" name="jid" placeholder="Wie lautet euer JID-Code?">  
         <input type="text" name="contact" placeholder="Wie seid Ihr beim JOTA/JOTI erreichbar?">  

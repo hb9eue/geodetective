@@ -16,17 +16,18 @@ if(isset($einreichen)) {
      exit(1);
 }
 if(isset($ergebnisse)) {
-    header('location: results.php');
+    header('location: choosesolutionimage.php');
      exit(1);
 }
-if(isset($highscore)) {
-    header('location: highscore.php');
-     exit(1);
-}
+
 if(isset($einstellungen)) {
     header('location: configure.php');
      exit(1);
 }
-
+if(isset($abmelden)) {
+    session_destroy();
+    header('location: splashscreen.php');
+     exit(1);
+}
 
 ?>

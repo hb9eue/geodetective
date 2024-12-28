@@ -8,7 +8,7 @@
   ?>
   
    <form action="editimage.php" method="post">
-   Klicke auf ein Bild um es zu bearbeiten<br>
+  
 
 
 
@@ -18,6 +18,13 @@
    $result = $conn->query($sql);
 
    $datensaetze = $result->fetch_all(MYSQLI_ASSOC);
+   if($result->num_rows==0)
+   {
+      echo' Du hast bisher keine Bilder eingereicht.';
+   }
+   else {
+      echo' Klicke auf ein Bild um es zu bearbeiten<br>';
+   }
    foreach($datensaetze as $datensatz) {
     $filename=$datensatz['filename'];    
     $imageid=$datensatz['id'];     
@@ -37,7 +44,7 @@
 
 </form>
 
-
+<button  onclick="window.location.href='main.php'">Zurück</button>
 
 
 

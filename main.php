@@ -17,9 +17,9 @@
         
  <button type="submit" name="spielen">Spielen</button><br><br>
  <button type="submit" name="einreichen">Meine Bilder</button><br><br>
- <button type="submit" name="ergebnisse">Ergebnisse</button><br><br>
- <button type="submit" name="highscore">Bestenliste</button><br><br>
- <button type="submit" name="einstellungen">Einstellungen</button>
+ <button type="submit" name="ergebnisse">Auflösung</button><br><br>
+ <button type="submit" name="einstellungen">Einstellungen</button><br><br>
+ <button type="submit" name="abmelden">Abmelden</button>
     </form>
 
 

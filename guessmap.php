@@ -2,8 +2,8 @@
 
 include("./templateoben.php");  
 
-if (isset($_SESSION['lat'])) {$lat=$_SESSION['lat'];} else {$lat=0;};
-if (isset($_SESSION['lon'])) {$lon=$_SESSION['lon'];}else {$lon=0;};
+$lat=0;
+$lon=0;
 ?>
 
 <!DOCTYPE html>

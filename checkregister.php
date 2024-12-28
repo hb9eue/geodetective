@@ -26,10 +26,9 @@ $hash = password_hash($password, PASSWORD_DEFAULT);
 $conn->query("INSERT INTO user (username, scoutgroup,password) VALUES ('".$username."', '".$scoutgroup."', '".$hash."')");
 
 //und einloggen
+ 
 
-$_SESSION['userid'] = $datensatz['id'];
-$_SESSION['role'] = $datensatz['role'];
-header("location: main.php");
+header("location: login.php?username=".$username."&password=".$password);
 exit(1);
 }  
 

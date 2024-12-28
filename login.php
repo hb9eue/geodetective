@@ -1,7 +1,7 @@
 <?php
 session_start();
  
-   include("./templateoben.php");  
+   include("./templatelogin.php");  
 
 
   if  (isset($username) and isset($password)){
@@ -21,7 +21,21 @@ if(password_verify($password, $datensatz['password']) && $username==$datensatz['
     //echo 'Passwort stimmt!';
     $_SESSION['userid'] = $datensatz['id'];
     $_SESSION['role'] = $datensatz['role'];
-    $_SESSION['eventid'] = 1;
+    
+    
+    //load event
+    $eventresult = $conn->query("SELECT * FROM event WHERE curdate() between submitfrom and endtimestamp");
+    $event = $eventresult->fetch_assoc();
+       
+    $_SESSION['eventid'] = $event['id']; 
+    $_SESSION['starttimestamp'] = $event['starttimestamp'];
+    $_SESSION['endtimestamp'] = $event['endtimestamp'];
+    $_SESSION['interval'] = $event['interval'];
+    $_SESSION['imagesperinterval'] = $event['imagesperinterval'];
+    $_SESSION['submitfrom'] = $event['submitfrom'];
+    $_SESSION['submituntil'] = $event['submituntil'];
+       
+
     header('location: main.php');
      exit(1);
 } 
