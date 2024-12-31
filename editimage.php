@@ -126,6 +126,19 @@ include("./templateohne.php");
 
 $imageid=$_SESSION['imageid'];
 
+if (isset($accept)) {
+    $imageid=$_POST['accept'];
+    $sql="update image set accepted= NOT accepted,acceptedby=".$_SESSION['userid']." WHERE id='".$imageid."'";
+    $conn->query($sql);
+    header('location: editmyimages.php?mode=admin');
+    exit(1);
+}else
+if (isset($delete)) {
+    $imageid=$_POST['delete'];
+    $_SESSION['imageid']=$imageid;
+    echo ' löschen';
+    } else
+
 if (isset($chosenimage)) {
     
     $imageid=$_POST['chosenimage'];

@@ -13,8 +13,13 @@
 
 
 <?php   
+  if(isset($mode) && $mode=='admin' && $_SESSION['role']=='admin') {
+   $sql="SELECT * FROM image WHERE  eventid='".$_SESSION['eventid']."' ";
+   echo'<H1>Administratormodus</H1>';
+  }
+  else {   
    $sql="SELECT * FROM image WHERE userid='".$_SESSION['userid']."' and eventid='".$_SESSION['eventid']."' ";
-   
+  }
    $result = $conn->query($sql);
 
    $datensaetze = $result->fetch_all(MYSQLI_ASSOC);
@@ -33,9 +38,21 @@
     <button type="submit" id="chosenimage" name="chosenimage" value="'.$imageid.'">
         <img src="uploads/'.$filename.'" style="width: 100%;max-width: 200px;margin-top: 20px;">
       </button>    
+    ';
     
-    
-        
+    if ($_SESSION['role']=='admin') {
+
+      echo '<br><br><button type="submit" id="accept" name="accept" value="'.$imageid.'">';
+      if(!$datensatz['accepted']) {echo'freigeben';}else{echo'sperren';};  
+      echo'</button> ';
+      echo '<button type="submit" id="delete" name="delete" value="'.$imageid.'">löschen</button>';
+
+    }
+
+   
+
+
+      echo'  
        <br> 
        <br> 
        ';

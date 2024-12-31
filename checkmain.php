@@ -5,6 +5,11 @@ session_start();
 
 
   
+   if(isset($admin)) {
+    header('location: admin.php');
+     exit(1);
+}
+
 
 if(isset($spielen)) {
     header('location: chooseguessimage.php');
