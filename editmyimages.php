@@ -57,11 +57,8 @@ function wirklichloeschen() {
       if(!$datensatz['accepted']) {echo'freigeben';}else{echo'sperren';};  
       echo'</button> ';
 
-      echo'<button onclick="return wirklichloeschen()" id="delete" name="delete" value="'.$imageid.'">loeschen</button>';
-
-      //echo '<button type="submit" id="delete" name="delete" value="'.$imageid.'">löschen</button>';
-
-    }
+      echo'<button onclick="return wirklichloeschen()" id="delete" name="delete" value="'.$imageid.'">löschen</button>';
+      }
 
    
 

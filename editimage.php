@@ -130,13 +130,28 @@ if (isset($accept)) {
     $imageid=$_POST['accept'];
     $sql="update image set accepted= NOT accepted,acceptedby=".$_SESSION['userid']." WHERE id='".$imageid."'";
     $conn->query($sql);
+
     header('location: editmyimages.php?mode=admin');
     exit(1);
 }else
 if (isset($delete)) {
     $imageid=$_POST['delete'];
-    $_SESSION['imageid']=$imageid;
-    echo ' löschen';
+    
+    //Datei löschen
+    $sql="SELECT * FROM image WHERE id='".$imageid."'";
+    $result = $conn->query($sql);
+    $datensatz = $result->fetch_assoc();
+    $filename=$datensatz['filename'];
+    unlink("uploads/".$filename); 
+    
+    $sql="delete from image  WHERE id='".$imageid."'";
+    $conn->query($sql);
+
+    $sql="delete from guess  WHERE imageid='".$imageid."'";
+    $conn->query($sql);
+    
+    header('location: editmyimages.php?mode=admin');
+    
     } else
 
 if (isset($chosenimage)) {
@@ -147,17 +162,14 @@ if (isset($chosenimage)) {
 
 
    $sql="SELECT * FROM image WHERE id='".$imageid."'";
-   
    $result = $conn->query($sql);
-
    $datensatz = $result->fetch_assoc();
-$filename=$datensatz['filename'];
-$lat=$datensatz['lat'];
-$lon=$datensatz['lon'];
-$_SESSION['lat']=$lat;
-$_SESSION['lon']=$lon;
-
-$beschreibung=$datensatz['description']
+   $filename=$datensatz['filename'];
+   $lat=$datensatz['lat'];
+   $lon=$datensatz['lon'];
+   $_SESSION['lat']=$lat;
+   $_SESSION['lon']=$lon;
+   $beschreibung=$datensatz['description']
    ?>
 
 

@@ -22,8 +22,8 @@
  
 
 
- <button type="submit" name="adminuser">Userverwaltung</button><br><br>';
- <button type="submit" name="admingroup">Gruppenverwaltung</button><br><br>';
+ <button type="submit" name="adminuser">Userverwaltung</button><br><br>
+ <button type="submit" name="admingroup">Gruppenverwaltung</button><br><br>
  <button type="submit" name="images">Bilder bearbeiten</button><br><br>
  <button type="submit" name="back">Hauptmenü</button>
 
