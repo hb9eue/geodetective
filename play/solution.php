@@ -1,6 +1,6 @@
 <?php
 
-include("./templateohne.php");  
+include("../templateohne.php");  
 
 
 
@@ -56,8 +56,8 @@ if (isset($chosenimage)) {
 
         //marker
         var jotamarker = new L.Icon({
-  iconUrl: 'images/jotamarker.png',
-  shadowUrl: 'images/jotashadow.png',
+  iconUrl: '../images/jotamarker.png',
+  shadowUrl: '../images/jotashadow.png',
   iconSize: [50, 73],
   iconAnchor: [25, 73],
   popupAnchor: [1, -77],

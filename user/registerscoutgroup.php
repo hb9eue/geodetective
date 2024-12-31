@@ -1,7 +1,7 @@
 <?php
 session_start();
  
-   include("./templateoben.php");  
+   include("../templateoben.php");  
 
 
    ?>
@@ -56,5 +56,5 @@ session_start();
 </center>
 
 <?php
-  include("./templateunten.php");
+  include("../templateunten.php");
   ?>

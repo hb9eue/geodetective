@@ -1,7 +1,7 @@
 <?php
 session_start();
  
-   include("./templatelogin.php");  
+   include("../templatelogin.php");  
 
 
   if  (isset($username) and isset($password)){
@@ -36,13 +36,13 @@ if(password_verify($password, $datensatz['password']) && $username==$datensatz['
     $_SESSION['submituntil'] = $event['submituntil'];
        
 
-    header('location: main.php');
+    header('location: ../menu/main.php');
      exit(1);
 } 
 else
 {
     //echo 'Passwort ist falsch!';
-    header('location: splashscreen.php?msg=Der eingegebene Benutzername oder Passwort ist falsch');
+    header('location: ../splashscreen.php?msg=Der eingegebene Benutzername oder Passwort ist falsch');
      exit(1);
 }
 }

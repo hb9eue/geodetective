@@ -1,7 +1,7 @@
 <?php
 session_start();
  
-   include("./templateoben.php");  
+   include("../templateoben.php");  
 
 
   
@@ -22,7 +22,7 @@ if(isset($save)) {
    $sql="update  image set description='".$imagedescription."' where id=".$_SESSION['imageid'];
    echo $sql;
    $conn->query($sql);
-   header("location: main.php");
+   header("location: ../menu/main.php");
    exit(1);
 
 
@@ -34,5 +34,5 @@ if(isset($save)) {
 
 
 
-include("./templateunten.php"); 
+include("../templateunten.php"); 
 ?>

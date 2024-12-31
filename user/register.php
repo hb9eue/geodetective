@@ -1,7 +1,7 @@
 <?php
 session_start();
  
-   include("./templateoben.php");  
+   include("../templateoben.php");  
 
 
    ?>
@@ -29,5 +29,5 @@ Du bist noch nicht registriert. Bitte fülle das Formular aus um dich zu registr
 </center>
 
 <?php
-  include("./templateunten.php");
+  include("../templateunten.php");
   ?>

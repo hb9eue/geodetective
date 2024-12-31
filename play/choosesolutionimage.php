@@ -3,7 +3,7 @@
 <?php
 
  
-   include("./templateoben.php");  
+   include("../templateoben.php");  
 
   ?>
    <h2>Auflösung</h2>
@@ -67,7 +67,7 @@ Die Ergebnisse bleiben bis zum Eventende abrufbar.
 
     echo '
     <button type="submit" id="chosenimage" name="chosenimage" value="'.$imageid.'">
-        <img src="uploads/'.$filename.'" style="width: 100%;max-width: 200px;margin-top: 20px;">
+        <img src="../uploads/'.$filename.'" style="width: 100%;max-width: 200px;margin-top: 20px;">
       </button>    
     
     
@@ -82,11 +82,11 @@ Die Ergebnisse bleiben bis zum Eventende abrufbar.
 
 </form>
 
-<button  onclick="window.location.href='main.php'">Zurück</button>
+<button  onclick="window.location.href='../menu/main.php'">Zurück</button>
 
 
 
 
 <?php
-  include("./templateunten.php");
+  include("../templateunten.php");
   ?>

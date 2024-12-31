@@ -1,6 +1,6 @@
 <?php
 
-include("./templateohne.php");  
+include("../templateohne.php");  
 
 
 
@@ -120,7 +120,7 @@ if (isset($chosenimage)) {
 
 <div class="container">
     <!-- Das Bild -->
-    <img src="uploads/<?=$filename?>" alt="Zoomable Image" class="image" id="zoomImage">
+    <img src="../uploads/<?=$filename?>" alt="Zoomable Image" class="image" id="zoomImage">
 
     <!-- Transparentes Overlay für den Zoom -->
     <div class="overlay">

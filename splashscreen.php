@@ -13,7 +13,7 @@
 <img src="images/GeoDetective-JOTA-JOTI.png" class="responsive">
 
 <h1>Login</h1>
-    <form action="login.php" method="post">
+    <form action="user/login.php" method="post">
         <input type="text" name="username" placeholder="Benutzername" ><br>
         <input type="password" name="password" placeholder="Passwort" >
         <br>

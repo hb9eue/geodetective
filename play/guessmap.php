@@ -1,6 +1,6 @@
 <?php
 
-include("./templateoben.php");  
+include("../templateoben.php");  
 
 $lat=0;
 $lon=0;

@@ -1,11 +1,11 @@
 <?php
 session_start();
  
-   include("./templateoben.php");  
+   include("../templateoben.php");  
 
    if(isset($abbrechen)) {
     
-    header("location: main.php");
+    header("location: ../menu/main.php");
     exit(1);
    }
 
@@ -95,7 +95,7 @@ session_start();
 
 
 
-      $target_dir ="uploads/";
+      $target_dir ="../uploads/";
       
       //echo basename($_FILES["uploadedimage"]["name"]);
       $target_file = $target_dir . basename($_FILES["uploadedimage"]["name"]);

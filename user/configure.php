@@ -1,7 +1,7 @@
 <?php
 session_start();
  
-   include("./templateoben.php");  
+   include("../templateoben.php");  
    
    $result = $conn->query("SELECT * FROM user WHERE id='".$_SESSION['userid']."'");
    $datensatz = $result->fetch_assoc();
@@ -43,5 +43,5 @@ Du bist noch nicht registriert. Bitte fülle das Formular aus um dich zu registr
 </center>
 
 <?php
-  include("./templateunten.php");
+  include("../templateunten.php");
   ?>

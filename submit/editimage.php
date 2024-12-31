@@ -1,7 +1,7 @@
 
  
 <?php
-include("./templateohne.php");  
+include("../templateohne.php");  
   ?>
   
   
@@ -142,7 +142,7 @@ if (isset($delete)) {
     $result = $conn->query($sql);
     $datensatz = $result->fetch_assoc();
     $filename=$datensatz['filename'];
-    unlink("uploads/".$filename); 
+    unlink("../uploads/".$filename); 
     
     $sql="delete from image  WHERE id='".$imageid."'";
     $conn->query($sql);
@@ -181,7 +181,7 @@ if (isset($chosenimage)) {
 <center>
 
 
-<img src="uploads/<?=$filename;?>" style="max-height: 200px;
+<img src="../uploads/<?=$filename;?>" style="max-height: 200px;
             
             margin-top: 20px;
             border: 2px solid #ccc;">
@@ -254,5 +254,5 @@ if (isset($chosenimage)) {
     </script>
 
 <?php
-  include("./templateunten.php");
+  include("../templateunten.php");
   ?>

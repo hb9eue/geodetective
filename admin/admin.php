@@ -7,9 +7,9 @@
  */#
 
   
-  include("./templateoben.php");
+  include("../templateoben.php");
   if ($_SESSION['role']!='admin') {
-    header('location: main.php');
+    header('location: ../menu/main.php');
     exit(1);
  } 
 ?>
@@ -34,5 +34,5 @@
 </center>
 
 <?php
-  include("./templateunten.php");
+  include("../templateunten.php");
   ?>

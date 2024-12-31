@@ -6,7 +6,7 @@
  
  */#
 
-  include("./templateoben.php");
+  include("../templateoben.php");
   ?>
 
 <center>
@@ -25,5 +25,5 @@
 </center>
 
 <?php
-  include("./templateunten.php");
+  include("../templateunten.php");
   ?>

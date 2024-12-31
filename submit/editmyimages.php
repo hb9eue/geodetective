@@ -3,7 +3,7 @@
 <?php
 
  
-   include("./templateoben.php");  
+   include("../templateoben.php");  
 
   ?>
 
@@ -47,7 +47,7 @@ function wirklichloeschen() {
 
     echo '
     <button type="submit" id="chosenimage" name="chosenimage" value="'.$imageid.'">
-        <img src="uploads/'.$filename.'" style="width: 100%;max-width: 200px;margin-top: 20px;">
+        <img src="../uploads/'.$filename.'" style="width: 100%;max-width: 200px;margin-top: 20px;">
       </button>    
     ';
     
@@ -72,11 +72,11 @@ function wirklichloeschen() {
 
 </form>
 
-<button  onclick="window.location.href='main.php'">Zurück</button>
+<button  onclick="window.location.href='../menu/main.php'">Zurück</button>
 
 
 
 
 <?php
-  include("./templateunten.php");
+  include("../templateunten.php");
   ?>

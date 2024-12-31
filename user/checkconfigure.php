@@ -1,11 +1,11 @@
 <?php
 session_start();
  
-   include("./templateoben.php");  
+   include("../templateoben.php");  
 
    if(isset($abbrechen)) {
-    echo 'hier';
-    header("location: main.php");
+   
+    header("location: ../menu/main.php");
     exit(1);
 }
    
@@ -32,9 +32,8 @@ if  (isset($username) and !isset($password)){
 
 //Wenn alle OK ist, User ändern
 
-//$conn->query($sql);
-echo $sql;
-//header("location: main.php");
+$conn->query($sql);
+header("location: ../menu/main.php");
 exit(1);
 }  
 

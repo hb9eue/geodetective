@@ -1,7 +1,7 @@
 <?php
 session_start();
  
-   include("./templateoben.php");  
+   include("../templateoben.php");  
 
 
   
@@ -17,12 +17,12 @@ if(isset($admingroup)) {
 }
 
 if(isset($images)) {
-    header('location: editmyimages.php?mode=admin');
+    header('location: ../submit/editmyimages.php?mode=admin');
      exit(1);
 }
 
 if(isset($back)) {
-    header('location: main.php');
+    header('location: ../menu/main.php');
      exit(1);
 }
 
