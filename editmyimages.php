@@ -6,7 +6,18 @@
    include("./templateoben.php");  
 
   ?>
+
+<script>
+function wirklichloeschen() {
+    if (confirm("Soll das Bild wirklich unwiderruflich gelöscht werden?")) {
+    this.form.submit();
+  } else {
+    return false;
+  }
   
+}
+</script>
+
    <form action="editimage.php" method="post">
   
 
@@ -40,12 +51,15 @@
       </button>    
     ';
     
-    if ($_SESSION['role']=='admin') {
+    if (isset($mode) && $mode=='admin' && $_SESSION['role']=='admin') {
 
       echo '<br><br><button type="submit" id="accept" name="accept" value="'.$imageid.'">';
       if(!$datensatz['accepted']) {echo'freigeben';}else{echo'sperren';};  
       echo'</button> ';
-      echo '<button type="submit" id="delete" name="delete" value="'.$imageid.'">löschen</button>';
+
+      echo'<button onclick="return wirklichloeschen()" id="delete" name="delete" value="'.$imageid.'">loeschen</button>';
+
+      //echo '<button type="submit" id="delete" name="delete" value="'.$imageid.'">löschen</button>';
 
     }
 
