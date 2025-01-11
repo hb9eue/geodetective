@@ -12,7 +12,7 @@ session_start();
 
 
 if(isset($admingroup)) {
-    header('location: adminuserverwaltung.php');
+    header('location: adminscoutgroup.php');
      exit(1);
 }
 
