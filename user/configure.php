@@ -12,7 +12,7 @@ session_start();
 
 
 <h1>Account ändern</h1>
-Du bist noch nicht registriert. Bitte fülle das Formular aus um dich zu registrieren
+Bitte fülle das Formular aus um deine Daten zu Ändern:
     <form action="checkconfigure.php" method="post">
     <?php
        echo '<select id="scoutgroup" name="scoutgroup">'; 
