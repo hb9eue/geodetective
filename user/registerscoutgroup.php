@@ -26,10 +26,11 @@ session_start();
     ?>
     <button type="submit">weiter</button><br><br>
     </form>
-    
+    <br><br>
+    <font color="#9900FF"> oder<br><br>
     <form action="checkgroupregister.php" method="post">
     
-    Sollte deine Gruppe nicht aufgeführt sein, fülle bitte folgende Felder aus:<br><br>
+    Sollte deine Gruppe nicht aufgeführt sein, fülle bitte folgende Felder aus:<br><br><br><br></font color>
         <input type="text" name="name" placeholder="Name deiner Pfadigruppe" required>
         <input type="text" name="association" placeholder="Name deines Pfadfinderverbands" required>
         <input type="text" name="city" placeholder="Aus welchem Ort kommt ihr?" required>

@@ -6,7 +6,7 @@ session_start();
 
   
    if(isset($adminuser)) {
-    header('location: adminuserverwaltung.php');
+    header('location: adminuser.php');
      exit(1);
 }
 

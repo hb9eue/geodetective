@@ -39,7 +39,7 @@ if (isset($delete)) {
     
         <label for="name">Name:</label> 
         <input type="text" name="name" value="<?=$groupdatensatz['name']?>" required><br>
-        <label for="name">Verband:</label> 
+        <label for="association">Verband:</label> 
         <input type="text" name="association" value="<?=$groupdatensatz['association']?>" required><br>
         <label for="city">Stadt:</label> 
         <input type="text" name="city" value="<?=$groupdatensatz['city']?>" required><br>
@@ -77,9 +77,9 @@ if (isset($delete)) {
        ?>  
        <br><br>
         <button type="submit">Pfadfindergruppe ändern</button><br><br>
-        <button  onclick="window.location.href='adminscoutgroup.php'">Zurück</button>
+        
     </form>
-
+    <button  onclick="window.location.href='adminscoutgroup.php'">Zurück</button>
 
 
 </center>
