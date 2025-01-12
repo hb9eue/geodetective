@@ -1,0 +1,91 @@
+<?php
+session_start();
+ 
+   include("../templateoben.php");  
+
+   if (isset($edit)) {
+    $editeventid=$_POST['edit'];
+    $sql="SELECT * from event WHERE id='".$editeventid."'";
+    $eventresult = $conn->query($sql);
+    $eventdatensatz = $eventresult->fetch_assoc();
+    $_SESSION['editeventid']=$editeventid;
+
+   
+
+    
+}else
+if (isset($delete)) {
+  $editeventid=$_POST['delete'];
+    
+    //Event löschen (wird nicht agezeigt, da es eimmer nur ein Event geben soll, rotzdem hier schon einmal vorbereitet fasl doch)
+    
+    
+    $sql="delete from event  WHERE id='".$editeventid."'";
+    $conn->query($sql);
+
+    
+    
+    header('location: adminevent.php');
+    
+    }else if (isset($_SESSION['editeventid'])) {
+        $editeventid=$_SESSION['editeventid'];
+        $sql="SELECT * from event WHERE id='".$editeventid."'";
+        $eventresult = $conn->query($sql);
+        $eventdatensatz = $eventresult->fetch_assoc();
+
+     
+
+    }
+     //Format für Datepicker: yyyy-mm-ddThh:mm   
+     $starttimestamp=substr(str_replace(" ","T",$eventdatensatz['starttimestamp']),0,16);
+     $endtimestamp=substr(str_replace(" ","T",$eventdatensatz['endtimestamp']),0,16);
+     $submitfrom=substr(str_replace(" ","T",$eventdatensatz['submitfrom']),0,16);
+     $submituntil=substr(str_replace(" ","T",$eventdatensatz['submituntil']),0,16);
+
+   ?>
+
+<center>
+
+
+<h1>Event Ändern</h1>
+
+ 
+    <form action="updateevent.php" method="post">
+    
+        <label for="name">Name:</label> 
+        <input type="text" name="name" value="<?=$eventdatensatz['name']?>" required><br>
+        
+        <label for="starttimestamp">Beginn:</label> 
+        <input type="datetime-local"  name="starttimestamp" value="<?=$starttimestamp?>"><br>
+        <label for="endtimestamp">Ende:</label> 
+        <input type="datetime-local"  name="endtimestamp" value="<?=$endtimestamp?>"><br>
+        <label for="submitfrom">Bilder einreichen ab:</label> 
+        <input type="datetime-local"  name="submitfrom" value="<?=$submitfrom?>"><br>
+        <label for="submituntil">Bilder einreichen bis:</label> 
+        <input type="datetime-local"  name="submituntil" value="<?=$submituntil?>"><br>
+        
+        <label for="interval">Die nächsten Bilder zum raten veröffentlichen ab Eventbeginn alle:</label> 
+        <input type="number"  name="interval" min="1" max="24" value="<?=$eventdatensatz['publishinterval']?>"> Stunden<br>
+
+        <label for="imagesperinterval">Anzahl der Bilder die pro Intervall veröffentlicht werden:</label> 
+        <input type="number"  name="imagesperinterval" min="1" max="1000" value="<?=$eventdatensatz['imagesperinterval']?>"><br>
+
+        <br><br>
+        
+        <?php
+        if($msg!='') {
+         echo'<span style="color:red;">'.$msg.'<br></span>';
+       }
+       ?>  
+       <br><br>
+        <button type="submit">Event ändern</button><br><br>
+        
+    </form>
+    <button  onclick="window.location.href='adminevent.php'">Zurück</button>
+
+
+</center>
+
+<?php
+  include("../templateunten.php");
+  ?>

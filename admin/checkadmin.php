@@ -16,6 +16,11 @@ if(isset($admingroup)) {
      exit(1);
 }
 
+if(isset($adminevent)) {
+     header('location: adminevent.php');
+      exit(1);
+ }
+
 if(isset($images)) {
     header('location: ../submit/editmyimages.php?mode=admin');
      exit(1);

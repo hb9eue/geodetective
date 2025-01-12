@@ -30,7 +30,7 @@ if(password_verify($password, $datensatz['password']) && $username==$datensatz['
     $_SESSION['eventid'] = $event['id']; 
     $_SESSION['starttimestamp'] = $event['starttimestamp'];
     $_SESSION['endtimestamp'] = $event['endtimestamp'];
-    $_SESSION['interval'] = $event['interval'];
+    $_SESSION['interval'] = $event['publishinterval'];
     $_SESSION['imagesperinterval'] = $event['imagesperinterval'];
     $_SESSION['submitfrom'] = $event['submitfrom'];
     $_SESSION['submituntil'] = $event['submituntil'];
