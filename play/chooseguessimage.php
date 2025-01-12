@@ -41,18 +41,22 @@ Die Ergebnisse bleiben bis zum Eventende abrufbar.
  $bildanzahlpublished=$intervallnummer*$_SESSION['imagesperinterval'];
  //anzahl der Bilder deren Dealine bereits abgelaufen ist
  $bildanzahldeadline=($intervallnummer-1)*($_SESSION['imagesperinterval']);
-    
+ 
+ 
+ //echo $intervallnummer;
+ //echo $bildanzahlpublished;
+ //echo $bildanzahldeadline;
   
 }
 
   
 $sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1  order by submitted limit ".$bildanzahlpublished." offset ".$bildanzahldeadline ;
 //$sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1 ";
-   
+ 
    $result = $conn->query($sql);
 
    $datensaetze = $result->fetch_all(MYSQLI_ASSOC);
-   $datensaetze = $result->fetch_all(MYSQLI_ASSOC);
+   
    
    if($result->num_rows==0)
    {
