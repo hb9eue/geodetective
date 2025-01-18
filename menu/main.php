@@ -12,7 +12,7 @@
 <center>
 
 
-<h1>Hauptmenü</h1>
+<h1><?=menutitle?></h1>
     <form action="checkmain.php" method="post">
  <?php       
  if ($_SESSION['role']=='admin') {

@@ -27,6 +27,7 @@ define("errorpasswordidentity", "Die Passwörter stimmen nicht überein");
 define("errorwrongpassword", "Das Passwort ist falsch");
 
 #Mainmenu
+define("menutitle", "Main menu");
 define("menuadmin", "Admin");
 define("menuplay", "Spielen");
 define("menumyimages", "Meine Bilder");
@@ -45,7 +46,7 @@ define("guesstitle", "Tippabgabe");
 define("guessnoimages", "Im Moment gibt es keine Bilder");
 define("guessexplain", "Bei Geodetectives geht es darum möglichst genau den Standort des Fotografen von Bildern zu
    bestimmen. Suche dir zuerst ein Bild aus für das du den Standort erraten möchtest:
-   Klicke auf ein Bild um einen Tipp abzugeben<br>");
+   Klicke auf ein Bild um einen Tipp abzugeben");
 define("guessuntil", "Raten möglich bis:");
 
 #choosesolutionimage

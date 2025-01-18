@@ -12,7 +12,7 @@ session_start();
 
 
 <h1><?=submitimagetitle?></h1>
-<?=submitimageexplain?><
+<?=submitimageexplain?>
     <form action="checksubmitimage.php" method="post" enctype="multipart/form-data">
     <img src="../images/photo.jpg" class="responsive">
     <br>   

@@ -8,7 +8,7 @@ define("buttonsave", "Speichern");
 define("buttonback", "zurück");
 define("buttondelete", "löschen");
 define("buttonupload", "Upload");
-define("buttoneditdata", "Daten Ändern");
+define("buttoneditdata", "Änderungen speichern");
 
 
 #common
@@ -27,6 +27,7 @@ define("errorpasswordidentity", "Die Passwörter stimmen nicht überein");
 define("errorwrongpassword", "Das Passwort ist falsch");
 
 #Mainmenu
+define("menutitle", "Hauptmenü");
 define("menuadmin", "Admin");
 define("menuplay", "Spielen");
 define("menumyimages", "Meine Bilder");
@@ -45,7 +46,7 @@ define("guesstitle", "Tippabgabe");
 define("guessnoimages", "Im Moment gibt es keine Bilder");
 define("guessexplain", "Bei Geodetectives  geht es darum möglichst genau den Standort des Fotografen von Bildern zu
    bestimmen. Suche dir zuerst ein Bild aus für das du den Standort erraten möchtest:
-   Klicke auf ein Bild um einen Tipp abzugeben<br>");
+   Klicke auf ein Bild um einen Tipp abzugeben");
 define("guessuntil", "Raten möglich bis:");
 
 #choosesolutionimage
@@ -67,9 +68,9 @@ define("solutionlist", "Liste der Einsendungen");
 
 #editimage
 
-define("editimageeditcoord", "Koordinaten anpasssen");
+define("editimageeditcoord", "Koordinaten anpassen");
 define("editimageedescrition", "<br>Allgemeine Bildbeschreibung und evt. Tipps:<br>
-        (kann bei der Tippabgabe von Spielern gelsesen werden)<br>");
+        (kann bei der Tippabgabe von Spielern gelesen werden)<br>");
 define("editimagesolutiontext", "<br>Auflösung:<br>
         Kurze Beschreibung was hier wo zu sehen ist.<br>
         (Wird nach Ablauf der Deadline angezeigt)<br>");

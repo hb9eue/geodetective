@@ -63,7 +63,7 @@ $sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=
       echo guessnoimages;
    }
    else {
-echo guessexplain;
+echo guessexplain; echo'<br>';
    }
    foreach($datensaetze as $datensatz) {
     $filename=$datensatz['filename'];    
