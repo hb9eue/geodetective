@@ -11,10 +11,8 @@ session_start();
 <center>
 
 
-<h1>Bild einreichen</h1>
-Klicke auf den Button um ein Bild hochzuladen.
-Beachte dass auf dem Bild etwas Pfadfinderisches zu sehen sein muss und auch genug
-Hinweise enthalten muss um den Aufnhameort erraten zu können.
+<h1><?=submitimagetitle?></h1>
+<?=submitimageexplain?><
     <form action="checksubmitimage.php" method="post" enctype="multipart/form-data">
     <img src="../images/photo.jpg" class="responsive">
     <br>   
@@ -25,8 +23,8 @@ Hinweise enthalten muss um den Aufnhameort erraten zu können.
     
     
     <br /><br />
-    <input type="submit" value="Upload" />
-    <input type="submit" name='abbrechen' value='abbrechen'/>
+    <input type="submit" value="<?=buttonupload?>" />
+    <input type="submit" name='abbrechen' value='<?=buttoncancel?>'/>
     </form>
 
 

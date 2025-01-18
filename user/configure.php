@@ -11,8 +11,8 @@ session_start();
 <center>
 
 
-<h1>Account ändern</h1>
-Bitte fülle das Formular aus um deine Daten zu Ändern:
+<h1><?=configuretitle?></h1>
+<?=configureexplain?>
     <form action="checkconfigure.php" method="post">
     <?php
        echo '<select id="scoutgroup" name="scoutgroup">'; 
@@ -25,17 +25,17 @@ Bitte fülle das Formular aus um deine Daten zu Ändern:
        }
        echo '</select><br><br>';
     ?>
-        <input type="text" name="username" placeholder="Benutzername" value='<?=$datensatz["username"] ?>' required>
-        <input type="password" name="password" placeholder="Passwort" >
-        <input type="password" name="password2" placeholder="Passwort wiederholen" > 
+        <input type="text" name="username" placeholder="<?=username?>" value='<?=$datensatz["username"] ?>' required>
+        <input type="password" name="password" placeholder="<?=password?>" >
+        <input type="password" name="password2" placeholder="<?=repeatpassword?>" > 
         <?php
        
        if($msg!='') {
          echo'<span style="color:red;">'.$msg.'<br></span>';
        }
        ?>      
- <button type="submit">Daten Ändern</button>
- <button type="submit" name='abbrechen'>Abbrechen</button>
+ <button type="submit"><?=buttoneditdata?></button>
+ <button type="submit" name='abbrechen'><?=buttoncancel?></button>
     </form>
 
 

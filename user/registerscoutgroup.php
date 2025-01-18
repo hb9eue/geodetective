@@ -12,7 +12,7 @@ session_start();
 <h1>Neuer Benutzer</h1>
 
 <form action="register.php" method="post">
-    Wähle bitte dein Pfadigruppe sie hier aus:<br><br>
+    <?=registergroupchoose?><br><br>
     
     
     <?php
@@ -24,17 +24,17 @@ session_start();
        }
        echo '</select><br><br>';
     ?>
-    <button type="submit">weiter</button><br><br>
+    <button type="submit"><?=next?></button><br><br>
     </form>
     <br><br>
-    <font color="#9900FF"> oder<br><br>
+    <font color="#9900FF"> <?=registergroupor?><br><br>
     <form action="checkgroupregister.php" method="post">
     
-    Sollte deine Gruppe nicht aufgeführt sein, fülle bitte folgende Felder aus:<br><br><br><br></font color>
-        <input type="text" name="name" placeholder="Name deiner Pfadigruppe" required>
-        <input type="text" name="association" placeholder="Name deines Pfadfinderverbands" required>
-        <input type="text" name="city" placeholder="Aus welchem Ort kommt ihr?" required>
-        Land:
+    <?=registergroupnew?><br><br><br><br></font color>
+        <input type="text" name="name" placeholder="<?=registergroupname?>" required>
+        <input type="text" name="association" placeholder="<?=registergroupassociation?>" required>
+        <input type="text" name="city" placeholder="<?=registergroupcity?>" required>
+        <?=registergroupcountry?>:
         <select id="country" name="country" required>
               <option value="Schweiz">Schweiz</option>
               <option value="Deutschland">Deutschland</option>
@@ -42,14 +42,14 @@ session_start();
               <option value="Luxemburg">Luxemburg</option>
              
         </select><br><br>
-        <input type="text" name="jid" placeholder="Wie lautet euer JID-Code?">  
-        <input type="text" name="contact" placeholder="Wie seid Ihr beim JOTA/JOTI erreichbar?">  
+        <input type="text" name="jid" placeholder="<?=registergroupjid?>">  
+        <input type="text" name="contact" placeholder="<?=registergroupcontact?>">  
         <?php
         if($msg!='') {
          echo'<span style="color:red;">'.$msg.'<br></span>';
        }
        ?>  
-        <button type="submit">Neue Pfadfindergruppe registrieren</button>
+        <button type="submit"><?=registergroupbutton?></button>
     </form>
 
 

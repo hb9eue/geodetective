@@ -12,12 +12,12 @@ $datensatz = $result->fetch_assoc();
 //$hash = password_hash($password, PASSWORD_DEFAULT);
 
 if ($result->num_rows)  {
-    header("location: register.php?msg='Der Nutzername ist bereits vergeben'");
+    header("location: register.php?msg=".errorusername);
      exit(1);
 }
 
 if ($password!=$password2){
-    header("location: register.php?msg='Die Passwörter stimmen nicht überein'");
+    header("location: register.php?msg=".errorpasswordidentity);
      exit(1);
 }
 

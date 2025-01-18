@@ -10,12 +10,12 @@ $datensatz = $result->fetch_assoc();
 
 
 if ($result->num_rows)  {
-    header("location: registerscoutgroup.php?msg='Der Gruppenname ist bereits angelegt, bitte aus der Liste auswählen.'");
+    header("location: registerscoutgroup.php?msg='".errorgroupname."'");
      exit(1);
 }
 
 if (strlen($jid)>0 && strlen($jid)<>6)  {
-    header("location: registerscoutgroup.php?msg='Der JID-Code muss sechstellig sein.'");
+    header("location: registerscoutgroup.php?msg='".errorjid."'");
      exit(1);
 }
 

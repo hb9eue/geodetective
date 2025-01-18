@@ -195,14 +195,11 @@ if (isset($chosenimage)) {
 
     <!-- Steuerungselemente -->
     <div class="controls">
-    <button type="submit" name="reposition">Koordinaten anpasssen</button>        
-        <br>Allgemeine Bildbeschreibung und evt. Tipps:<br>
-        (kann bei der Tippabgabe von Spielern gelsesen werden)<br>
+    <button type="submit" name="reposition"><?=editimageeditcoord?></button>        
+    <?=editimageedescrition?>
         <!--<input type="text" name="imagedescription" placeholder="Bildbeschreibung" value="<?=$beschreibung;?>"/>-->
         <textarea id="text" name="imagedescription" rows="3" cols="40"><?=trim($beschreibung);?></textarea>
-        <br>Auflösung:<br>
-        Kurze Beschreibung was hier wo zu sehen ist.<br>
-        (Wird nach Ablauf der Deadline angezeigt)<br>
+        <?=editimagesolutiontext?>
         <!--<input type="text" name="imagedescription" placeholder="Bildbeschreibung" value="<?=$beschreibung;?>"/>-->
         <textarea id="text" name="imagesolutiontext" rows="3" cols="40"><?=trim($solutiontext);?></textarea>
         <?php
@@ -212,7 +209,7 @@ if (isset($chosenimage)) {
        
        ?>   
         
-        <button type="submit" name="save">Bildbeschreibung Speichern</button>
+        <button type="submit" name="save"><?=editimagesavebutton?></button>
     </div>
 
     

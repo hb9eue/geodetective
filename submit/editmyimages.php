@@ -9,7 +9,7 @@
 
 <script>
 function wirklichloeschen() {
-    if (confirm("Soll das Bild wirklich unwiderruflich gelöscht werden?")) {
+    if (confirm("<?=reallydelete?>")) {
     this.form.submit();
   } else {
     return false;
@@ -36,10 +36,10 @@ function wirklichloeschen() {
    $datensaetze = $result->fetch_all(MYSQLI_ASSOC);
    if($result->num_rows==0)
    {
-      echo' Du hast bisher keine Bilder eingereicht.';
+      echo editmyimagesnomimages;
    }
    else {
-      echo' Klicke auf ein Bild um es zu bearbeiten<br>';
+      echo editmyimagesclickimage;
    }
    foreach($datensaetze as $datensatz) {
     $filename=$datensatz['filename'];    
@@ -54,10 +54,10 @@ function wirklichloeschen() {
     if (isset($mode) && $mode=='admin' && $_SESSION['role']=='admin') {
 
       echo '<br><br><button type="submit" id="accept" name="accept" value="'.$imageid.'">';
-      if(!$datensatz['accepted']) {echo'freigeben';}else{echo'sperren';};  
+      if(!$datensatz['accepted']) {echo editmyimagesaccept;}else{echo editmyimagesdecline;};  
       echo'</button> ';
 
-      echo'<button onclick="return wirklichloeschen()" id="delete" name="delete" value="'.$imageid.'">löschen</button>';
+      echo'<button onclick="return wirklichloeschen()" id="delete" name="delete" value="'.$imageid.'">'.buttondelete.'</button>';
       }
 
    
@@ -72,7 +72,7 @@ function wirklichloeschen() {
 
 </form>
 
-<button  onclick="window.location.href='../menu/main.php'">Zurück</button>
+<button  onclick="window.location.href='../menu/main.php'"><?=buttonback?></button>
 
 
 

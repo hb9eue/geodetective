@@ -11,7 +11,7 @@ $datensatz = $result->fetch_assoc();
 
 
 if(isset($register)) {
-    header('location: registerscoutgroup.php');
+    header('location: chooselanguage.php');
      exit(1);
 }
 
@@ -22,6 +22,7 @@ if(password_verify($password, $datensatz['password']) && $username==$datensatz['
     $_SESSION['userid'] = $datensatz['id'];
     $_SESSION['role'] = $datensatz['role'];
     $_SESSION['language'] = $language;
+    include('locale/' . $_SESSION['language'] . '.php');
     
     //load event
     $eventresult = $conn->query("SELECT * FROM event WHERE curdate() between submitfrom and endtimestamp");
@@ -42,7 +43,7 @@ if(password_verify($password, $datensatz['password']) && $username==$datensatz['
 else
 {
     //echo 'Passwort ist falsch!';
-    header('location: ../splashscreen.php?msg=Der eingegebene Benutzername oder Passwort ist falsch');
+    header('location: ../splashscreen.php?msg='.errorwrongpassword);
      exit(1);
 }
 }

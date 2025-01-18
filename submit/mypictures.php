@@ -12,11 +12,11 @@
 <center>
 
 
-<h1>Meine Bilder</h1>
+<h1><?=mypicturestitle?></h1>
     <form action="checkmypictures.php" method="post">
         
- <button type="submit" name="einreichen">Neues Bild einreichen</button><br><br>
- <button type="submit" name="bearbeiten">Meine Bilder bearbeiten</button><br><br>
+ <button type="submit" name="einreichen"><?=mypicturesnew?></button><br><br>
+ <button type="submit" name="bearbeiten"><?=mypicturesedit?></button><br><br>
  
     </form>
 

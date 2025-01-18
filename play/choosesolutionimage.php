@@ -82,7 +82,7 @@ Die Ergebnisse bleiben bis zum Eventende abrufbar.
 
 </form>
 
-<button  onclick="window.location.href='../menu/main.php'">Zurück</button>
+<button  onclick="window.location.href='../menu/main.php'"><?=buttonback?></button>
 
 
 

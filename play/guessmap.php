@@ -13,7 +13,7 @@ $lon=0;
   <meta charset="UTF-8">
   
 
-  <title>Geodetective Location Picker</title>
+  <title><?=guessmaptitle?></title>
 
    
   

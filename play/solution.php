@@ -34,7 +34,7 @@ if (isset($chosenimage)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kartenmarker mit Entfernungen</title>
+    <title><?=solutiontitle?></title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
         #map { height: 500px; }
@@ -44,11 +44,11 @@ if (isset($chosenimage)) {
 </head>
 <body>
 
-    <h1>Auflösung</h1>
+    <h1><?=solutionheadline?></h1>
     
     <div id="map"></div>
 
-    <h2>Liste der Einsendungen</h2>
+    <h2><?=solutionlist?></h2>
     <ul id="marker-list"></ul>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -144,6 +144,6 @@ var greenmarker = new L.Icon({
             listElement.appendChild(listItem);
         });
     </script>
- <button  onclick="window.location.href='choosesolutionimage.php'">Zurück</button>
+ <button  onclick="window.location.href='choosesolutionimage.php'"><?=buttonback?></button>
 </body>
 </html>
