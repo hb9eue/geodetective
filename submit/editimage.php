@@ -169,7 +169,8 @@ if (isset($chosenimage)) {
    $lon=$datensatz['lon'];
    $_SESSION['lat']=$lat;
    $_SESSION['lon']=$lon;
-   $beschreibung=$datensatz['description']
+   $beschreibung=$datensatz['description'];
+   $solutiontext=$datensatz['solutiontext'];
    ?>
 
 
@@ -195,9 +196,15 @@ if (isset($chosenimage)) {
     <!-- Steuerungselemente -->
     <div class="controls">
     <button type="submit" name="reposition">Koordinaten anpasssen</button>        
-        <br>Bildbeschreibung:<br>
+        <br>Allgemeine Bildbeschreibung und evt. Tipps:<br>
+        (kann bei der Tippabgabe von Spielern gelsesen werden)<br>
         <!--<input type="text" name="imagedescription" placeholder="Bildbeschreibung" value="<?=$beschreibung;?>"/>-->
         <textarea id="text" name="imagedescription" rows="3" cols="40"><?=trim($beschreibung);?></textarea>
+        <br>Auflösung:<br>
+        Kurze Beschreibung was hier wo zu sehen ist.<br>
+        (Wird nach Ablauf der Deadline angezeigt)<br>
+        <!--<input type="text" name="imagedescription" placeholder="Bildbeschreibung" value="<?=$beschreibung;?>"/>-->
+        <textarea id="text" name="imagesolutiontext" rows="3" cols="40"><?=trim($solutiontext);?></textarea>
         <?php
          if($msg!='') {
          echo'<span style="color:red;">'.$msg.'<br></span>';

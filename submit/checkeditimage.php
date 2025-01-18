@@ -19,7 +19,7 @@ if(isset($save)) {
     }else {
         
    //Bildbeschreibung speichern und zum Hauptmenü
-   $sql="update  image set description='".$imagedescription."' where id=".$_SESSION['imageid'];
+   $sql="update  image set description='".$imagedescription."',solutiontext='".$imagesolutiontext."' where id=".$_SESSION['imageid'];
    echo $sql;
    $conn->query($sql);
    header("location: ../menu/main.php");

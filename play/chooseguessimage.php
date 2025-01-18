@@ -13,9 +13,11 @@
 <?php 
 
 $limit=0;
-
+date_default_timezone_set('Europe/Berlin'); 
 $startzeit = new DateTime($_SESSION['starttimestamp']);
+$startzeit=$startzeit->getTimestamp();
 $aktuellezeit = new DateTime();
+$aktuellezeit=$aktuellezeit->getTimestamp();
 
 
 
@@ -30,29 +32,27 @@ Die Ergebnisse bleiben bis zum Eventende abrufbar.
 */
 
 //event läuft
- if ($startzeit<$aktuellezeit )
+
+
 {
  
  //intervallnummer bestimmen: aktuellezeit-startzeitpunkt in stunden / interval
- $diff_mins = abs($startzeit->getTimestamp() - $aktuellezeit->getTimestamp()) / 60;
+ $diff_mins = abs($startzeit - $aktuellezeit) / 60;
+
  $diff_hours=floor($diff_mins/60);  
  $intervallnummer=floor($diff_hours/$_SESSION['interval'])+1; 
  //anzahl der bereits veröffentlichen Bilder:
  $bildanzahlpublished=$intervallnummer*$_SESSION['imagesperinterval'];
  //anzahl der Bilder deren Dealine bereits abgelaufen ist
  $bildanzahldeadline=($intervallnummer-1)*($_SESSION['imagesperinterval']);
- 
- 
- //echo $intervallnummer;
- //echo $bildanzahlpublished;
- //echo $bildanzahldeadline;
+ $deadline=$startzeit+($_SESSION['interval']*3600);
+ $deadlinestring= date("Y-m-d H:i:s", $deadline); 
   
 }
 
   
 $sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1  order by submitted limit ".$bildanzahlpublished." offset ".$bildanzahldeadline ;
 //$sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1 ";
- 
    $result = $conn->query($sql);
 
    $datensaetze = $result->fetch_all(MYSQLI_ASSOC);
@@ -76,6 +76,10 @@ echo'Bei Geodetectives geht es darum möglichst genau den Standort des Fotografe
         <img src="../uploads/'.$filename.'" style="width: 100%;max-width: 200px;margin-top: 20px;">
       </button>    
     
+    <br><br>  
+    '.$datensatz['description'].'
+    <br><br>
+    Raten möglich bis: '.$deadlinestring.' 
     
         
        <br> 

@@ -69,9 +69,10 @@ Die Ergebnisse bleiben bis zum Eventende abrufbar.
     <button type="submit" id="chosenimage" name="chosenimage" value="'.$imageid.'">
         <img src="../uploads/'.$filename.'" style="width: 100%;max-width: 200px;margin-top: 20px;">
       </button>    
-    
-    
-        
+      <br><br>
+    '.$datensatz['description'].'
+    <br><br>
+        '.$datensatz['solutiontext'].'
        <br> 
        <br> 
        ';
