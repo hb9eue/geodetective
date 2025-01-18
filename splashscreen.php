@@ -31,8 +31,8 @@
           echo'<span style="color:red;">'.$msg.'<br></span>';
         }
         ?>   
- <button type="submit" name="login">Anmelden</button>
- <button type="submit" name="register">Registrieren</button>
+ <button type="submit" name="login">Login</button>
+ <button type="submit" name="register">Register</button>
     </form>
 
 
