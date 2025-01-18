@@ -21,7 +21,7 @@ if(password_verify($password, $datensatz['password']) && $username==$datensatz['
     //echo 'Passwort stimmt!';
     $_SESSION['userid'] = $datensatz['id'];
     $_SESSION['role'] = $datensatz['role'];
-    
+    $_SESSION['language'] = $language;
     
     //load event
     $eventresult = $conn->query("SELECT * FROM event WHERE curdate() between submitfrom and endtimestamp");

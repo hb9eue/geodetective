@@ -22,11 +22,11 @@
  
 
 
- <button type="submit" name="adminuser">Userverwaltung</button><br><br>
- <button type="submit" name="admingroup">Gruppenverwaltung</button><br><br>
- <button type="submit" name="adminevent">Eventverwaltung</button><br><br>
- <button type="submit" name="images">Bilderverwaltung</button><br><br>
- <button type="submit" name="back">Hauptmenü</button>
+ <button type="submit" name="adminuser"><?=adminmenuuser?></button><br><br>
+ <button type="submit" name="admingroup"><?=adminmenugroup?></button><br><br>
+ <button type="submit" name="adminevent"><?=adminmenuevent?></button><br><br>
+ <button type="submit" name="images"><?=adminmenuimages?></button><br><br>
+ <button type="submit" name="back"><?=adminmenuback?></button>
 
  </form>
 

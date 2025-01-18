@@ -6,7 +6,7 @@
    include("../templateoben.php");  
 
   ?>
-   <h2>Auflösung</h2>
+   <h2><?=solutiontitle?></h2>
    
    
    <form action="solution.php" method="post">
@@ -52,11 +52,10 @@ Die Ergebnisse bleiben bis zum Eventende abrufbar.
     
    if($result->num_rows==0)
    {
-      echo' Es gibt noch keine Ergebnisse';
+      echo solutionnoresults;
    }
    else {
-      echo'Für folgende Bilder ist keine Tippabgabe mehr möglich.<br>
-   Klicke auf ein Bild um des Rätsels Lösung anzusehen:<br><br>';
+      echo solutionresults;
    }
 
    $datensaetze = $result->fetch_all(MYSQLI_ASSOC);

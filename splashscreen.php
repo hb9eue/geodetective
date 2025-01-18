@@ -14,6 +14,14 @@
 
 <h1>Login</h1>
     <form action="user/login.php" method="post">
+      Language:
+    <select id="language" name="language" required>
+              <option value="de">Deutsch</option>
+              <option value="en">English</option>
+              <option value="fr">Français</option>
+              <option value="nl">Nederlands</option>
+             
+        </select><br><br>
         <input type="text" name="username" placeholder="Benutzername" ><br>
         <input type="password" name="password" placeholder="Passwort" >
         <br>

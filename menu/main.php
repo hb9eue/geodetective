@@ -16,14 +16,14 @@
     <form action="checkmain.php" method="post">
  <?php       
  if ($_SESSION['role']=='admin') {
- echo'<button type="submit" name="admin">Admin</button><br><br>';
+ echo'<button type="submit" name="admin">'.menuadmin.'</button><br><br>';
  }
  ?>
- <button type="submit" name="spielen">Spielen</button><br><br>
- <button type="submit" name="einreichen">Meine Bilder</button><br><br>
- <button type="submit" name="ergebnisse">Auflösung</button><br><br>
- <button type="submit" name="einstellungen">Einstellungen</button><br><br>
- <button type="submit" name="abmelden">Abmelden</button>
+ <button type="submit" name="spielen"><?=menuplay?></button><br><br>
+ <button type="submit" name="einreichen"><?=menumyimages?></button><br><br>
+ <button type="submit" name="ergebnisse"><?=menusolution?></button><br><br>
+ <button type="submit" name="einstellungen"><?=menuoptions?></button><br><br>
+ <button type="submit" name="abmelden"><?=menulogout?></button>
     </form>
 
 

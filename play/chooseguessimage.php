@@ -6,7 +6,7 @@
    include("../templateoben.php");  
 
   ?>
-   <h2>Tippabgabe</h2>
+   <h2><?=guesstitle?></h2>
    
    <form action="guess.php" method="post">
    
@@ -60,12 +60,10 @@ $sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=
    
    if($result->num_rows==0)
    {
-      echo' Im Moment gibt es keine Bilder';
+      echo guessnoimages;
    }
    else {
-echo'Bei Geodetectives geht es darum möglichst genau den Standort des Fotografen von Bildern zu
-   bestimmen. Suche dir zuerst ein Bild aus für das du den Standort erraten möchtest:
-   Klicke auf ein Bild um einen Tipp abzugeben<br>';
+echo guessexplain;
    }
    foreach($datensaetze as $datensatz) {
     $filename=$datensatz['filename'];    
@@ -78,8 +76,8 @@ echo'Bei Geodetectives geht es darum möglichst genau den Standort des Fotografe
     
     <br><br>  
     '.$datensatz['description'].'
-    <br><br>
-    Raten möglich bis: '.$deadlinestring.' 
+    <br><br>';echo guessuntil; 
+    echo' '.$deadlinestring.' 
     
         
        <br> 
@@ -89,7 +87,7 @@ echo'Bei Geodetectives geht es darum möglichst genau den Standort des Fotografe
    ?>
 
 </form>
-<button  onclick="window.location.href='../menu/main.php'">Zurück</button>
+<button  onclick="window.location.href='../menu/main.php'"><?=buttonback?></button>
 
 
 
