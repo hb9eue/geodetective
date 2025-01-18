@@ -3,16 +3,16 @@ declare(strict_types=1);
 
 #Buttons
 define("buttonok", "OK");
-define("buttoncancel", "Abbrechen");
-define("buttonsave", "Speichern");
-define("buttonback", "zurücke");
+define("buttoncancel", "cancel");
+define("buttonsave", "save");
+define("buttonback", "back");
 define("buttondelete", "löschen");
-define("buttonupload", "Upload");
-define("buttoneditdata", "Daten Ändern");
+define("buttonupload", "upload");
+define("buttoneditdata", "edit data");
 
 
 #common
-define("reallydelete", "Soll der Datensatz wirklich unwiderruflich gelöscht werden?");
+define("reallydelete", "Do you really want to delete this record?");
 define("username", "username");
 define("password", "passwort");
 define("repeatpassword", "The passwords do not match");
@@ -20,30 +20,30 @@ define("next", "next");
 
 
 #errormessages
-define("errorgroupname", "Der Gruppenname ist bereits angelegt, bitte aus der Liste auswählen.");
-define("errorjid", "Der JID-Code muss sechstellig sein.");
-define("errorusername", "Der Nutzername ist bereits vergeben");
+define("errorgroupname", "This groupname is already registered, please choose one from the list.");
+define("errorjid", "The JID-Code must be six characters long.");
+define("errorusername", "This username is already taken");
 define("errorpasswordidentity", "The passwords do not match");
-define("errorwrongpassword", "Das Passwort ist falsch");
+define("errorwrongpassword", "The password is wrong");
 
 #Mainmenu
-define("menuadmin", "Admin");
-define("menuplay", "Spielen");
-define("menumyimages", "Meine Bilder");
-define("menusolution", "Auflösung");
-define("menuoptions", "Einstellungen");
-define("menulogout", "Abmelden");
+define("menuadmin", "admin");
+define("menuplay", "play");
+define("menumyimages", "my images");
+define("menusolution", "solution");
+define("menuoptions", "options");
+define("menulogout", "log out");
 #Adminmenu
-define("adminmenuuser", "Userverwaltung");
-define("adminmenugroup", "Gruppenverwaltung");
-define("adminmenuevent", "Eventverwaltung");
-define("adminmenuimages", "Bilderverwaltung");
-define("adminmenuback", "Hauptmenü");
+define("adminmenuuser", "manage users ");
+define("adminmenugroup", "manage groups");
+define("adminmenuevent", "manage events");
+define("adminmenuimages", "manage images");
+define("adminmenuback", "main menu");
 
 #chooseguessimage
-define("guesstitle", "Tippabgabe");
-define("guessnoimages", "Im Moment gibt es keine Bilder");
-define("guessexplain", "Bei Geodetectives (tm) geht es darum möglichst genau den Standort des Fotografen von Bildern zu
+define("guesstitle", "guess");
+define("guessnoimages", "There are no images at the moment");
+define("guessexplain", "Bei Geodetectives geht es darum möglichst genau den Standort des Fotografen von Bildern zu
    bestimmen. Suche dir zuerst ein Bild aus für das du den Standort erraten möchtest:
    Klicke auf ein Bild um einen Tipp abzugeben<br>");
 define("guessuntil", "Raten möglich bis:");

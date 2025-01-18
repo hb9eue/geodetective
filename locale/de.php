@@ -5,7 +5,7 @@ declare(strict_types=1);
 define("buttonok", "OK");
 define("buttoncancel", "Abbrechen");
 define("buttonsave", "Speichern");
-define("buttonback", "zurücke");
+define("buttonback", "zurück");
 define("buttondelete", "löschen");
 define("buttonupload", "Upload");
 define("buttoneditdata", "Daten Ändern");
@@ -43,7 +43,7 @@ define("adminmenuback", "Hauptmenü");
 #chooseguessimage
 define("guesstitle", "Tippabgabe");
 define("guessnoimages", "Im Moment gibt es keine Bilder");
-define("guessexplain", "Bei Geodetectives (tm) geht es darum möglichst genau den Standort des Fotografen von Bildern zu
+define("guessexplain", "Bei Geodetectives  geht es darum möglichst genau den Standort des Fotografen von Bildern zu
    bestimmen. Suche dir zuerst ein Bild aus für das du den Standort erraten möchtest:
    Klicke auf ein Bild um einen Tipp abzugeben<br>");
 define("guessuntil", "Raten möglich bis:");
