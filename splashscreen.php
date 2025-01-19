@@ -2,6 +2,10 @@
 /*
  * Created on 27.10.2024
  * updated on 27.10.2024
+ * 
+ * Wenn fertig dann:
+ * <option value="fr">Français</option>
+ * <option value="nl">Nederlands</option>
  *
  
  */#
@@ -18,8 +22,7 @@
     <select id="language" name="language" required>
               <option value="de">Deutsch</option>
               <option value="en">English</option>
-              <option value="fr">Français</option>
-              <option value="nl">Nederlands</option>
+              
              
         </select><br><br>
         <input type="text" name="username" placeholder="Benutzername" ><br>

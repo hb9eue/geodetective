@@ -16,8 +16,7 @@ taal kiezen
     <select id="language" name="language" required>
               <option value="de">Deutsch</option>
               <option value="en">English</option>
-              <option value="fr">Français</option>
-              <option value="nl">Nederlands</option>
+              
              
         </select>
 
