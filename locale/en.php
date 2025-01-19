@@ -48,6 +48,9 @@ define("guessnoimages", "There are no images at the moment");
 define("guessexplain", "Geodetective is a game where you try to located the exact location of the photographer
     of the given image. Choose an image by clicking on it to start guessing the location:");
 define("guessuntil", "guessing is possible until:");
+define("gamestart", "The game begins: ");
+define("uploaduntilstart", "Until then you can upload your images for the game.");
+define("buttonuploaduntilstart", "upload images");
 
 #choosesolutionimage
 define("solutiontitle", "Solution");

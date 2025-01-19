@@ -49,6 +49,9 @@ define("guessexplain", "Bei Geodetectives geht es darum möglichst genau den Sta
    bestimmen. Suche dir zuerst ein Bild aus für das du den Standort erraten möchtest:
    Klicke auf ein Bild um einen Tipp abzugeben");
 define("guessuntil", "Raten möglich bis:");
+define("gamestart", "Das Spiel beginnt: ");
+define("uploaduntilstart", "Bis dahin kannst du Bilder hochladen, die dann im Spiel verwendet werden.");
+define("buttonuploaduntilstart", "Bilder einreichen");
 
 #choosesolutionimage
 define("solutiontitle", "Auflösung");

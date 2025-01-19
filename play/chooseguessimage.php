@@ -3,12 +3,7 @@ session_start();
 
    include("../templateoben.php");  
 
-  ?>
-   <h2><?=guesstitle?></h2>
-   
-   <form action="guess.php" method="post">
-   
-<?php 
+ 
 
 $limit=0;
 date_default_timezone_set('Europe/Berlin'); 
@@ -30,8 +25,7 @@ Die Ergebnisse bleiben bis zum Eventende abrufbar.
 */
 
 //event läuft
-
-
+if ($startzeit<=$aktuellezeit )
 {
  
  //intervallnummer bestimmen: aktuellezeit-startzeitpunkt in stunden / interval
@@ -45,9 +39,11 @@ Die Ergebnisse bleiben bis zum Eventende abrufbar.
  $bildanzahldeadline=($intervallnummer-1)*($_SESSION['imagesperinterval']);
  $deadline=$startzeit+($_SESSION['interval']*3600);
  $deadlinestring= date("Y-m-d H:i:s", $deadline); 
-  
-}
-
+ echo' 
+ <h2>'.guesstitle.'</h2>
+   
+   <form action="guess.php" method="post">
+';
   
 $sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1  order by submitted limit ".$bildanzahlpublished." offset ".$bildanzahldeadline ;
 //$sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1 ";
@@ -82,6 +78,18 @@ echo guessexplain; echo'<br>';
        <br> 
        ';
    }
+} //ende event läuft 
+else {
+  echo'<h1>'; 
+  echo gamestart;
+  echo'<br>';
+  echo date("Y-m-d H:i:s", $startzeit);
+  echo'</h1><br>';
+  echo uploaduntilstart;
+  echo"<br><br><button  onclick=\"window.location.href='../submit/submitimage.php'\">".buttonuploaduntilstart."</button>";
+  
+
+}
    ?>
 
 </form>
