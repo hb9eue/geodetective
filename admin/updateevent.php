@@ -21,7 +21,8 @@ $sql=$sql." where id=".$editeventid;
 
 //echo $sql;
 $conn->query($sql);
-header("location: adminevent.php");
+echo "<script>window.location.href='adminevent.php';</script>"; 
+//header("location: adminevent.php");
 exit(1);
   
 

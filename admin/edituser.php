@@ -24,9 +24,10 @@ if (isset($delete)) {
     $conn->query($sql);
 
     
-    
-    header('location: adminuser.php');
-    
+    echo "<script>window.location.href='adminuser.php';</script>"; 
+    //header('location: adminuser.php');
+    exit(1);
+
     }else if (isset($_SESSION['edituserid'])) {
         $edituserid=$_SESSION['edituserid'];
         $sql="SELECT * from user WHERE id='".$edituserid."'";

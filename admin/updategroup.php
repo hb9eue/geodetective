@@ -15,12 +15,14 @@ $datensatz = $result->fetch_assoc();
 
 
 if ($result->num_rows)  {
-    header("location: registerscoutgroup.php?msg='Der Gruppenname ist bereits angelegt, bitte aus der Liste auswählen.'");
+    echo "<script>window.location.href='registerscoutgroup.php?msg='".htmlentities("Der Gruppenname ist bereits angelegt, bitte aus der Liste auswählen."),"';</script>"; 
+    //header("location: registerscoutgroup.php?msg='Der Gruppenname ist bereits angelegt, bitte aus der Liste auswählen.'");
      exit(1);
 }
 
 if (strlen($jid)>0 && strlen($jid)<>6)  {
-    header("location: registerscoutgroup.php?msg='Der JID-Code muss sechstellig sein.'");
+    echo "<script>window.location.href='registerscoutgroup.php?msg=".htmlentities("Der JID-Code muss sechstellig sein.")."';</script>"; 
+    //header("location: registerscoutgroup.php?msg='Der JID-Code muss sechstellig sein.'");
      exit(1);
 }
 
@@ -30,8 +32,8 @@ $sql="update scoutgroup set name='".$name."', country='".$country."',city='".$ci
 
 $conn->query($sql);
 
-
-header("location: adminscoutgroup.php");
+echo "<script>window.location.href='adminscoutgroup.php';</script>"; 
+//header("location: adminscoutgroup.php");
 exit(1);
   
 

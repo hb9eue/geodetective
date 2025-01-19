@@ -10,7 +10,8 @@ $result = $conn->query($sql0);
 $datensatz = $result->fetch_assoc();
 
 if ($result->num_rows)  {
-    header("location: edituser.php?msg='Der Username existiert bereits. Bitte wähle einen anderen.");
+    echo "<script>window.location.href='edituser.php?msg=".htmlentities("Der Username existiert bereits. Bitte wähle einen anderen.")."';</script>";
+    //header("location: edituser.php?msg='Der Username existiert bereits. Bitte wähle einen anderen.");
      exit(1);
 }
 
@@ -25,8 +26,8 @@ if ($password<>"*****") {
 $sql=$sql." where id=".$edituserid;
 $conn->query($sql);
 
-
-header("location: adminuser.php");
+echo "<script>window.location.href='adminuser.php';</script>";
+//header("location: adminuser.php");
 exit(1);
   
 

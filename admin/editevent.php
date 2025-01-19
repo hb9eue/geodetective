@@ -24,9 +24,10 @@ if (isset($delete)) {
     $conn->query($sql);
 
     
-    
-    header('location: adminevent.php');
-    
+    echo "<script>window.location.href='adminevent.php';</script>"; 
+    //header('location: adminevent.php');
+    exit(1);
+
     }else if (isset($_SESSION['editeventid'])) {
         $editeventid=$_SESSION['editeventid'];
         $sql="SELECT * from event WHERE id='".$editeventid."'";

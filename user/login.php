@@ -1,7 +1,7 @@
 <?php
 session_start();
  
-   include("../templatelogin.php");  
+   include("../templateloginohne.php");  
 
 
   if  (isset($username) and isset($password)){
@@ -11,8 +11,9 @@ $datensatz = $result->fetch_assoc();
 
 
 if(isset($register)) {
-    header('location: chooselanguage.php');
-     exit(1);
+    echo "<script>window.location.href='chooselanguage.php';</script>";
+    //header('location: chooselanguage.php');
+    exit(1);
 }
 
 
@@ -36,15 +37,19 @@ if(password_verify($password, $datensatz['password']) && $username==$datensatz['
     $_SESSION['submitfrom'] = $event['submitfrom'];
     $_SESSION['submituntil'] = $event['submituntil'];
        
-
-    header('location: ../menu/main.php');
-     exit(1);
+    echo "<script>window.location.href='../menu/main.php';</script>";
+    exit;
+    //header('location: ../menu/main.php');
+    // exit(1);
 } 
 else
 {
     //echo 'Passwort ist falsch!';
-    header('location: ../splashscreen.php?msg='.errorwrongpassword);
-     exit(1);
+    echo "<script>window.location.href='../splashscreen.php?msg=".htmlentities(errorwrongpassword)."';</script>";
+    exit;
+    //header('location: ../splashscreen.php?msg='.errorwrongpassword);
+    // exit(1);
 }
 }
+
 ?>

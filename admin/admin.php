@@ -9,7 +9,8 @@
   
   include("../templateoben.php");
   if ($_SESSION['role']!='admin') {
-    header('location: ../menu/main.php');
+    echo "<script>window.location.href='../menu/main.php';</script>";
+    //header('location: ../menu/main.php');
     exit(1);
  } 
 ?>

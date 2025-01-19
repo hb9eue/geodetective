@@ -3,8 +3,8 @@ session_start();
  
 $_SESSION['language']=$_POST['language'];   
 
-
-header('location: registerscoutgroup.php');
+echo "<script>window.location.href='registerscoutgroup.php';</script>";
+//header('location: registerscoutgroup.php');
      exit(1);
  
 

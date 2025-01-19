@@ -12,12 +12,14 @@ $datensatz = $result->fetch_assoc();
 //$hash = password_hash($password, PASSWORD_DEFAULT);
 
 if ($result->num_rows)  {
-    header("location: register.php?msg=".errorusername);
+  echo "<script>window.location.href='register.php?msg=".htmlentities(errorusername)."';</script>";
+    //header("location: register.php?msg=".errorusername);
      exit(1);
 }
 
 if ($password!=$password2){
-    header("location: register.php?msg=".errorpasswordidentity);
+    echo "<script>window.location.href='register.php?msg=".htmlentities(errorpasswordidentity)."';</script>";
+    //header("location: register.php?msg=".errorpasswordidentity);
      exit(1);
 }
 
@@ -27,8 +29,8 @@ $conn->query("INSERT INTO user (username, scoutgroup,password) VALUES ('".$usern
 
 //und einloggen
  
-
-header("location: login.php?username=".$username."&password=".$password);
+echo "<script>window.location.href='login.php?username=".$username."&password=".$password."';</script>";
+//header("location: login.php?username=".$username."&password=".$password);
 exit(1);
 }  
 

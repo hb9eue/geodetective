@@ -7,13 +7,15 @@ session_start();
   
 
 if(isset($reposition)) {
-    header('location: map.php');
+    echo "<script>window.location.href='map.php';</script>";
+    //header('location: map.php');
      exit(1);
 }
 
 if(isset($save)) {
     
     if(strlen($imagedescription)==0){
+        echo "<script>window.location.href='editimage.php?msg=".htmlentities(errormissingdescription)."';</script>"; 
         header("location: editimage.php?msg=Bitte eine Bildbeschreibung eingeben");
          exit(1);
     }else {
@@ -22,7 +24,8 @@ if(isset($save)) {
    $sql="update  image set description='".$imagedescription."',solutiontext='".$imagesolutiontext."' where id=".$_SESSION['imageid'];
    echo $sql;
    $conn->query($sql);
-   header("location: ../menu/main.php");
+   echo "<script>window.location.href='../menu/main.php';</script>"; 
+   //header("location: ../menu/main.php");
    exit(1);
 
 

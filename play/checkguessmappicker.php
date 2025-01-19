@@ -4,7 +4,8 @@ session_start();
    include("../templateoben.php");  
 
    if(isset($abbrechen)) {
-       header("location: ../menu/main.php");
+      echo "<script>window.location.href='../menu/main.php';</script>";
+       //header("location: ../menu/main.php");
     exit(1);
    }
    if(isset($ok) and  isset($Location_Latitude)) {
@@ -31,7 +32,8 @@ session_start();
    
    }
    }
-   header("location: ../menu/main.php");
+   echo "<script>window.location.href='../menu/main.php';</script>";
+   //header("location: ../menu/main.php");
    exit(1);
    
         

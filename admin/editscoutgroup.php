@@ -21,8 +21,8 @@ if (isset($delete)) {
     $conn->query($sql);
 
     
-    
-    header('location: adminscoutgroup.php');
+    echo "<script>window.location.href='adminscoutgroup.php';</script>"; 
+    //header('location: adminscoutgroup.php');
     
     }
 

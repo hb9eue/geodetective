@@ -4,8 +4,8 @@ session_start();
    include("../templateoben.php");  
 
    if(isset($abbrechen)) {
-    
-    header("location: ../menu/main.php");
+    echo "<script>window.location.href='../menu/main.php';</script>";  
+    //header("location: ../menu/main.php");
     exit(1);
    }
 
@@ -130,7 +130,7 @@ session_start();
 echo $target_file;
           //Bild speichern
           if (move_uploaded_file($_FILES["uploadedimage"]["tmp_name"], $target_file)) {
-            echo'hier';
+            
                $conn->query("INSERT INTO image (eventid,filename,userid,lat,lon) VALUES ('".$_SESSION['eventid']."', '".$_FILES["uploadedimage"]["name"]."', '".$_SESSION['userid']."', '".$lat."', '".$lon."')");
           } else {
             echo'Fehler';
@@ -143,13 +143,14 @@ $_SESSION['lat'] = $lat;
 $_SESSION['lon'] = $lon;
 //check if coordinates are present
 if ($lat>0) {
-header("location: editimage.php");
-exit(1);
+  echo "<script>window.location.href='editimage.php';</script>";  
+  //header("location: editimage.php");
+  exit(1);
    
         }else{
           //Wenn keine Koordinaten, dann locationpicker
-            
-        header("location: map.php");
+        echo "<script>window.location.href='map.php';</script>";    
+        //header("location: map.php");
         exit(1);
         }
         

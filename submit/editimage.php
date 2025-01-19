@@ -1,8 +1,56 @@
-
- 
 <?php
 include("../templateohne.php");  
-  ?>
+
+$imageid=$_SESSION['imageid'];
+
+if (isset($accept)) {
+    $imageid=$_POST['accept'];
+    $sql="update image set accepted= NOT accepted,acceptedby=".$_SESSION['userid']." WHERE id='".$imageid."'";
+    $conn->query($sql);
+
+    echo "<script>window.location.href='editmyimages.php?mode=admin';</script>";
+    //header('location: editmyimages.php?mode=admin');
+    exit(1);
+}else
+if (isset($delete)) {
+    $imageid=$_POST['delete'];
+    
+    //Datei löschen
+    $sql="SELECT * FROM image WHERE id='".$imageid."'";
+    $result = $conn->query($sql);
+    $datensatz = $result->fetch_assoc();
+    $filename=$datensatz['filename'];
+    unlink("../uploads/".$filename); 
+    
+    $sql="delete from image  WHERE id='".$imageid."'";
+    $conn->query($sql);
+
+    $sql="delete from guess  WHERE imageid='".$imageid."'";
+    $conn->query($sql);
+    
+    echo "<script>window.location.href='editmyimages.php?mode=admin';</script>";
+    //header('location: editmyimages.php?mode=admin');
+    
+    } else
+
+if (isset($chosenimage)) {
+    
+    $imageid=$_POST['chosenimage'];
+    $_SESSION['imageid']=$imageid;
+}
+
+
+   $sql="SELECT * FROM image WHERE id='".$imageid."'";
+   $result = $conn->query($sql);
+   $datensatz = $result->fetch_assoc();
+   $filename=$datensatz['filename'];
+   $lat=$datensatz['lat'];
+   $lon=$datensatz['lon'];
+   $_SESSION['lat']=$lat;
+   $_SESSION['lon']=$lon;
+   $beschreibung=$datensatz['description'];
+   $solutiontext=$datensatz['solutiontext'];
+   ?>
   
   
   
@@ -122,56 +170,7 @@ include("../templateohne.php");
   
   
   <body>  
-<?php 
 
-$imageid=$_SESSION['imageid'];
-
-if (isset($accept)) {
-    $imageid=$_POST['accept'];
-    $sql="update image set accepted= NOT accepted,acceptedby=".$_SESSION['userid']." WHERE id='".$imageid."'";
-    $conn->query($sql);
-
-    header('location: editmyimages.php?mode=admin');
-    exit(1);
-}else
-if (isset($delete)) {
-    $imageid=$_POST['delete'];
-    
-    //Datei löschen
-    $sql="SELECT * FROM image WHERE id='".$imageid."'";
-    $result = $conn->query($sql);
-    $datensatz = $result->fetch_assoc();
-    $filename=$datensatz['filename'];
-    unlink("../uploads/".$filename); 
-    
-    $sql="delete from image  WHERE id='".$imageid."'";
-    $conn->query($sql);
-
-    $sql="delete from guess  WHERE imageid='".$imageid."'";
-    $conn->query($sql);
-    
-    header('location: editmyimages.php?mode=admin');
-    
-    } else
-
-if (isset($chosenimage)) {
-    
-    $imageid=$_POST['chosenimage'];
-    $_SESSION['imageid']=$imageid;
-}
-
-
-   $sql="SELECT * FROM image WHERE id='".$imageid."'";
-   $result = $conn->query($sql);
-   $datensatz = $result->fetch_assoc();
-   $filename=$datensatz['filename'];
-   $lat=$datensatz['lat'];
-   $lon=$datensatz['lon'];
-   $_SESSION['lat']=$lat;
-   $_SESSION['lon']=$lon;
-   $beschreibung=$datensatz['description'];
-   $solutiontext=$datensatz['solutiontext'];
-   ?>
 
 
 

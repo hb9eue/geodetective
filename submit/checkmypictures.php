@@ -9,11 +9,13 @@ session_start();
 
 
 if(isset($einreichen)) {
-    header('location: submitimage.php');
+    echo "<script>window.location.href='submitimage.php';</script>";
+    //header('location: submitimage.php');
      exit(1);
 }
 if(isset($bearbeiten)) {
-    header('location: editmyimages.php');
+    echo "<script>window.location.href='editmyimages.php';</script>";
+    //header('location: editmyimages.php');
      exit(1);
 }
 

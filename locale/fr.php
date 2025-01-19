@@ -25,6 +25,7 @@ define("errorjid", "Der JID-Code muss sechstellig sein.");
 define("errorusername", "Der Nutzername ist bereits vergeben");
 define("errorpasswordidentity", "Die Passwörter stimmen nicht überein");
 define("errorwrongpassword", "Das Passwort ist falsch");
+define("errormissingdescription", "Bitte eine Bildbeschreibung eingeben");
 
 #Mainmenu
 define("menutitle", "Main menu");

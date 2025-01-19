@@ -10,12 +10,14 @@ $datensatz = $result->fetch_assoc();
 
 
 if ($result->num_rows)  {
-    header("location: registerscoutgroup.php?msg='".errorgroupname."'");
+    echo "<script>window.location.href='registerscoutgroup.php?msg=".htmlentities(errorgroupname)."';</script>";
+    //header("location: registerscoutgroup.php?msg='".errorgroupname."'");
      exit(1);
 }
 
 if (strlen($jid)>0 && strlen($jid)<>6)  {
-    header("location: registerscoutgroup.php?msg='".errorjid."'");
+    echo "<script>window.location.href='registerscoutgroup.php?msg=".htmlentities(errorjid)."';</script>";
+    //header("location: registerscoutgroup.php?msg='".errorjid."'");
      exit(1);
 }
 
@@ -29,8 +31,8 @@ $result = $conn->query("SELECT * FROM scoutgroup WHERE name='".$name."'");
 
 $datensatz = $result->fetch_assoc();
 
-
-header("location: register.php?scoutgroup=".$datensatz['id']);
+echo "<script>window.location.href='register.php?scoutgroup=".$datensatz['id']."';</script>";
+//header("location: register.php?scoutgroup=".$datensatz['id']);
 exit(1);
   
 
