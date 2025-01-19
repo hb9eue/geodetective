@@ -98,6 +98,7 @@ define("submitimagetitle", "submit image");
 define("submitimageexplain", "Click in the button to upload an image.
 Note that the image must show be something that has to do with scouting and
 must contain enough clues to make it possible to guess the location.");
+define("submitdiabled", "At the moment no images can be uploaded");
 
 #configure
 

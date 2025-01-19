@@ -98,7 +98,8 @@ define("mypicturesedit", "Meine Bilder bearbeiten");
 define("submitimagetitle", "Bild einreichen");
 define("submitimageexplain", "Klicke auf den Button um ein Bild hochzuladen.
 Beachte dass auf dem Bild etwas Pfadfinderisches zu sehen sein muss und auch genug
-Hinweise enthalten muss um den Aufnhameort erraten zu können.");
+Hinweise enthalten muss um den Aufnahmeort erraten zu können.");
+define("submitdiabled", "Zur Zeit können keine neuen Bilder eingereicht werden");
 
 #configure
 
