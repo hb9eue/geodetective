@@ -11,13 +11,46 @@ $startzeit = new DateTime($_SESSION['starttimestamp']);
 $startzeit=$startzeit->getTimestamp();
 $aktuellezeit = new DateTime();
 $aktuellezeit=$aktuellezeit->getTimestamp();
+$datum=date("Y-m-d ", $aktuellezeit);
+$nachmittag=false;
+$morgen=strtotime("tomorrow");
+$datummorgen=date("Y-m-d ", $morgen);
+if (date("a", $aktuellezeit)=='pm')
+{
+   $nachmittag=true;
+}
 
 
+//Nacht
+$startnachtstring=$datum.$_SESSION['startnight'];
+$startnacht=new DateTime($startnachtstring);
+$startnacht=$startnacht->getTimestamp();
+$endnachtstring=$datum.$_SESSION['endnight'];
+if($nachmittag){
+   $endnachtstring=$datummorgen.$_SESSION['endnight'];
+} 
+$endnacht=new DateTime($endnachtstring);
+$endnacht=$endnacht->getTimestamp();
+
+$night=false;
+if ($startnacht<$aktuellezeit && $aktuellezeit<$endnacht)
+{
+     $night=true;
+} 
+$deadline=new DateTime($datum);
+
+if (!$night) {
+ $deadline=$aktuellezeit+(4*60*60);
+}else{
+ $deadline=$endnacht;
+}
+
+$deadlinestring=date("Y-m-d H:i:s", $deadline);
 
 /*
 Event:
 Ein Event hat eine Start und Endezeit
-Nach beginn der Startzeit wird das Event in Iatervalle aufgeteilt.
+Nach beginn der Startzeit wird das Event in Intervalle aufgeteilt.
 In jedem Intervall werden x weitere der eingereichten Bilder zum arten freigegeben.
 Nach ablauf des Intervalls kann kein Tipp mehr abegegeben werden und die Lösung
 sowie alle Tipps erscheinen unter "Ergebnisse".
@@ -29,25 +62,35 @@ if ($startzeit<=$aktuellezeit )
 {
  
  //intervallnummer bestimmen: aktuellezeit-startzeitpunkt in stunden / interval
- $diff_mins = abs($startzeit - $aktuellezeit) / 60;
+ //$diff_mins = abs($startzeit - $aktuellezeit) / 60;
 
- $diff_hours=floor($diff_mins/60);  
- $intervallnummer=floor($diff_hours/$_SESSION['interval'])+1; 
+ //$diff_hours=floor($diff_mins/60);  
+ //$intervallnummer=floor($diff_hours/$_SESSION['interval'])+1; 
  //anzahl der bereits veröffentlichen Bilder:
- $bildanzahlpublished=$intervallnummer*$_SESSION['imagesperinterval'];
+ //$bildanzahlpublished=$intervallnummer*$_SESSION['imagesperinterval'];
  //anzahl der Bilder deren Dealine bereits abgelaufen ist
- $bildanzahldeadline=($intervallnummer-1)*($_SESSION['imagesperinterval']);
- $deadline=$startzeit+($_SESSION['interval']*3600);
- $deadlinestring= date("Y-m-d H:i:s", $deadline); 
+ //$bildanzahldeadline=($intervallnummer-1)*($_SESSION['imagesperinterval']);
+ //$deadline=$startzeit+($_SESSION['interval']*3600);
+ //$deadlinestring= date("Y-m-d H:i:s", $deadline); 
+ 
+ //Neues Konzept zeige immer #imagesperinverval bilder deren deadline nicht erreicht ist
+ //Alle dieser Bilder die dealine=hivalue haben deadline=jetzt+intervalldauer
+ //Wenn NAchtruhe dann deadline=ende der Nachtruhe
+ 
+ 
+ 
+ 
+ 
  echo' 
  <h2>'.guesstitle.'</h2>
    
    <form action="guess.php" method="post">
 ';
   
-$sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1  order by submitted limit ".$bildanzahlpublished." offset ".$bildanzahldeadline ;
+//$sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1  order by submitted limit ".$bildanzahlpublished." offset ".$bildanzahldeadline ;
 //$sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1 ";
-   $result = $conn->query($sql);
+$sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1  and deadline> CURRENT_TIMESTAMP()  order by submitted limit ".$_SESSION['imagesperinterval'];   
+$result = $conn->query($sql);
 
    $datensaetze = $result->fetch_all(MYSQLI_ASSOC);
    
@@ -60,6 +103,15 @@ $sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=
 echo guessexplain; echo'<br>';
    }
    foreach($datensaetze as $datensatz) {
+    //Deadline neu setzen
+    if ($night || $datensatz['deadline']=='2035-12-31 00:00:00'){
+    $updatesql="update image set deadline='".$deadlinestring."' where id=".$datensatz['id'];
+    $conn->query($updatesql);
+    $datensatz['deadline']=$deadlinestring;
+    }
+    
+    
+    //Bilder anzeigen
     $filename=$datensatz['filename'];    
     $imageid=$datensatz['id'];     
 
@@ -71,7 +123,7 @@ echo guessexplain; echo'<br>';
     <br><br>  
     '.$datensatz['description'].'
     <br><br>';echo guessuntil; 
-    echo' '.$deadlinestring.' 
+    echo' '.$datensatz['deadline'].' 
     
         
        <br> 

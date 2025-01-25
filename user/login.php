@@ -36,6 +36,8 @@ if(password_verify($password, $datensatz['password']) && $username==$datensatz['
     $_SESSION['imagesperinterval'] = $event['imagesperinterval'];
     $_SESSION['submitfrom'] = $event['submitfrom'];
     $_SESSION['submituntil'] = $event['submituntil'];
+    $_SESSION['startnight'] = $event['startnightsrest'];
+    $_SESSION['endnight'] = $event['endnightsrest'];
        
     echo "<script>window.location.href='../menu/main.php';</script>";
     exit;
