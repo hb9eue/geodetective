@@ -15,6 +15,8 @@
 
    $startzeit = new DateTime($_SESSION['starttimestamp']);
    $aktuellezeit = new DateTime();
+
+   $aktuellezeitstring=date("Y-m-d H:i:s", $aktuellezeit->getTimestamp());
   
    
 
@@ -45,7 +47,8 @@ Die Ergebnisse bleiben bis zum Eventende abrufbar.
    }
 
      
-   $sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1  order by submitted limit ".$bildanzahldeadline ;
+   //$sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1  order by submitted limit ".$bildanzahldeadline ;
+   $sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1  and deadline <'".$aktuellezeitstring."' order by submitted";
    $result = $conn->query($sql);
     
    if($result->num_rows==0)
