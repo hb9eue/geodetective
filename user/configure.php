@@ -25,6 +25,8 @@
        }
        echo '</select><br><br>';
     ?>
+        <button type="submit" name='editscoutgroup'><?=buttoneditscoutgroup?></button> 
+        <br><br>
         <input type="text" name="username" placeholder="<?=username?>" value='<?=$datensatz["username"] ?>' required>
         <input type="password" name="password" placeholder="<?=password?>" >
         <input type="password" name="password2" placeholder="<?=repeatpassword?>" > 
@@ -33,7 +35,8 @@
        if($msg!='') {
          echo'<span style="color:red;">'.$msg.'<br></span>';
        }
-       ?>      
+       ?>
+      
  <button type="submit"><?=buttoneditdata?></button>
  <button type="submit" name='abbrechen'><?=buttoncancel?></button>
     </form>

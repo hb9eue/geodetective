@@ -9,6 +9,7 @@ define("buttonback", "zurück");
 define("buttondelete", "löschen");
 define("buttonupload", "Upload");
 define("buttoneditdata", "Änderungen speichern");
+define("buttoneditscoutgroup", "Pfadfindergruppe ändern");
 
 
 #common

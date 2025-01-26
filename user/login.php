@@ -23,6 +23,8 @@ if(password_verify($password, $datensatz['password']) && $username==$datensatz['
     $_SESSION['userid'] = $datensatz['id'];
     $_SESSION['role'] = $datensatz['role'];
     $_SESSION['language'] = $language;
+    $_SESSION['userscoutgroup'] = $datensatz['scoutgroup'];
+
     include('locale/' . $_SESSION['language'] . '.php');
     
     include("loadevent.php");  

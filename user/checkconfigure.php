@@ -5,7 +5,13 @@ session_start();
 
    if(isset($abbrechen)) {
     echo "<script>window.location.href='../menu/main.php';</script>";
-    //header("location: ../menu/main.php");
+    
+    exit(1);
+}
+
+if(isset($editscoutgroup)) {
+    echo "<script>window.location.href='editscoutgroup.php';</script>";
+    
     exit(1);
 }
    

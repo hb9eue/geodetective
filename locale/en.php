@@ -9,7 +9,7 @@ define("buttonback", "back");
 define("buttondelete", "löschen");
 define("buttonupload", "upload");
 define("buttoneditdata", "save changes");
-
+define("buttoneditscoutgroup", "edit scoutgroup");
 
 #common
 define("reallydelete", "Do you really want to delete this record?");
