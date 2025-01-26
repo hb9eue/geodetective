@@ -89,7 +89,7 @@ if ($startzeit<=$aktuellezeit )
   
 //$sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1  order by submitted limit ".$bildanzahlpublished." offset ".$bildanzahldeadline ;
 //$sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1 ";
-$sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1  and deadline> CURRENT_TIMESTAMP()  order by submitted limit ".$_SESSION['imagesperinterval'];   
+$sql="SELECT * FROM image join user on image.userid=user.id join scoutgroup on user.scoutgroup=scoutgroup.id WHERE eventid='".$_SESSION['eventid']."' and accepted=1  and deadline> CURRENT_TIMESTAMP()  order by submitted limit ".$_SESSION['imagesperinterval'];   
 $result = $conn->query($sql);
 
    $datensaetze = $result->fetch_all(MYSQLI_ASSOC);
@@ -119,10 +119,13 @@ echo guessexplain; echo'<br>';
     <button type="submit" id="chosenimage" name="chosenimage" value="'.$imageid.'">
         <img src="../uploads/'.$filename.'" style="width: 100%;max-width: 200px;margin-top: 20px;">
       </button>    
-    
     <br><br>  
+     
     '.$datensatz['description'].'
-    <br><br>';echo guessuntil; 
+    <br><br>
+    '.guesssubmittedby.' '.$datensatz['name'].' 
+    <br><br> ';
+    echo guessuntil; 
     echo' '.$datensatz['deadline'].' 
     
         
