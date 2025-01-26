@@ -15,7 +15,7 @@
 <?=configureexplain?>
     <form action="checkconfigure.php" method="post">
     <?php
-       echo '<select id="scoutgroup" name="scoutgroup">'; 
+       echo '<select id="scoutgroup" name="scoutgroup" disabled>'; 
        $result2 = $conn->query("SELECT * FROM scoutgroup");
        $datensaetze = $result2->fetch_all(MYSQLI_ASSOC);
        foreach($datensaetze as $datensatz2) {
