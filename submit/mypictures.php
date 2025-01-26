@@ -19,7 +19,7 @@
  <button type="submit" name="bearbeiten"><?=mypicturesedit?></button><br><br>
  
     </form>
-
+    <button  onclick="window.location.href='../menu/main.php'"><?=buttonback?></button>
 
 
 </center>

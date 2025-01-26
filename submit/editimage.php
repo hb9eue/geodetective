@@ -1,11 +1,12 @@
 <?php
 include("../templateohne.php");  
+ 
 
 $imageid=$_SESSION['imageid'];
 
 if (isset($accept)) {
     $imageid=$_POST['accept'];
-    $sql="update image set accepted= NOT accepted,acceptedby=".$_SESSION['userid']." WHERE id='".$imageid."'";
+    $sql="update image set accepted= NOT accepted,acceptedby=".$_SESSION['userid'].",deadline='2035-12-31 00:00:00' WHERE id='".$imageid."'";
     $conn->query($sql);
 
     echo "<script>window.location.href='editmyimages.php?mode=admin';</script>";
