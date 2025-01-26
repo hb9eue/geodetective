@@ -18,14 +18,14 @@ session_start();
    $guessresult = $result->fetch_assoc();
    $guessid=$guessresult['id']; 
     
-   $sql="update  guess set jid='".$jid."' where id=".$guessid;
+   $sql="update  guess set guessedjid='".$jid."' where id=".$guessid;
    
    $conn->query($sql);
 
    }
    else { 
 
-    $sql="insert into guess (imageid,userid,jid) values (".$_SESSION['imageid'].",".$_SESSION['userid'].",'".$jid."')";
+    $sql="insert into guess (imageid,userid,guessedjid) values (".$_SESSION['imageid'].",".$_SESSION['userid'].",'".$jid."')";
    
     $conn->query($sql);   
    

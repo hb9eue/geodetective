@@ -23,7 +23,7 @@ if (isset($chosenimage)) {
     $jidsql="SELECT * FROM image join user on image.userid=user.id join scoutgroup on user.scoutgroup=scoutgroup.id WHERE image.id=".$imageid;
     $imagejid = $conn->query($jidsql);
     $imagejiddtaensatz = $imagejid->fetch_assoc();
-    $jid= $imagejiddtaensatz['scoutgroup.jid']; 
+    $jid= $imagejiddtaensatz['jid']; 
 
    
     $sql="SELECT * FROM guess join user on guess.userid=user.id join scoutgroup on user.scoutgroup=scoutgroup.id WHERE imageid=".$imageid;
@@ -90,14 +90,14 @@ var greenmarker = new L.Icon({
                 
                 //jid korrekt
                 $jidcorrect="";
-                if ($guess['jid']==$jid)
+                if ($guess['guessedjid']==$jid)
                 {
                     $jidcorrect=solutionjidcorrect; 
                 }
                 if (!$first) {echo ',';}; 
                 $first=false;
                 $beschriftung="";
-                $beschriftung=$jid;
+                
                 if ($guess['userid']==$_SESSION['userid']) {
                     $beschriftung=$beschriftung."*";
                 }

@@ -9,7 +9,7 @@ session_start();
     $jid="";
     if ($guessresult->num_rows)  {
         $guessdatensatz = $guessresult->fetch_assoc();
-        $jid=$guessdatensatz['jid'];
+        $jid=$guessdatensatz['guessedjid'];
     
     }
 ?>
