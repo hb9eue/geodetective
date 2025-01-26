@@ -19,6 +19,12 @@ if (isset($chosenimage)) {
     $lat=$datensatz['lat'];
     $lon=$datensatz['lon'];
     
+    //JID des Bildes
+    $jidsql="SELECT * FROM image join user on image.userid=user.id join scoutgroup on user.scoutgroup=scoutgroup.id WHERE image.id=".$imageid;
+    $imagejid = $conn->query($jidsql);
+    $imagejiddtaensatz = $imagejid->fetch_assoc();
+    $jid= $imagejiddtaensatz['scoutgroup.jid']; 
+
    
     $sql="SELECT * FROM guess join user on guess.userid=user.id join scoutgroup on user.scoutgroup=scoutgroup.id WHERE imageid=".$imageid;
     $guesses = $conn->query($sql);
@@ -81,13 +87,23 @@ var greenmarker = new L.Icon({
              
              $first=true;
              foreach($guesses as $guess) {
+                
+                //jid korrekt
+                $jidcorrect="";
+                if ($guess['jid']==$jid)
+                {
+                    $jidcorrect=solutionjidcorrect; 
+                }
                 if (!$first) {echo ',';}; 
                 $first=false;
-                $beschriftung=$guess['name']." (".$guess['city'].", ".$guess['country'].")";
+                $beschriftung="";
+                $beschriftung=$jid;
                 if ($guess['userid']==$_SESSION['userid']) {
                     $beschriftung=$beschriftung."*";
                 }
-
+                $beschriftung=$beschriftung.$guess['name']." (".$guess['city'].", ".$guess['country'].")";
+                
+                $beschriftung=$beschriftung." ".$jidcorrect;
                 echo'{ name: "'.$beschriftung.'", lat: '.$guess['lat'].', lng: '.$guess['lon'].' }';
 
              }

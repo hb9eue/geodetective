@@ -71,6 +71,7 @@ define("guessmaptitle", "Geodetective Location Picker");
 define("solutiontitle", "Kartenmarker mit Entfernungen");
 define("solutionheadline", "Auflösung");
 define("solutionlist", "Liste der Einsendungen");
+define("solutionjidcorrect", "Jid richtig geraten!!");
 
 #editimage
 

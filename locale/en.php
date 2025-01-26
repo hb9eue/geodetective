@@ -70,7 +70,7 @@ define("guessmaptitle", "Geodetective Location Picker");
 define("solutiontitle", "Mapmarkers with distances");
 define("solutionheadline", "Solution");
 define("solutionlist", "List of submissions");
-
+define("solutionjidcorrect", "Jid guessed correctly!!");
 #editimage
 
 define("editimageeditcoord", "Edit coordinates");
