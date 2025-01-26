@@ -2,7 +2,7 @@
 
  
    include("../templateoben.php");  
-   include("../loadevent.php"); 
+   include("../user/loadevent.php");  
   ?>
    <h2><?=solutiontitle?></h2>
    
