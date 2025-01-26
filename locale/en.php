@@ -10,6 +10,8 @@ define("buttondelete", "löschen");
 define("buttonupload", "upload");
 define("buttoneditdata", "save changes");
 define("buttoneditscoutgroup", "edit scoutgroup");
+define("buttonguesslocation", "guess location");
+define("buttonguessjid", "guess Jid");
 
 #common
 define("reallydelete", "Do you really want to delete this record?");

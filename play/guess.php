@@ -8,7 +8,12 @@ $imageid=$_SESSION['imageid'];
 
 if (isset($chosenimage)) {
     
+    if (isset($_POST['chosenimage'])){
     $imageid=$_POST['chosenimage'];
+    }
+    else {
+        if (isset($_GET['chosenimage'])){$imageid=$_GET['chosenimage']; } 
+    }
     $_SESSION['imageid']=$imageid;
 
     $sql="SELECT * FROM image WHERE id=".$imageid;
@@ -91,9 +96,35 @@ if (isset($chosenimage)) {
         /* Button für guessmap.php */
         .button {
             position: absolute;
+            padding: 10px 20px;
             top: 20px;
             left: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .button2 {
+            position: absolute;
             padding: 10px 20px;
+            top: 60px;
+            left: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .button3{
+            position: absolute;
+            padding: 10px 20px;
+            top: 100px;
+            left: 20px;
             background-color: rgba(255, 255, 255, 0.8);
             border: none;
             border-radius: 5px;
@@ -131,7 +162,11 @@ if (isset($chosenimage)) {
     </div>
 
     <!-- Button für guessmap.php -->
-    <button class="button" onclick="window.location.href='guessmap.php'">Standort raten</button>
+    
+     <button class="button" onclick="window.location.href='guessmap.php'"><?=buttonguesslocation?></button>
+     <button class="button2" onclick="window.location.href='guessjid.php'"><?=buttonguessjid?></button>
+     <button class="button3" onclick="window.location.href='chooseguessimage.php'"><?=buttonback?></button>
+    
 </div>
 
 <script>
