@@ -47,6 +47,7 @@ define("adminmenuback", "Hauptmenü");
 #chooseguessimage
 define("guesstitle", "Tippabgabe");
 define("guesssubmittedby", "Eingereicht von:");
+define("guesscontact", "Kontakt:");
 define("guessnoimages", "Im Moment gibt es keine Bilder");
 define("guessexplain", "Bei Geodetectives geht es darum möglichst genau den Standort des Fotografen von Bildern zu
    bestimmen. Suche dir zuerst ein Bild aus für das du den Standort erraten möchtest:

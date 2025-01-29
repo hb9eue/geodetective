@@ -1,9 +1,27 @@
 <?php
 
-include("../templateoben.php");  
+include("../templateohne.php");  
 
 $lat=0;
 $lon=0;
+
+//one gess per user
+$sql="SELECT * FROM guess join user on guess.userid=user.id  WHERE imageid=".$_SESSION['imageid']." and userid=".$_SESSION['userid'];
+
+
+
+
+    $result = $conn->query($sql);
+    $ds=$result->num_rows;
+    if ($ds>0)  {
+    $datensatz = $result->fetch_assoc();
+    if (null!=$datensatz['lat']) {
+      $lat=$datensatz['lat'];
+      $lon=$datensatz['lon'];
+    }
+    
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -11,8 +29,7 @@ $lon=0;
 
 <head>
   <meta charset="UTF-8">
-  
-
+  hier<?=$lat?>da
   <title><?=guessmaptitle?></title>
 
    
@@ -104,6 +121,7 @@ body {
        <br>
         <input type="submit" id="ok" name="ok" value="Koordinaten speichern" />
         <input type="submit" id="abbrechen" name="abbrechen" value="Abbrechen" />
+    
 </center>      
        
 </form>

@@ -46,6 +46,7 @@ define("adminmenuback", "Hauptmenü");
 
 #chooseguessimage
 define("guesstitle", "Tippabgabe");
+define("guesscontact", "Kontakt:");
 define("guesssubmittedby", "Eingereicht von:");
 define("guessnoimages", "Im Moment gibt es keine Bilder");
 define("guessexplain", "Bei Geodetectives  geht es darum möglichst genau den Standort des Fotografen von Bildern zu
@@ -60,7 +61,7 @@ define("buttonuploaduntilstart", "Bilder einreichen");
 define("solutiontitle", "Auflösung");
 define("solutionnoresults", "Es gibt noch keine Ergebnisse");
 define("solutionresults", "Für folgende Bilder ist keine Tippabgabe mehr möglich.<br>
-   Klicke auf ein Bild um des Rätsels Lösung anzusehen:<br><br>");
+   Klicke auf ein Bild um die Ergebnisliste anzusehen:<br><br>");
 
    #guess
 define("guesstitle", "Untersuche das Bild genau nach Hinweisen");

@@ -47,6 +47,7 @@ define("adminmenuback", "main menu");
 #chooseguessimage
 define("guesstitle", "guess");
 define("guesssubmittedby", "submitted by:");
+define("guesscontact", "contact:");
 define("guessnoimages", "There are no images at the moment");
 define("guessexplain", "Geodetective is a game where you try to located the exact location of the photographer
     of the given image. Choose an image by clicking on it to start guessing the location:");
