@@ -1,7 +1,7 @@
 <?php
 session_start();
  
-   include("../templateoben.php");  
+   include("../templatelogin.php");  
 
        
 $result = $conn->query("SELECT * FROM scoutgroup WHERE name='".$name."'");
