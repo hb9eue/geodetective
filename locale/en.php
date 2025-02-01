@@ -3,22 +3,22 @@ declare(strict_types=1);
 
 #Buttons
 define("buttonok", "OK");
-define("buttoncancel", "cancel");
-define("buttonsave", "save");
-define("buttonback", "back");
-define("buttondelete", "löschen");
-define("buttonupload", "upload");
-define("buttoneditdata", "save changes");
-define("buttoneditscoutgroup", "edit scoutgroup");
-define("buttonguesslocation", "guess location");
-define("buttonguessjid", "guess Jid");
+define("buttoncancel", "Cancel");
+define("buttonsave", "Save");
+define("buttonback", "Back");
+define("buttondelete", "Löschen");
+define("buttonupload", "Upload");
+define("buttoneditdata", "Save changes");
+define("buttoneditscoutgroup", "Edit scoutgroup");
+define("buttonguesslocation", "Guess location");
+define("buttonguessjid", "Guess Jid");
 
 #common
 define("reallydelete", "Do you really want to delete this record?");
-define("username", "username");
-define("password", "passwort");
-define("repeatpassword", "repeat password");
-define("next", "next");
+define("username", "Username");
+define("password", "Passwort");
+define("repeatpassword", "Repeat password");
+define("next", "Next");
 
 
 #errormessages
@@ -31,21 +31,21 @@ define("errormissingdescription", "The description of the image is missing");
 
 #Mainmenu
 define("menutitle", "Main menu");
-define("menuadmin", "admin");
-define("menuplay", "play");
-define("menumyimages", "my images");
-define("menusolution", "solution");
-define("menuoptions", "options");
-define("menulogout", "log out");
+define("menuadmin", "Admin");
+define("menuplay", "Play");
+define("menumyimages", "My images");
+define("menusolution", "Solution");
+define("menuoptions", "Options");
+define("menulogout", "Log out");
 #Adminmenu
-define("adminmenuuser", "manage users ");
-define("adminmenugroup", "manage groups");
-define("adminmenuevent", "manage events");
-define("adminmenuimages", "manage images");
-define("adminmenuback", "main menu");
+define("adminmenuuser", "Manage users ");
+define("adminmenugroup", "Manage groups");
+define("adminmenuevent", "Manage events");
+define("adminmenuimages", "Manage images");
+define("adminmenuback", "Main menu");
 
 #chooseguessimage
-define("guesstitle", "guess");
+define("guesstitle", "Guess");
 define("guesssubmittedby", "submitted by:");
 define("guesscontact", "contact:");
 define("guessnoimages", "There are no images at the moment");
@@ -54,7 +54,7 @@ define("guessexplain", "Geodetective is a game where you try to located the exac
 define("guessuntil", "guessing is possible until:");
 define("gamestart", "The game begins: ");
 define("uploaduntilstart", "Until then you can upload your images for the game.");
-define("buttonuploaduntilstart", "upload images");
+define("buttonuploaduntilstart", "Upload images");
 
 #choosesolutionimage
 define("solutiontitle", "Solution");
@@ -86,19 +86,19 @@ define("editimagesavebutton", "save");
 #editmyimages
 define("editmyimagesnomimages", "You did not upload an image yet.");
 define("editmyimagesclickimage", "Click oń the image to edit<br>");
-define("editmyimagesaccept", "accept");
-define("editmyimagesdecline", "decline");
+define("editmyimagesaccept", "Accept");
+define("editmyimagesdecline", "Decline");
 
 #map
 define("mapcoordtitle", "Click on the map to define coordinates.");
 
 #mypictures
-define("mypicturestitle", "my images");
-define("mypicturesnew", "submit new image");
-define("mypicturesedit", "edit my images");
+define("mypicturestitle", "My images");
+define("mypicturesnew", "Submit new image");
+define("mypicturesedit", "Edit my images");
 
 #submitimage
-define("submitimagetitle", "submit image");
+define("submitimagetitle", "Submit image");
 define("submitimageexplain", "Click in the button to upload an image.
 Note that the image must show be something that has to do with scouting and
 must contain enough clues to make it possible to guess the location.");
@@ -106,13 +106,13 @@ define("submitdiabled", "At the moment no images can be uploaded");
 
 #configure
 
-define("configuretitle", "edit account");
+define("configuretitle", "Edit account");
 define("configureexplain", "Please fill in the form to edit yout data:");
 
 #register
-define("registertitle", "new user");
+define("registertitle", "New user");
 define("registerexplain", "You are not registered yet. Please fill in the form to register.");
-define("registerbutton", "register new user");
+define("registerbutton", "Register new user");
 
 #registerscoutgroup
 
@@ -121,8 +121,9 @@ define("registergroupor", "or");
 define("registergroupnew", "If your group ist not registered yet, fill in the following fields:");
 define("registergroupname", "Name of your scoutgroup");
 define("registergroupassociation", "Name of your scoutassociation");
-define("registergroupcity", "From which city are you?");
+define("registergroupcity", "City of your scoutgroup:");
 define("registergroupcountry", "Country");
 define("registergroupjid", "What's your JID-Code?");
-define("registergroupcontact", "How can your group be contaced during JOTA/JOTI?");
-define("registergroupbutton", "register new scoutgroup");
+define("registergroupcontact", "How can your group be contacted during JOTA/JOTI?");
+define("registergroupbutton", "Register new scoutgroup");
+define("changegroup", "Change scoutgroup");

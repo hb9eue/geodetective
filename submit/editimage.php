@@ -210,8 +210,10 @@ if (isset($chosenimage)) {
        ?>   
         
         <button type="submit" name="save"><?=editimagesavebutton?></button>
+        
     </div>
-
+    </form>
+    <button  onclick="window.location.href='editmyimages.php'"><?=buttonback?></button>
     
     
     

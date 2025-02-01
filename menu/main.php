@@ -14,7 +14,8 @@
 
 <h1><?=menutitle?></h1>
     <form action="checkmain.php" method="post">
- <?php       
+ <?php
+       
  if ($_SESSION['role']=='admin') {
  echo'<button type="submit" name="admin">'.menuadmin.'</button><br><br>';
  }

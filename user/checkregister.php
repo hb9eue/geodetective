@@ -29,7 +29,7 @@ $conn->query("INSERT INTO user (username, scoutgroup,password) VALUES ('".$usern
 
 //und einloggen
  
-echo "<script>window.location.href='login.php?username=".$username."&password=".$password."';</script>";
+echo "<script>window.location.href='login.php?username=".$username."&password=".$password."&language=".$_SESSION['language']."';</script>";
 //header("location: login.php?username=".$username."&password=".$password);
 exit(1);
 }  

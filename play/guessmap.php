@@ -34,7 +34,7 @@ $sql="SELECT * FROM guess join user on guess.userid=user.id  WHERE imageid=".$_S
 
    
   
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' href='https://npmcdn.com/leaflet@0.7.7/dist/leaflet.css'>
   
 <style>
@@ -92,7 +92,20 @@ body {
   padding: 0.5em;
   border: 1px solid #000;
 }
-
+input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            
+            color: black;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
 </style>
 
@@ -115,7 +128,7 @@ body {
     
     <form action="checkguessmappicker.php" method="post" enctype="multipart/form-data">
     <center>
-    Klicke auf die Karte um die Koordinaten festzulegen.   
+    Klicke auf die Karte um die Koordinaten festzulegen.<br>   
           <input id="Latitude" placeholder="Latitude" name="Location.Latitude" />
           <input id="Longitude" placeholder="Longitude" name="Location.Longitude" />
        <br>

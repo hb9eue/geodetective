@@ -11,19 +11,19 @@ session_start();
 <center>
 
 
-<h1>Gruppe Ändern</h1>
+<h1><?=changegroup?></h1>
 
  
     <form action="updategroup.php" method="post">
     
-        <label for="name">Name:</label> 
+        <label for="name"><?=registergroupname?>:</label> 
         <input type="text" name="name" value="<?=$groupdatensatz['name']?>" disabled><br>
-        <label for="association">Verband:</label> 
+        <label for="association"><?=registergroupassociation?>:</label> 
         <input type="text" name="association" value="<?=$groupdatensatz['association']?>" required><br>
-        <label for="city">Stadt:</label> 
+        <label for="city"><?=registergroupcity?></label> 
         <input type="text" name="city" value="<?=$groupdatensatz['city']?>" required><br>
         
-        Land:
+        <?=registergroupcountry?>:
         <select id="country" name="country" required>
           <?php
           echo'<option value="Schweiz" ';
@@ -45,9 +45,9 @@ session_start();
             
              
         </select><br><br>
-        <label for="jid">JID-Code:</label> 
+        <label for="jid"><?=registergroupjid?></label> 
         <input type="text" name="jid" value="<?=$groupdatensatz['jid']?>">  <br>
-        <label for="contact">Kontakt:</label> 
+        <label for="contact"><?=registergroupcontact?></label> 
         <input type="text" name="contact" value="<?=$groupdatensatz['contact']?>">  
         <?php
         if($msg!='') {
@@ -55,10 +55,10 @@ session_start();
        }
        ?>  
        <br><br>
-        <button type="submit">Pfadfindergruppe ändern</button><br><br>
+        <button type="submit"><?=changegroup?></button><br><br>
         
     </form>
-    <button  onclick="window.location.href='configure.php'">Zurück</button>
+    <button  onclick="window.location.href='configure.php'"><?=buttonback?></button>
 
 
 </center>

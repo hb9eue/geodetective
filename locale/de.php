@@ -128,3 +128,4 @@ define("registergroupcountry", "Land");
 define("registergroupjid", "Wie lautet euer JID-Code?");
 define("registergroupcontact", "Wie seid Ihr beim JOTA/JOTI erreichbar?");
 define("registergroupbutton", "Neue Pfadfindergruppe registrieren");
+define("changegroup", "Gruppe ändern");

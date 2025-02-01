@@ -33,14 +33,12 @@ session_start();
     <?=registergroupnew?><br><br><br><br></font color>
         <input type="text" name="name" placeholder="<?=registergroupname?>" required>
         <input type="text" name="association" placeholder="<?=registergroupassociation?>" required>
-        <input type="text" name="city" placeholder="<?=registergroupcity?>" required>
-        <?=registergroupcountry?>:
-        <select id="country" name="country" required>
+        <input type="text" name="city" placeholder="<?=registergroupcity?>" required><br>
+        <?=registergroupcountry?>:<select id="country" name="country" required>
               <option value="Schweiz">Schweiz</option>
               <option value="Deutschland">Deutschland</option>
               <option value="Österreich">Österreich</option>
               <option value="Luxemburg">Luxemburg</option>
-             
         </select><br><br>
         <input type="text" name="jid" placeholder="<?=registergroupjid?>">  
         <input type="text" name="contact" placeholder="<?=registergroupcontact?>">  
