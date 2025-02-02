@@ -97,13 +97,14 @@ var greenmarker = new L.Icon({
                 if (!$first) {echo ',';}; 
                 $first=false;
                 $beschriftung="";
-                
-                if ($guess['userid']==$_SESSION['userid']) {
-                    $beschriftung=$beschriftung."*";
-                }
+               
+               
                 $beschriftung=$beschriftung.$guess['username']." - ".$guess['name']." (".$guess['city'].", ".$guess['country'].")";
                 
                 $beschriftung=$beschriftung." ".$jidcorrect;
+                if ($guess['userid']==$_SESSION['userid']) {
+                    $beschriftung=$beschriftung."*";
+                }
                 echo'{ name: "'.$beschriftung.'", lat: '.$guess['lat'].', lng: '.$guess['lon'].' }';
 
              }
