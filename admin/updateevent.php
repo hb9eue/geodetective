@@ -15,6 +15,7 @@ session_start();
 
 $sql="update event set name='".$name."',";
 $sql=$sql."starttimestamp='".$starttimestamp."', endtimestamp='".$endtimestamp."', ";
+$sql=$sql."startnightsrest='".$startnightsrest."', endnightsrest='".$endnightsrest."', ";
 $sql=$sql."submitfrom='".$submitfrom."', submituntil='".$submituntil."', ";
 $sql=$sql."publishinterval='".$interval."',imagesperinterval='".$imagesperinterval."' ";
 $sql=$sql." where id=".$editeventid;

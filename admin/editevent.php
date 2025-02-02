@@ -42,7 +42,8 @@ if (isset($delete)) {
      $endtimestamp=substr(str_replace(" ","T",$eventdatensatz['endtimestamp']),0,16);
      $submitfrom=substr(str_replace(" ","T",$eventdatensatz['submitfrom']),0,16);
      $submituntil=substr(str_replace(" ","T",$eventdatensatz['submituntil']),0,16);
-
+     $startnightsrest=$eventdatensatz['startnightsrest'];
+     $endnightsrest=$eventdatensatz['endnightsrest'];
    ?>
 
 <center>
@@ -69,8 +70,13 @@ if (isset($delete)) {
         <input type="number"  name="interval" min="1" max="24" value="<?=$eventdatensatz['publishinterval']?>"> Stunden<br>
 
         <label for="imagesperinterval">Anzahl der Bilder die pro Intervall veröffentlicht werden:</label> 
-        <input type="number"  name="imagesperinterval" min="1" max="1000" value="<?=$eventdatensatz['imagesperinterval']?>"><br>
+        <input type="number"  name="imagesperinterval" min="1" max="1000" value="<?=$eventdatensatz['imagesperinterval']?>"><br> 
 
+        <label for="startnightsrest">Beginn der Nachtruhe:</label> 
+        <input type="time"  name="startnightsrest" value="<?=$startnightsrest?>"><br>
+
+        <label for="endnightsrest">Ende der Nachtruhe:</label> 
+        <input type="time"  name="endnightsrest" value="<?=$endnightsrest?>"><br>
         <br><br>
         
         <?php
