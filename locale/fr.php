@@ -3,129 +3,128 @@ declare(strict_types=1);
 
 #Buttons
 define("buttonok", "OK");
-define("buttoncancel", "Abbrechen");
-define("buttonsave", "Speichern");
-define("buttonback", "zurück");
-define("buttondelete", "löschen");
-define("buttonupload", "Upload");
-define("buttoneditdata", "Daten Ändern");
-define("buttoneditscoutgroup", "Pfadfindergruppe ändern");
-define("buttonguesslocation", "Standort raten");
-define("buttonguessjid", "Jid raten");
+define("buttoncancel", "Annuler");
+define("buttonsave", "Sauver");
+define("buttonback", "retour");
+define("buttondelete", "effacer");
+define("buttonupload", "Téléversement");
+define("buttoneditdata", "Modification données");
+define("buttoneditscoutgroup", "Modifier troupe");
+define("buttonguesslocation", "Deviner localisation");
+define("buttonguessjid", "Deviner JID");
 
 #common
-define("reallydelete", "Soll der Datensatz wirklich unwiderruflich gelöscht werden?");
-define("username", "Benutzername");
-define("password", "Passwort");
-define("repeatpassword", "Passwort wiederholen");
-define("next", "weiter");
+define("reallydelete", "Voulez-vous vraiment supprimer définitivement l'enregistrement ?");
+define("username", "Nom d'utilisateur");
+define("password", "Mot de passe");
+define("repeatpassword", "Répéter le mot de passe");
+define("next", "suivant");
 
 
 #errormessages
-define("errorgroupname", "Der Gruppenname ist bereits angelegt, bitte aus der Liste auswählen.");
-define("errorjid", "Der JID-Code muss sechstellig sein.");
-define("errorusername", "Der Nutzername ist bereits vergeben");
-define("errorpasswordidentity", "Die Passwörter stimmen nicht überein");
-define("errorwrongpassword", "Das Passwort ist falsch");
-define("errormissingdescription", "Bitte eine Bildbeschreibung eingeben");
+define("errorgroupname", "Nom de troupe existant. Choisi le dans la liste.");
+define("errorjid", "Le code JID est composé de 6 caractères.");
+define("errorusername", "Nom d'utilisateur déjà existant.");
+define("errorpasswordidentity", "Les mots de passes ne concordent pas.");
+define("errorwrongpassword", "Mot de passe erroné.");
+define("errormissingdescription", "Veuillez donner une description de l'image.");
 
 #Mainmenu
-define("menutitle", "Main menu");
+define("menutitle", "Menu");
 define("menuadmin", "Admin");
-define("menuplay", "Spielen");
-define("menumyimages", "Meine Bilder");
-define("menusolution", "Auflösung");
-define("menuoptions", "Einstellungen");
-define("menulogout", "Abmelden");
+define("menuplay", "Jouer");
+define("menumyimages", "Mes images");
+define("menusolution", "Solutions");
+define("menuoptions", "Paramètres");
+define("menulogout", "Logout");
 #Adminmenu
-define("adminmenuuser", "Userverwaltung");
-define("adminmenugroup", "Gruppenverwaltung");
-define("adminmenuevent", "Eventverwaltung");
-define("adminmenuimages", "Bilderverwaltung");
-define("adminmenuback", "Hauptmenü");
+define("adminmenuuser", "Gestion des utilisateurs");
+define("adminmenugroup", "Gestion des troupes");
+define("adminmenuevent", "Gestion des évènements");
+define("adminmenuimages", "Gestion des images");
+define("adminmenuback", "Menu principale");
 
 #chooseguessimage
-define("guesstitle", "Tippabgabe");
-define("guesssubmittedby", "Eingereicht von:");
-define("guesscontact", "Kontakt:");
-define("guessnoimages", "Im Moment gibt es keine Bilder");
-define("guessexplain", "Bei Geodetectives geht es darum möglichst genau den Standort des Fotografen von Bildern zu
-   bestimmen. Suche dir zuerst ein Bild aus für das du den Standort erraten möchtest:
+define("guesstitle", "Tentative");
+define("guesssubmittedby", "Soumis par:");
+define("guesscontact", "Contact:");
+define("guessnoimages", "Pour le moment, pas d'image");
+define("guessexplain", "Le géo-detective consiste à déterminer le plus précisèment possible l'endroit où se trouvait le photographe d'une image. Choisi une image pour laquelle tu souhaite soumettre une possible localisation:
    Klicke auf ein Bild um einen Tipp abzugeben");
-define("guessuntil", "Raten möglich bis:");
-define("gamestart", "Das Spiel beginnt: ");
-define("uploaduntilstart", "Bis dahin kannst du Bilder hochladen, die dann im Spiel verwendet werden.");
-define("buttonuploaduntilstart", "Bilder einreichen");
+define("guessuntil", "Tentative à soumettre jusqu'au :");
+define("gamestart", "Le jeu débute: ");
+define("uploaduntilstart", "Délai de dépôt d'images jusqu'auquel elles peuvent être utilisée dans le jeu.");
+define("buttonuploaduntilstart", "Soumettre image");
 
 #choosesolutionimage
-define("solutiontitle", "Auflösung");
-define("solutionnoresults", "Es gibt noch keine Ergebnisse");
-define("solutionresults", "Für folgende Bilder ist keine Tippabgabe mehr möglich.<br>
-   Klicke auf ein Bild um des Rätsels Lösung anzusehen:<br><br>");
+define("solutiontitle", "Solution");
+define("solutionnoresults", "Il n'y a pas encore de solution.");
+define("solutionresults", "Pour l'image suivante, il n'est pas possible de déposer une suggestion.<br>
+   Clique sur l'image pour voir la solution de l'énigme:<br><br>");
 
    #guess
-define("guesstitle", "Untersuche das Bild genau nach Hinweisen");
+define("guesstitle", "Analyse l'image de manière détaillée selon les indications");
 
 #guessmap
-define("guessmaptitle", "Geodetective Location Picker");
+define("guessmaptitle", "Geodetective selection de localisation");
 
 #solution
-define("solutiontitle", "Kartenmarker mit Entfernungen");
-define("solutionheadline", "Auflösung");
-define("solutionlist", "Liste der Einsendungen");
-define("solutionjidcorrect", "Jid richtig geraten!!");
+define("solutiontitle", "Indicateur de carte avec éloignement");
+define("solutionheadline", "Solution");
+define("solutionlist", "Liste des soumissions");
+define("solutionjidcorrect", "Jid correctement devnié !!");
 
 #editimage
 
-define("editimageeditcoord", "Koordinaten anpasssen");
-define("editimageedescrition", "<br>Allgemeine Bildbeschreibung und evt. Tipps:<br>
-        (kann bei der Tippabgabe von Spielern gelsesen werden)<br>");
-define("editimagesolutiontext", "<br>Auflösung:<br>
+define("editimageeditcoord", "Modifier les coordonnées");
+define("editimageedescrition", "<brDescription générale de l'image et indices éventuels:<br>
+        (peut être affiché par les utilisateurs sous forme d'indice)<br>");
+define("editimagesolutiontext", "<br>Solution:<br>
         Kurze Beschreibung was hier wo zu sehen ist.<br>
-        (Wird nach Ablauf der Deadline angezeigt)<br>");
-define("editimagesavebutton", "Bildbeschreibung speichern");
+        (Sera affiché à l'échéant du délai)<br>");
+define("editimagesavebutton", "Sauver la description de l'image");
 
 #editmyimages
-define("editmyimagesnomimages", "Du hast bisher keine Bilder eingereicht.");
-define("editmyimagesclickimage", "Klicke auf ein Bild um es zu bearbeiten<br>");
-define("editmyimagesaccept", "freigeben");
-define("editmyimagesdecline", "sperren");
+define("editmyimagesnomimages", "Tu n'as encore déposé aucune image.");
+define("editmyimagesclickimage", "Clique sur l'image pour l'éditer.<br>");
+define("editmyimagesaccept", "libérer");
+define("editmyimagesdecline", "bloquer");
 
 #map
-define("mapcoordtitle", "Klicke auf die Karte um die Koordinaten festzulegen.");
+define("mapcoordtitle", "Clique sur la carte pour définir les coordonnées.");
 
 #mypictures
-define("mypicturestitle", "Meine Bilder");
-define("mypicturesnew", "Neues Bild einreichen");
-define("mypicturesedit", "Meine Bilder bearbeiten");
+define("mypicturestitle", "Mes images");
+define("mypicturesnew", "Déposer une nouvelle image");
+define("mypicturesedit", "Modifier mes images");
 
 #submitimage
-define("submitimagetitle", "Bild einreichen");
-define("submitimageexplain", "Klicke auf den Button um ein Bild hochzuladen.
-Beachte dass auf dem Bild etwas Pfadfinderisches zu sehen sein muss und auch genug
-Hinweise enthalten muss um den Aufnahmeort erraten zu können.");
-define("submitdiabled", "Zur Zeit können keine neuen Bilder eingereicht werden");
+define("submitimagetitle", "Soumettre une image");
+define("submitimageexplain", "Clique sur le bouton pour téléverser une image.
+Celle-ci doit visuellement contenir quelque chose en rapport avec le scoutisme ainsi
+que des indices suffisant pour la rendre localisable.");
+define("submitdiabled", "Pour le moment, aucune nouvelle image ne peut être soumise");
 
 #configure
 
-define("configuretitle", "Account ändern");
-define("configureexplain", "Bitte fülle das Formular aus um deine Daten zu Ändern:");
+define("configuretitle", "Modifier compte");
+define("configureexplain", "Rempli le formulaire pour modifier mes données:");
 
 #register
-define("registertitle", "Neuer Benutzer");
-define("registerexplain", "Du bist noch nicht registriert. Bitte fülle das Formular aus um dich zu registrieren");
-define("registerbutton", "Neuen Benutzer registrieren");
+define("registertitle", "Nouvel utilisateur");
+define("registerexplain", "Tu n'est pas encore enregistré. Merci de remplir le formulaire.");
+define("registerbutton", "Enregistrer le nouvel utilisateur");
 
 #registerscoutgroup
 
-define("registergroupchoose", "Wähle bitte dein Pfadigruppe sie hier aus:");
-define("registergroupor", "oder");
-define("registergroupnew", "Sollte deine Gruppe nicht aufgeführt sein, fülle bitte folgende Felder aus:");
-define("registergroupname", "Name deiner Pfadigruppe");
-define("registergroupassociation", "Name deines Pfadfinderverbands");
-define("registergroupcity", "Aus welchem Ort kommt ihr?");
-define("registergroupcountry", "Land");
-define("registergroupjid", "Wie lautet euer JID-Code?");
-define("registergroupcontact", "Wie seid Ihr beim JOTA/JOTI erreichbar?");
-define("registergroupbutton", "Neue Pfadfindergruppe registrieren");
-define("changegroup", "Gruppe ändern");
+define("registergroupchoose", "Sélectionne ton groupe scout:");
+define("registergroupor", "ou");
+define("registergroupnew", "Si ton groupe n'apparait pas, rempli le formulaire suivant :");
+define("registergroupname", "Nom de ton groupe");
+define("registergroupassociation", "Nom de ton association scoute");
+define("registergroupcity", "De quel endroit venez-vous ?");
+define("registergroupcountry", "Pays");
+define("registergroupjid", "Quel est votre code JID ?");
+define("registergroupcontact", "Par quels moyens êtes vous atteignables lors du JOTA-JOTI ?");
+define("registergroupbutton", "Enregistrer un nouveau groupe scout");
+define("changegroup", "Modifier groupe");
