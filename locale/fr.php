@@ -50,7 +50,7 @@ define("guesssubmittedby", "Soumis par:");
 define("guesscontact", "Contact:");
 define("guessnoimages", "Pour le moment, pas d'image");
 define("guessexplain", "Le géo-detective consiste à déterminer le plus précisèment possible l'endroit où se trouvait le photographe d'une image. Choisi une image pour laquelle tu souhaite soumettre une possible localisation:
-   Klicke auf ein Bild um einen Tipp abzugeben");
+   Cliquez sur une image pour soumettre un conseil.");
 define("guessuntil", "Tentative à soumettre jusqu'au :");
 define("gamestart", "Le jeu débute: ");
 define("uploaduntilstart", "Délai de dépôt d'images jusqu'auquel elles peuvent être utilisée dans le jeu.");

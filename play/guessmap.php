@@ -128,12 +128,12 @@ input {
     
     <form action="checkguessmappicker.php" method="post" enctype="multipart/form-data">
     <center>
-    Klicke auf die Karte um die Koordinaten festzulegen.<br>   
+    <?=mapcoordtitle?><br>   
           <input id="Latitude" placeholder="Latitude" name="Location.Latitude" />
           <input id="Longitude" placeholder="Longitude" name="Location.Longitude" />
        <br>
-        <input type="submit" id="ok" name="ok" value="Koordinaten speichern" />
-        <input type="submit" id="abbrechen" name="abbrechen" value="Abbrechen" />
+        <input type="submit" id="ok" name="ok" value="<?=buttonsave?>" />
+        <input type="submit" id="abbrechen" name="abbrechen" value="<?=buttoncancel?>" />
     
 </center>      
        

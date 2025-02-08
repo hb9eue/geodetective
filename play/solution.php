@@ -28,7 +28,7 @@ if (isset($chosenimage)) {
    
     $sql="SELECT * FROM guess join user on guess.userid=user.id join scoutgroup on user.scoutgroup=scoutgroup.id WHERE imageid=".$imageid;
     $guesses = $conn->query($sql);
-    
+    $anzahlguesses = $guesses->num_rows;
     
    
     }
@@ -43,7 +43,7 @@ if (isset($chosenimage)) {
     <title><?=solutiontitle?></title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
-        #map { height: 500px; }
+        #map { height: 500px; max-width: 800px;}
         #marker-list { margin-top: 20px; }
         li { margin-bottom: 5px; }
     </style>
@@ -59,6 +59,24 @@ if (isset($chosenimage)) {
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
+
+function zoomLevelForDistance(map, distanceInMeters) {
+    const center = map.getCenter();
+    var metersPerPixel = Math.cos(center.lat * Math.PI / 180) * 40075017 / (256 * Math.pow(2, map.getZoom())); // Formel für Meter pro Pixel
+    let zoomLevel = map.getZoom();
+
+    while (metersPerPixel * map.getSize().x > distanceInMeters) { // Solange die Kartenbreite in Pixeln * Meter pro Pixel größer ist als die gewünschte Distanz...
+        zoomLevel++;
+        metersPerPixel = Math.cos(center.lat * Math.PI / 180) * 40075017 / (256 * Math.pow(2, zoomLevel)); // Meter pro Pixel für neues Zoomlevel berechnen
+    }
+     while (metersPerPixel * map.getSize().x < distanceInMeters) { // Solange die Kartenbreite in Pixeln * Meter pro Pixel kleiner ist als die gewünschte Distanz...
+        zoomLevel--;
+        metersPerPixel = Math.cos(center.lat * Math.PI / 180) * 40075017 / (256 * Math.pow(2, zoomLevel)); // Meter pro Pixel für neues Zoomlevel berechnen
+    }
+    
+    return zoomLevel;
+}
+
 
         //marker
         var jotamarker = new L.Icon({
@@ -144,12 +162,18 @@ var greenmarker = new L.Icon({
         // Sortiere Marker nach Entfernung zum Referenzpunkt (aufsteigend)
         distances.sort((a, b) => a.distance - b.distance);
 
+        //median der abstände ist an position
+        var medianpos=<?=$anzahlguesses/2?>;
+        var i=0;
         // Zeige die sortierten Marker in einer Liste an
         const listElement = document.getElementById('marker-list');
         distances.forEach(marker => {
             const listItem = document.createElement('li');
             var distance=marker.distance.toFixed(2);
             var einheit='m';
+            
+            //median der abstände
+            if(i==medianpos) {median=distance;i=i+1;} else {i=i+1;}
             if(distance>1000) {
                 distance=(distance/1000).toFixed(3);
                 einheit='km';
@@ -160,6 +184,10 @@ var greenmarker = new L.Icon({
             //listItem.textContent = `${marker.name}: ${marker.distance} m`;
             listElement.appendChild(listItem);
         });
+       
+        map.setView(referencePoint, zoomLevelForDistance(map,(median))-1);
+
+        
     </script>
  <button  onclick="window.location.href='choosesolutionimage.php'"><?=buttonback?></button>
 </body>
