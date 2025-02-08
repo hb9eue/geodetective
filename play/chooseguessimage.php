@@ -40,7 +40,8 @@ if ($startnacht<$aktuellezeit && $aktuellezeit<$endnacht)
 $deadline=new DateTime($datum);
 
 if (!$night) {
- $deadline=$aktuellezeit+(4*60*60);
+ //$deadline=$aktuellezeit+(4*60*60);
+ $deadline=$aktuellezeit+($_SESSION['interval']*60*60);
 }else{
  $deadline=$endnacht;
 }
@@ -79,7 +80,8 @@ if ($startzeit<=$aktuellezeit )
  
  
  
- 
+
+
  
  echo' 
  <h2>'.guesstitle.'</h2>
