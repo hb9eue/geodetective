@@ -3,8 +3,10 @@ session_start();
  
    include("../templateloginohne.php");  
 
-
-  if  (isset($username) and isset($password)){
+   $_SESSION['language'] = $language;
+   include('../locale/' . $_SESSION['language'] . '.php');
+  
+   if  (isset($username) and isset($password)){
       
 $result = $conn->query("SELECT * FROM user WHERE username='".$username."'");
 $datensatz = $result->fetch_assoc();
@@ -21,10 +23,9 @@ if(password_verify($password, $datensatz['password']) && $username==$datensatz['
     //echo 'Passwort stimmt!';
     $_SESSION['userid'] = $datensatz['id'];
     $_SESSION['role'] = $datensatz['role'];
-    $_SESSION['language'] = $language;
     $_SESSION['userscoutgroup'] = $datensatz['scoutgroup'];
 
-    include('locale/' . $_SESSION['language'] . '.php');
+    
     
     include("loadevent.php");  
 
@@ -38,7 +39,9 @@ if(password_verify($password, $datensatz['password']) && $username==$datensatz['
 else
 {
     //echo 'Passwort ist falsch!';
-    echo "<script>window.location.href='../splashscreen.php?msg=".htmlentities(errorwrongpassword)."';</script>";
+    
+    //echo "<script>window.location.href='../splashscreen.php?msg=".htmlentities(errorwrongpassword, ENT_HTML5  , 'UTF-8')."';</script>";
+    echo "<script>window.location.href='../splashscreen.php?msg=errorwrongpassword';</script>";
     exit;
     //header('location: ../splashscreen.php?msg='.errorwrongpassword);
     // exit(1);

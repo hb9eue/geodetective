@@ -14,9 +14,10 @@ Sprache wählen / choose language / choisir la langue /
 taal kiezen
     <form action="checklanguage.php" method="post">
     <select id="language" name="language" required>
-              <option value="de">Deutsch</option>
-              <option value="en">English</option>
-              <option value="fr">Français</option>
+              
+              <option value="de" <?php if ($_SESSION['language'] =='de') {echo ' selected ';} ?>>Deutsch</option>
+              <option value="en" <?php if ($_SESSION['language'] =='en') {echo ' selected ';} ?>>English </option>
+              <option value="fr" <?php if ($_SESSION['language'] =='fr') {echo ' selected ';} ?>>Français  </option>
               
              
         </select>
