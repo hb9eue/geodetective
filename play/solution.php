@@ -42,8 +42,9 @@ if (isset($chosenimage)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?=solutiontitle?></title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+   
     <style>
-        #map { height: 500px; max-width: 800px;}
+        #map { height: 500px;  max-width: 800px;}
         #marker-list { margin-top: 20px; }
         li { margin-bottom: 5px; }
     </style>
@@ -53,6 +54,13 @@ if (isset($chosenimage)) {
     <h1 style="display: inline"><?=solutionheadline?></h1><br> (<img src='../images/jotamarker.png' height='25em' ><?=solution?>,<img src='../images/markergreen.png' height='25em' ><?=solutionguesses?>, <img src='https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png'height='25em' ><?=solutionmyguess?>)
     
     <div id="map"></div>
+   
+   <script>
+     
+     var windowheight=60/100*window.innerHeight;
+     windowheight=Math.floor(windowheight)+'px';
+     document.getElementById("map").style.height=windowheight;
+    </script> 
 
     <h2><?=solutionlist?></h2>
     <ul id="marker-list"></ul>
