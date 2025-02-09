@@ -73,6 +73,9 @@ define("solutiontitle", "Mapmarkers with distances");
 define("solutionheadline", "Solution");
 define("solutionlist", "List of submissions");
 define("solutionjidcorrect", "Jid guessed correctly!!");
+define("solution", "Solution");
+define("solutionguesses", "guesses");
+define("solutionmyguess", "my guess");
 #editimage
 
 define("editimageeditcoord", "Edit coordinates");

@@ -73,6 +73,9 @@ define("solutiontitle", "Indicateur de carte avec éloignement");
 define("solutionheadline", "Solution");
 define("solutionlist", "Liste des soumissions");
 define("solutionjidcorrect", "Jid correctement devnié !!");
+define("solution", "Solution");
+define("solutionguesses", "tentatives");
+define("solutionmyguess", "ma tentative");
 
 #editimage
 

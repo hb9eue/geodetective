@@ -50,7 +50,7 @@ if (isset($chosenimage)) {
 </head>
 <body>
 
-    <h1><?=solutionheadline?></h1>
+    <h1 style="display: inline"><?=solutionheadline?></h1><br> (<img src='../images/jotamarker.png' height='25em' ><?=solution?>,<img src='../images/markergreen.png' height='25em' ><?=solutionguesses?>, <img src='https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png'height='25em' ><?=solutionmyguess?>)
     
     <div id="map"></div>
 

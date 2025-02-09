@@ -74,6 +74,9 @@ define("solutiontitle", "Kartenmarker mit Entfernungen");
 define("solutionheadline", "Auflösung");
 define("solutionlist", "Liste der Einsendungen");
 define("solutionjidcorrect", "Jid richtig geraten!!");
+define("solution", "Lösung");
+define("solutionguesses", "Tipps");
+define("solutionmyguess", "mein Tipp");
 
 #editimage
 
