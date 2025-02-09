@@ -12,6 +12,7 @@ define("buttoneditdata", "Änderungen speichern");
 define("buttoneditscoutgroup", "Pfadfindergruppe ändern");
 define("buttonguesslocation", "Standort raten");
 define("buttonguessjid", "Jid raten");
+define("buttonreset", "Bild zentrieren");
 
 #common
 define("reallydelete", "Soll der Datensatz wirklich unwiderruflich gelöscht werden?");

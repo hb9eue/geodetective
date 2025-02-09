@@ -31,7 +31,8 @@ if (isset($chosenimage)) {
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    
     <title><?=guesstitle?></title>
     <style>
         /* Grundlegende Stile für den Body */
@@ -120,7 +121,7 @@ if (isset($chosenimage)) {
             color: #333;
         }
 
-        .button3{
+        .button4{
             position: absolute;
             padding: 10px 20px;
             top: 100px;
@@ -132,6 +133,20 @@ if (isset($chosenimage)) {
             font-size: 16px;
             color: #333;
         }
+
+        .button3{
+            position: absolute;
+            padding: 10px 20px;
+            top: 140px;
+            left: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #333;
+        }
+
 
         /* Responsiv für kleine Bildschirme */
         @media (max-width: 768px) {
@@ -151,7 +166,7 @@ if (isset($chosenimage)) {
 
 <div class="container">
     <!-- Das Bild -->
-    <img src="../uploads/<?=$filename?>" alt="Zoomable Image" class="image" id="zoomImage">
+    <img src="../uploads/<?=$filename?>" alt="Zoomable Image" class="image" id="zoomImage" ondragstart="return false">
 
     <!-- Transparentes Overlay für den Zoom -->
     <div class="overlay">
@@ -165,7 +180,9 @@ if (isset($chosenimage)) {
     
      <button class="button" onclick="window.location.href='guessmap.php'"><?=buttonguesslocation?></button>
      <button class="button2" onclick="window.location.href='guessjid.php'"><?=buttonguessjid?></button>
+     <button class="button4" onclick="resetImage()"><?=buttonreset?></button>
      <button class="button3" onclick="window.location.href='chooseguessimage.php'"><?=buttonback?></button>
+     
     
 </div>
 
@@ -180,6 +197,20 @@ if (isset($chosenimage)) {
     let initialTouchX = 0;
     let initialTouchY = 0;
 
+
+    function resetImage(){
+        startX=0, startY=0;
+        scale = 1;
+        initialTouchDistance = 0;
+        initialScale = scale;
+        initialTouchX = 0;
+        initialTouchY = 0;
+        image.style.transform = `scale(${scale})`;
+        image.style.left = `0px`;
+        image.style.top = `0px`;
+        zoomSlider.value = scale;
+
+    }
     // Zoom mit dem UI Slider
     zoomSlider.addEventListener('input', (e) => {
         scale = parseFloat(e.target.value);

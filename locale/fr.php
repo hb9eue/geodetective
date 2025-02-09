@@ -12,6 +12,7 @@ define("buttoneditdata", "Modification données");
 define("buttoneditscoutgroup", "Modifier troupe");
 define("buttonguesslocation", "Deviner localisation");
 define("buttonguessjid", "Deviner JID");
+define("buttonreset", "Réinitialiser l'image");
 
 #common
 define("reallydelete", "Voulez-vous vraiment supprimer définitivement l'enregistrement ?");

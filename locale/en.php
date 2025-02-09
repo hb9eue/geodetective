@@ -12,6 +12,7 @@ define("buttoneditdata", "Save changes");
 define("buttoneditscoutgroup", "Edit scoutgroup");
 define("buttonguesslocation", "Guess location");
 define("buttonguessjid", "Guess Jid");
+define("buttonreset", "Center Image");
 
 #common
 define("reallydelete", "Do you really want to delete this record?");
