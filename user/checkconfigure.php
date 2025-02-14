@@ -16,7 +16,7 @@ if(isset($editscoutgroup)) {
 }
   
   $sql="";
-  if  (isset($username) and isset($password)){
+  if  (isset($username) and isset($password) ){
  $hash = password_hash($password, PASSWORD_DEFAULT);
 
  $sql0="SELECT * FROM user WHERE id<>".$_SESSION['userid']." and username='".$username."'";
