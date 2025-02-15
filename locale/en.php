@@ -28,6 +28,7 @@ define("errorjid", "The JID-Code must be six characters long.");
 define("errorusername", "This username is already taken");
 define("errorpasswordidentity", "The passwords do not match");
 define("errorwrongpassword", "The password is wrong");
+define("errorpasswordlength", "The password must at least be 6 characters long");
 define("errormissingdescription", "The description of the image is missing");
 
 #Mainmenu

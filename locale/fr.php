@@ -28,6 +28,7 @@ define("errorjid", "Le code JID est composé de 6 caractères.");
 define("errorusername", "Nom d'utilisateur déjà existant.");
 define("errorpasswordidentity", "Les mots de passes ne concordent pas.");
 define("errorwrongpassword", "Mot de passe erroné.");
+define("errorpasswordlength", "Le mot de passe doit comporter au moins 6 caractères.");
 define("errormissingdescription", "Veuillez donner une description de l'image.");
 
 #Mainmenu

@@ -16,12 +16,13 @@ session_start();
         <input type="text" name="username" placeholder="<?=username?>" required>
         <input type="password" name="password" placeholder="<?=password?>" required>
         <input type="password" name="password2" placeholder="<?=repeatpassword?>" required> 
-        <?php
+        <button type="submit"><?=registerbutton?></button>
+ <?php
          if($msg!='') {
-         echo'<span style="color:red;">'.$msg.'<br></span>';
+          
+         echo'<br><span style="color:red;">'.constant($msg).'<br></span>';
        }
-       ?>      
- <button type="submit"><?=registerbutton?></button>
+       ?>   
     </form>
 
 

@@ -30,15 +30,13 @@
         <input type="text" name="username" placeholder="<?=username?>" value='<?=$datensatz["username"] ?>' required>
         <input type="password" name="password" placeholder="<?=password?>" >
         <input type="password" name="password2" placeholder="<?=repeatpassword?>" > 
-        <?php
-       
-       if($msg!='') {
-         echo'<span style="color:red;">'.$msg.'<br></span>';
-       }
-       ?>
-      
- <button type="submit"><?=buttoneditdata?></button>
- <button type="submit" name='abbrechen'><?=buttoncancel?></button>
+        <button type="submit"><?=buttoneditdata?></button>
+        <button type="submit" name='abbrechen'><?=buttoncancel?></button>
+   <?php
+         if($msg!='') {
+   echo'<br><br><span style="color:red;">'.constant($msg).'<br></span>';
+ }
+ ?>
     </form>
 
 
