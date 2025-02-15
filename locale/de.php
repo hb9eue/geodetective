@@ -60,6 +60,7 @@ define("uploaduntilstart", "Bis dahin kannst du Bilder hochladen, die dann im Sp
 define("buttonuploaduntilstart", "Bilder einreichen");
 
 #choosesolutionimage
+define("solutionimagdescription", "Bildbeschreibung");
 define("solutiontitle", "Auflösung");
 define("solutionnoresults", "Es gibt noch keine Ergebnisse");
 define("solutionresults", "Für folgende Bilder ist keine Tippabgabe mehr möglich.<br>

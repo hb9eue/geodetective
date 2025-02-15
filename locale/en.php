@@ -60,6 +60,7 @@ define("buttonuploaduntilstart", "Upload images");
 
 #choosesolutionimage
 define("solutiontitle", "Solution");
+define("solutionimagdescription", "Image description");
 define("solutionnoresults", "There are no results yet.");
 define("solutionresults", "For the following images guessing is not possible anymore.<br>
    Click on an image to view the results:<br><br>");

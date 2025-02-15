@@ -48,7 +48,8 @@ Die Ergebnisse bleiben bis zum Eventende abrufbar.
 
      
    //$sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1  order by submitted limit ".$bildanzahldeadline ;
-   $sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1  and deadline <'".$aktuellezeitstring."' order by submitted";
+   //$sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1  and deadline <'".$aktuellezeitstring."' order by submitted";
+   $sql="SELECT image.id,deadline,description,name,contact,filename,solutiontext FROM image join user on image.userid=user.id join scoutgroup on user.scoutgroup=scoutgroup.id WHERE eventid='".$_SESSION['eventid']."' and accepted=1  and deadline <'".$aktuellezeitstring."' order by submitted";
    $result = $conn->query($sql);
     
    if($result->num_rows==0)
@@ -66,16 +67,22 @@ Die Ergebnisse bleiben bis zum Eventende abrufbar.
      
 
     echo '
+    <div style="background-color:lightgray;padding: 25px 25px 25px 25px ;margin: 25px 25px 25px 25px;max-width: 300px;">
     <button type="submit" id="chosenimage" name="chosenimage" value="'.$imageid.'">
         <img src="../uploads/'.$filename.'" style="width: 100%;max-width: 200px;margin-top: 20px;">
-      </button>    
+      </button>
       <br><br>
+    '.guesssubmittedby.' '.$datensatz['name'].' 
+     
+      <br><br>
+      '.solutionimagdescription.':
+      <br>
     '.$datensatz['description'].'
     <br><br>
+    '.solutiontitle.':
+    <br>
         '.$datensatz['solutiontext'].'
-       <br> 
-       <br> 
-       ';
+      </div>      ';
    }
 
    

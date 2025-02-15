@@ -60,6 +60,7 @@ define("buttonuploaduntilstart", "Soumettre image");
 
 #choosesolutionimage
 define("solutiontitle", "Solution");
+define("solutionimagdescription", "Description d'image");
 define("solutionnoresults", "Il n'y a pas encore de solution.");
 define("solutionresults", "Pour l'image suivante, il n'est pas possible de déposer une suggestion.<br>
    Clique sur l'image pour voir la solution de l'énigme:<br><br>");

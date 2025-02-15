@@ -61,6 +61,7 @@ define("buttonuploaduntilstart", "Bilder einreichen");
 
 #choosesolutionimage
 define("solutiontitle", "Auflösung");
+define("solutionimagdescription", "Bildbeschreibung");
 define("solutionnoresults", "Es gibt noch keine Ergebnisse");
 define("solutionresults", "Für folgende Bilder ist keine Tippabgabe mehr möglich.<br>
    Klicke auf ein Bild um des Rätsels Lösung anzusehen:<br><br>");
