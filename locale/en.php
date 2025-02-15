@@ -48,12 +48,12 @@ define("adminmenuback", "Main menu");
 
 #chooseguessimage
 define("guesstitle", "Guess");
-define("guesssubmittedby", "submitted by:");
-define("guesscontact", "contact:");
+define("guesssubmittedby", "Submitted by:");
+define("guesscontact", "Contact:");
 define("guessnoimages", "There are no images at the moment");
 define("guessexplain", "Geodetective is a game where you try to located the exact location of the photographer
     of the given image. Choose an image by clicking on it to start guessing the location:");
-define("guessuntil", "guessing is possible until:");
+define("guessuntil", "Guessing is possible until:");
 define("gamestart", "The game begins: ");
 define("uploaduntilstart", "Until then you can upload your images for the game.");
 define("buttonuploaduntilstart", "Upload images");
@@ -77,8 +77,8 @@ define("solutionheadline", "Solution");
 define("solutionlist", "List of submissions");
 define("solutionjidcorrect", "Jid guessed correctly!!");
 define("solution", "Solution");
-define("solutionguesses", "guesses");
-define("solutionmyguess", "my guess");
+define("solutionguesses", "Guesses");
+define("solutionmyguess", "My guess");
 #editimage
 
 define("editimageeditcoord", "Edit coordinates");
@@ -87,7 +87,7 @@ define("editimageedescrition", "<br>General image description and clues:<br>
 define("editimagesolutiontext", "<br>Solution:<br>
         Short description of what can be seen on the image.<br>
         (is visible for players after the deadline)<br>");
-define("editimagesavebutton", "save");
+define("editimagesavebutton", "Save");
 
 #editmyimages
 define("editmyimagesnomimages", "You did not upload an image yet.");
