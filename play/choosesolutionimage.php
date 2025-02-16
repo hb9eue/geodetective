@@ -49,7 +49,7 @@ Die Ergebnisse bleiben bis zum Eventende abrufbar.
      
    //$sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1  order by submitted limit ".$bildanzahldeadline ;
    //$sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1  and deadline <'".$aktuellezeitstring."' order by submitted";
-   $sql="SELECT image.id,deadline,description,name,contact,filename,solutiontext FROM image join user on image.userid=user.id join scoutgroup on user.scoutgroup=scoutgroup.id WHERE eventid='".$_SESSION['eventid']."' and accepted=1  and deadline <'".$aktuellezeitstring."' order by submitted";
+   $sql="SELECT image.id,deadline,description,name,contact,filename,solutiontext FROM image join user on image.userid=user.id join scoutgroup on user.scoutgroup=scoutgroup.id WHERE eventid='".$_SESSION['eventid']."' and accepted=1  and deadline <'".$aktuellezeitstring."' order by submitted desc";
    $result = $conn->query($sql);
     
    if($result->num_rows==0)
