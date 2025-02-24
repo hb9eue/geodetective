@@ -9,6 +9,50 @@ session_start();
     exit(1);
    }
 
+   function removeExifData($file) {
+    // Überprüfen, ob die Datei existiert und ein Bild ist
+    if (isset($file) && $file['error'] == 0) {
+    // Ermitteln des Dateityps
+    $imageType = exif_imagetype($file['tmp_name']);
+    
+    // Bild je nach Typ laden
+    switch ($imageType) {
+    case IMAGETYPE_JPEG:
+    $image = imagecreatefromjpeg($file['tmp_name']);
+    break;
+    case IMAGETYPE_PNG:
+    $image = imagecreatefrompng($file['tmp_name']);
+    break;
+    case IMAGETYPE_GIF:
+    $image = imagecreatefromgif($file['tmp_name']);
+    break;
+    default:
+    return "Unsupported image type.";
+    }
+    
+    // Neues Bild ohne EXIF-Daten speichern
+    $newFilePath = '../uploads/' . basename($file['name']);
+    switch ($imageType) {
+    case IMAGETYPE_JPEG:
+    imagejpeg($image, $newFilePath);
+    break;
+    case IMAGETYPE_PNG:
+    imagepng($image, $newFilePath);
+    break;
+    case IMAGETYPE_GIF:
+    imagegif($image, $newFilePath);
+    break;
+    }
+    
+    // Speicher freigeben
+    imagedestroy($image);
+    
+    return true;
+    } else {
+    return false;
+    }
+    }
+    
    
     function gps($coordinate, $hemisphere) {
          
@@ -95,13 +139,13 @@ session_start();
 
 
 
-      $target_dir ="../uploads/";
+      //$target_dir ="../uploads/";
       
       //echo basename($_FILES["uploadedimage"]["name"]);
-      $target_file = $target_dir . basename($_FILES["uploadedimage"]["name"]);
+      //$target_file = $target_dir . basename($_FILES["uploadedimage"]["name"]);
       
-      $uploadOk = 1;
-      $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+      //$uploadOk = 1;
+      //$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
       // Check if image file is a actual image or fake image
       
         //$check = getimagesize($_FILES["uploadedimage"]["tmp_name"]);
@@ -127,10 +171,11 @@ session_start();
          echo'<br>';     
         
         
-echo $target_file;
+//echo $target_file;
           //Bild speichern
-          if (move_uploaded_file($_FILES["uploadedimage"]["tmp_name"], $target_file)) {
-            
+          //if (move_uploaded_file($_FILES["uploadedimage"]["tmp_name"], $target_file)) {
+            if (removeExifData($_FILES["uploadedimage"])){
+
                $conn->query("INSERT INTO image (eventid,filename,userid,lat,lon) VALUES ('".$_SESSION['eventid']."', '".$_FILES["uploadedimage"]["name"]."', '".$_SESSION['userid']."', '".$lat."', '".$lon."')");
           } else {
             echo'Fehler';
