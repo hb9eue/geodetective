@@ -55,7 +55,7 @@ $conn = mysqli_connect($server, $user, $pass,$dbase);
   <meta name="revisit after" content= "7 days">
   <META NAME="Description" CONTENT="Jamboree in the Air and Internet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="SHORTCUT ICON" href="favicon.ico">
+  <link rel="SHORTCUT ICON" href="../favicon.ico">
   <link rel="stylesheet" href="../main.css">
     
   </head>
