@@ -72,6 +72,10 @@ if (isset($delete)) {
           if ($userdatensatz['role']=="user") {echo' selected ';}
           echo'>user</option>';
           
+          echo'<option value="moderator" ';
+          if ($userdatensatz['role']=="moderator") {echo' selected ';}
+          echo'>moderator</option>';
+
           echo'<option value="admin" ';
           if ($userdatensatz['role']=="admin") {echo' selected ';}
           echo'>admin</option>';         
