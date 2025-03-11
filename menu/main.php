@@ -19,7 +19,7 @@
    $openguesses=$datensatz['openguesses'];
    $openguessestext=$openguesses." ".menunewimages;
    
-   if ($openguesses=0) {
+   if ($openguesses=="0") {
       $openguessestext=menunonewimages;
    } 
    
