@@ -39,6 +39,8 @@ define("menumyimages", "Meine Bilder");
 define("menusolution", "Auflösung");
 define("menuoptions", "Einstellungen");
 define("menulogout", "Abmelden");
+define("menunewimages", "neue Bilder!");
+define("menunonewimages", "Keine neuen Bilder!");
 #Adminmenu
 define("adminmenuuser", "Userverwaltung");
 define("adminmenugroup", "Gruppenverwaltung");

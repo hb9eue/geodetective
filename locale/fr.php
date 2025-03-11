@@ -39,6 +39,8 @@ define("menumyimages", "Mes images");
 define("menusolution", "Solutions");
 define("menuoptions", "Paramètres");
 define("menulogout", "Logout");
+define("menunewimages", "nouvelles photos!");
+define("menunonewimages", "Pas de nouvelles photos!");
 #Adminmenu
 define("adminmenuuser", "Gestion des utilisateurs");
 define("adminmenugroup", "Gestion des troupes");

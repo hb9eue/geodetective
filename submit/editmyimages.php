@@ -23,7 +23,7 @@ function wirklichloeschen() {
 
 <?php   
   if(isset($mode) && $mode=='admin' && $_SESSION['role']=='admin') {
-   $sql="SELECT * FROM image WHERE  eventid='".$_SESSION['eventid']."' ";
+   $sql="SELECT * FROM image WHERE  eventid='".$_SESSION['eventid']."' order by ordernumber,submitted";
    echo'<H1>Administratormodus</H1>';
   }
   else {   
