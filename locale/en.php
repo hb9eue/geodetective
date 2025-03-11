@@ -59,6 +59,7 @@ define("guessuntil", "Guessing is possible until:");
 define("gamestart", "The game begins: ");
 define("uploaduntilstart", "Until then you can upload your images for the game.");
 define("buttonuploaduntilstart", "Upload images");
+define("buttoneditimages", "Edit my guesses");
 
 #choosesolutionimage
 define("solutiontitle", "Solution");

@@ -60,6 +60,7 @@ define("guessuntil", "Raten möglich bis:");
 define("gamestart", "Das Spiel beginnt: ");
 define("uploaduntilstart", "Bis dahin kannst du Bilder hochladen, die dann im Spiel verwendet werden.");
 define("buttonuploaduntilstart", "Bilder einreichen");
+define("buttoneditimages", "Meine Tipps ändern");
 
 #choosesolutionimage
 define("solutionimagdescription", "Bildbeschreibung");

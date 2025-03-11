@@ -85,14 +85,14 @@ if ($startzeit<=$aktuellezeit )
  
  echo' 
  <h2>'.guesstitle.'</h2>
-<button  onclick="window.location.href=\'chooseguessagain.php\'">'.buttoneditimages.'</button>
+
    
    <form action="guess.php" method="post">
 ';
   
 //$sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1  order by submitted limit ".$bildanzahlpublished." offset ".$bildanzahldeadline ;
 //$sql="SELECT * FROM image WHERE eventid='".$_SESSION['eventid']."' and accepted=1 ";
-$sql="SELECT image.id,deadline,description,name,contact,filename,guess.userid guessed FROM image join user on image.userid=user.id join scoutgroup on user.scoutgroup=scoutgroup.id left join guess on image.id=guess.imageid and guess.userid =".$_SESSION['userid']." WHERE eventid='".$_SESSION['eventid']."' and accepted=1  and deadline> CURRENT_TIMESTAMP()  and guess.userid is null order by ordernumber,image.submitted limit ".$_SESSION['imagesperinterval'];   
+$sql="SELECT image.id,deadline,description,name,contact,filename,guess.userid guessed FROM image join user on image.userid=user.id join scoutgroup on user.scoutgroup=scoutgroup.id left join guess on image.id=guess.imageid and guess.userid =".$_SESSION['userid']." WHERE eventid='".$_SESSION['eventid']."' and accepted=1  and deadline> CURRENT_TIMESTAMP()  and not guess.userid is null order by ordernumber,image.submitted limit ".$_SESSION['imagesperinterval'];   
 
 
 $result = $conn->query($sql);
@@ -158,7 +158,7 @@ else {
    ?>
 
 </form>
-<button  onclick="window.location.href='../menu/main.php'"><?=buttonback?></button>
+<button  onclick="window.location.href='chooseguessimage.php'"><?=buttonback?></button>
 
 
 

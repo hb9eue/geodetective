@@ -59,6 +59,7 @@ define("guessuntil", "Tentative à soumettre jusqu'au :");
 define("gamestart", "Le jeu débute: ");
 define("uploaduntilstart", "Délai de dépôt d'images jusqu'auquel elles peuvent être utilisée dans le jeu.");
 define("buttonuploaduntilstart", "Soumettre image");
+define("buttoneditimages", "Changer mes tentatives");
 
 #choosesolutionimage
 define("solutiontitle", "Solution");
