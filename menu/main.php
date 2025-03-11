@@ -22,6 +22,9 @@
    if ($openguesses=="0") {
       $openguessestext=menunonewimages;
    } 
+   if ($openguesses=="1") {
+      $openguessestext=menunewimage;
+   } 
    
 
   ?>

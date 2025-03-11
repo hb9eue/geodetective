@@ -40,6 +40,7 @@ define("menusolution", "Auflösung");
 define("menuoptions", "Einstellungen");
 define("menulogout", "Abmelden");
 define("menunewimages", "neue Bilder!");
+define("menunewimage", "Ein neues Bild!");
 define("menunonewimages", "Keine neuen Bilder!");
 #Adminmenu
 define("adminmenuuser", "Userverwaltung");

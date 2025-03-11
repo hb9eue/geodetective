@@ -40,6 +40,7 @@ define("menusolution", "Solution");
 define("menuoptions", "Options");
 define("menulogout", "Log out");
 define("menunewimages", "new images!");
+define("menunewimage", "One new image!");
 define("menunonewimages", "No new images!");
 #Adminmenu
 define("adminmenuuser", "Manage users ");
