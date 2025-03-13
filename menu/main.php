@@ -36,7 +36,7 @@
     <form action="checkmain.php" method="post">
  <?php
        
- if ($_SESSION['role']=='admin') {
+ if ($_SESSION['role']=='admin'|| $_SESSION['role']=='moderator') {
  echo'<button type="submit" name="admin">'.menuadmin.'</button><br><br>';
  }
  ?>

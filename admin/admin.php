@@ -8,7 +8,7 @@
 
   
   include("../templateoben.php");
-  if ($_SESSION['role']!='admin') {
+  if ($_SESSION['role']!='admin' && $_SESSION['role']!='moderator') {
     echo "<script>window.location.href='../menu/main.php';</script>";
     //header('location: ../menu/main.php');
     exit(1);
@@ -21,11 +21,14 @@
 <h1>Administration</h1>
     <form action="checkadmin.php" method="post">
  
-
-
- <button type="submit" name="adminuser"><?=adminmenuuser?></button><br><br>
- <button type="submit" name="admingroup"><?=adminmenugroup?></button><br><br>
- <button type="submit" name="adminevent"><?=adminmenuevent?></button><br><br>
+<?php
+ if ($_SESSION['role']=='admin') {
+  echo'
+ <button type="submit" name="adminuser">'.adminmenuuser.'</button><br><br>
+ <button type="submit" name="admingroup">'.adminmenugroup.'</button><br><br>
+ <button type="submit" name="adminevent">'.adminmenuevent.'</button><br><br>
+ ';
+ }?>
  <button type="submit" name="images"><?=adminmenuimages?></button><br><br>
  <button type="submit" name="back"><?=adminmenuback?></button>
 
