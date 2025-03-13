@@ -39,8 +39,15 @@
  if ($_SESSION['role']=='admin'|| $_SESSION['role']=='moderator') {
  echo'<button type="submit" name="admin">'.menuadmin.'</button><br><br>';
  }
+
+ if($openguesses=="0")
+ {
+   echo'<div style="background-color:rgb(235, 123, 129);max-width: 200px; padding:15px">';
+ }else {
+    echo'<div style="background-color:rgb(160, 233, 137);max-width: 200px; padding:15px">';
+ }
  ?>
- <div style="background-color: #40b3ef;max-width: 200px; padding:15px">
+ 
  <button type="submit" name="spielen"><?=menuplay?></button><br><br>
  <?=$openguessestext?>
 </div>
