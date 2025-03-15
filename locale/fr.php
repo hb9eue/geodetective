@@ -67,9 +67,10 @@ define("solutiontitle", "Solution");
 define("solutionimagdescription", "Description d'image");
 define("solutionnoresults", "Il n'y a pas encore de solution.");
 define("solutionresults", "Pour l'image suivante, il n'est pas possible de déposer une suggestion.<br>
-   Clique sur l'image pour voir la solution de l'énigme:<br><br>");
+Clique sur le bouton pour voir la solution de l'énigme:<br>
+Clique sur l'image pour l'agrandir:<br><br>");
 
-   #guess
+#guess
 define("guesstitle", "Analyse l'image de manière détaillée selon les indications");
 
 #guessmap

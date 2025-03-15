@@ -68,9 +68,10 @@ define("solutionimagdescription", "Bildbeschreibung");
 define("solutiontitle", "Auflösung");
 define("solutionnoresults", "Es gibt noch keine Ergebnisse");
 define("solutionresults", "Für folgende Bilder ist keine Tippabgabe mehr möglich.<br>
-   Klicke auf ein Bild um die Ergebnisliste anzusehen:<br><br>");
+   Klicke auf den Button unter dem Bild um die Ergebnisliste anzusehen.<br>
+   Klicke auf ein Bild um es zu vergößern:<br><br>");
 
-   #guess
+#guess
 define("guesstitle", "Untersuche das Bild genau nach Hinweisen");
 
 #guessmap

@@ -10,7 +10,7 @@ if (isset($chosenimage)) {
     
     $imageid=$_POST['chosenimage'];
     $_SESSION['imageid']=$imageid;
-
+    
 
     $sql="SELECT * FROM image WHERE  id=".$imageid;
     

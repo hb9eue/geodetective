@@ -68,9 +68,14 @@ Die Ergebnisse bleiben bis zum Eventende abrufbar.
 
     echo '
     <div style="background-color:lightgray;padding: 25px 25px 25px 25px ;margin: 25px 25px 25px 25px;max-width: 300px;">
-    <button type="submit" id="chosenimage" name="chosenimage" value="'.$imageid.'">
+    <button onclick="window.location.href=\'showimage.php?imageid='.$imageid.'\' ;return false;">
         <img src="../uploads/'.$filename.'" style="width: 100%;max-width: 200px;margin-top: 20px;">
       </button>
+      <br><br>
+      
+       <button type="submit" id="chosenimage" name="chosenimage" value="'.$imageid.'">
+        '.solutionlist.'
+      </button> 
       <br><br>
     '.guesssubmittedby.' '.$datensatz['name'].' 
      
