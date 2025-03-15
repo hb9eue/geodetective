@@ -6,7 +6,7 @@
  
  */#
 
-  include("../templateoben.php");
+  include("../templaterefresh.php");
 
   //$sql="SELECT image.id,guess.userid FROM image join left join guess on imager.id=imageid where eventid='".$_SESSION['eventid']."' and accepted=1  and deadline> CURRENT_TIMESTAMP()  limit ".$_SESSION['imagesperinterval'];   
 //$result = $conn->query($sql);
