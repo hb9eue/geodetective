@@ -30,6 +30,7 @@
  ';
  }?>
  <button type="submit" name="images"><?=adminmenuimages?></button><br><br>
+ <button type="submit" name="sortimages">Bilder sortieren</button><br><br>
  <button type="submit" name="back"><?=adminmenuback?></button>
 
  </form>

@@ -22,6 +22,19 @@ $sql=$sql." where id=".$editeventid;
 
 //echo $sql;
 $conn->query($sql);
+
+ 
+$_SESSION['starttimestamp'] = $starttimestamp;
+$_SESSION['endtimestamp'] = $endtimestamp;
+$_SESSION['interval'] = $interval;
+$_SESSION['imagesperinterval'] = $imagesperinterval;
+$_SESSION['submitfrom'] = $submitfrom;
+$_SESSION['submituntil'] = $submituntil;
+$_SESSION['startnight'] = $startnightsrest;
+$_SESSION['endnight'] = $endnightsrest;
+   
+
+
 echo "<script>window.location.href='adminevent.php';</script>"; 
 //header("location: adminevent.php");
 exit(1);
