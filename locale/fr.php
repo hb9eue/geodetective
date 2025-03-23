@@ -139,3 +139,13 @@ define("registergroupjid", "Quel est votre code JID ?");
 define("registergroupcontact", "Par quels moyens êtes vous atteignables lors du JOTA-JOTI ?");
 define("registergroupbutton", "Enregistrer un nouveau groupe scout");
 define("changegroup", "Modifier groupe");
+
+#comments
+define("commenttitle", "Commentaires");
+define("comment", "Commentaire");
+define("commentbutton", "Soumettre un commentaire");  
+define("commentplaceholder", "Écrivez votre commentaire ici:");
+define("commentsaved", "Votre commentaire a été enregistré mais doit encore être approuvé par un modérateur.");      
+
+
+?>

@@ -138,3 +138,10 @@ define("registergroupjid", "What's your JID-Code?");
 define("registergroupcontact", "How can your group be contacted during JOTA/JOTI?");
 define("registergroupbutton", "Register new scoutgroup");
 define("changegroup", "Change scoutgroup");
+
+#comments
+define("commenttitle", "Commentse");
+define("comment", "Comment");
+define("commentbutton", "Send commend");  
+define("commentplaceholder", "Type your comment here:");
+define("commentsaved", "Your comment has been send successfully, but must be aproved by a moderator.");      

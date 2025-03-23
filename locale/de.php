@@ -140,3 +140,10 @@ define("registergroupjid", "Wie lautet euer JID-Code?");
 define("registergroupcontact", "Wie seid Ihr beim JOTA/JOTI erreichbar?");
 define("registergroupbutton", "Neue Pfadfindergruppe registrieren");
 define("changegroup", "Gruppe ändern");
+
+#comments
+define("commenttitle", "Kommentare");
+define("comment", "Kommentieren");
+define("commentbutton", "Kommentar absenden");  
+define("commentplaceholder", "Schreibe hier deinen Kommentar:");
+define("commentsaved", "Dein Kommentar wurde gespeichert, muss aber noch von einem Moderator freigegeben werden.");      

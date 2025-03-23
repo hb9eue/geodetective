@@ -3,6 +3,11 @@
  
    include("../templateoben.php");  
    include("../user/loadevent.php");  
+
+   if (isset($_GET['saved'])) {
+      echo '<script> alert("'.commentsaved.'") </script>';
+      
+      } 
   ?>
    <h2><?=solutiontitle?></h2>
    
@@ -87,14 +92,38 @@ Die Ergebnisse bleiben bis zum Eventende abrufbar.
     '.solutiontitle.':
     <br>
         '.$datensatz['solutiontext'].'
-      </div>      ';
-   }
-
+   <br><br>
+    
+   <button onclick="window.location.href=\'commentimage.php?imageid='.$imageid.'\' ;return false;">
+        '.comment.'
+      
+      </button>';
+  
+   //Kommentare
+  $commentsql="SELECT * FROM comment join user on comment.userid=user.id WHERE imageid=".$imageid." and accepted=1 order by submitted desc limit 2" ;
+ 
+  $commentresult = $conn->query($commentsql);
    
+  if($commentresult->num_rows>0)
+  {
+     
+
+  $kommentare = $commentresult->fetch_all(MYSQLI_ASSOC);
+  foreach($kommentare as $kommentar) {
+   echo '<br><br><b>'.$kommentar['username'].' ';
+   echo $kommentar['submitted'];
+   echo ':</b><br>';
+   
+   echo $kommentar['text'];
+   
+  }
+  
+  }
+  echo'</div>';
+  }
    ?>
 
 </form>
-
 <button  onclick="window.location.href='../menu/main.php'"><?=buttonback?></button>
 
 
