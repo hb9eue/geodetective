@@ -28,6 +28,9 @@ if (isset($delete)) {
 
     $sql="delete from guess  WHERE imageid='".$imageid."'";
     $conn->query($sql);
+
+    $sql="delete from comment  WHERE imageid='".$imageid."'";
+    $conn->query($sql);
     
     echo "<script>window.location.href='editmyimages.php?mode=admin';</script>";
     //header('location: editmyimages.php?mode=admin');

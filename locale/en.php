@@ -48,6 +48,9 @@ define("adminmenugroup", "Manage groups");
 define("adminmenuevent", "Manage events");
 define("adminmenuimages", "Manage images");
 define("adminmenuback", "Main menu");
+define("menuacceptcomments", "not accepted comments!");
+define("menuacceptcomment", "One not accepted comment!");
+define("menunoacceptcomments", "No new comments!");
 
 #chooseguessimage
 define("guesstitle", "Guess");

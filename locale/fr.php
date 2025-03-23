@@ -48,6 +48,10 @@ define("adminmenugroup", "Gestion des troupes");
 define("adminmenuevent", "Gestion des évènements");
 define("adminmenuimages", "Gestion des images");
 define("adminmenuback", "Menu principale");
+define("menuacceptcomments", "Commentaires bloqués!");
+define("menuacceptcomment", "Un commentaire bloqué !");
+define("menunoacceptcomments", "Pas de nouveaux commentaires !");
+
 
 #chooseguessimage
 define("guesstitle", "Tentative");

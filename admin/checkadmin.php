@@ -37,6 +37,13 @@ if(isset($sortimages)) {
      exit(1);
 }
 
+if(isset($admincomments)) {
+     
+     echo "<script>window.location.href='admincomments.php';</script>";
+    
+     exit(1);
+}
+
 if(isset($back)) {
      echo "<script>window.location.href='../menu/main.php';</script>";
     

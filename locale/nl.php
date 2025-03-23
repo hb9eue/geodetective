@@ -48,6 +48,9 @@ define("adminmenugroup", "Gruppenverwaltung");
 define("adminmenuevent", "Eventverwaltung");
 define("adminmenuimages", "Bilderverwaltung");
 define("adminmenuback", "Hauptmenü");
+define("menuacceptcomments", "gesperrte Kommentare!");
+define("menuacceptcomment", "Ein gesperrter Kommentar!");
+define("menunoacceptcomments", "Keine neuen Kommentare!");
 
 #chooseguessimage
 define("guesstitle", "Tippabgabe");
