@@ -2,9 +2,19 @@
 
  
    include("../templateoben.php");  
+   if(isset($mode) && $mode=='admin' && $_SESSION['role']=='admin') {
+   if (isset($allimages)) {
+    echo'<button  onclick="window.location.href=\'editmyimages.php?mode=admin\'">Nur nicht freigegebe Bilder anzeigen</button>'; 
+    $sql="SELECT * FROM image WHERE  eventid='".$_SESSION['eventid']."' order by ordernumber,submitted";} 
+    
+    else {
+      echo'<button  onclick="window.location.href=\'editmyimages.php?mode=admin&allimages=1\'">Alle Bilder anzeigen</button>';    
+      $sql="SELECT * FROM image WHERE  eventid='".$_SESSION['eventid']."' and accepted=0 order by ordernumber,submitted";} 
+  }
+   
 
   ?>
-
+                
 <script>
 function wirklichloeschen() {
     if (confirm("<?=reallydelete?>")) {
@@ -23,7 +33,9 @@ function wirklichloeschen() {
 
 <?php   
   if(isset($mode) && $mode=='admin' && $_SESSION['role']=='admin') {
-   $sql="SELECT * FROM image WHERE  eventid='".$_SESSION['eventid']."' order by ordernumber,submitted";
+
+
+   //$sql="SELECT * FROM image WHERE  eventid='".$_SESSION['eventid']."' order by ordernumber,submitted";
    echo'<H1>Administratormodus</H1>';
   }
   else {   
