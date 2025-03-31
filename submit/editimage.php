@@ -1,17 +1,20 @@
 <?php
 include("../templateohne.php");  
  
-
 $imageid=$_SESSION['imageid'];
 
 if (isset($accept)) {
     $imageid=$_POST['accept'];
     $sql="update image set accepted= NOT accepted,acceptedby=".$_SESSION['userid'].",deadline='2035-12-31 00:00:00' WHERE id='".$imageid."'";
     $conn->query($sql);
-
-    echo "<script>window.location.href='editmyimages.php?mode=admin';</script>";
-    //header('location: editmyimages.php?mode=admin');
-    exit(1);
+    //echo $sql; 
+    if ($_SESSION['allimages']==1) {
+       echo "<script>window.location.href='editmyimages.php?mode=admin&allimages=1';</script>";
+    }
+    else {
+        echo "<script>window.location.href='editmyimages.php?mode=admin';</script>";
+    }
+    
 }else
 if (isset($delete)) {
     $imageid=$_POST['delete'];
@@ -32,8 +35,14 @@ if (isset($delete)) {
     $sql="delete from comment  WHERE imageid='".$imageid."'";
     $conn->query($sql);
     
-    echo "<script>window.location.href='editmyimages.php?mode=admin';</script>";
-    //header('location: editmyimages.php?mode=admin');
+
+    if ($_SESSION['allimages']==1) {
+        echo "<script>window.location.href='editmyimages.php?mode=admin&allimages=1';</script>";
+     }
+     else {
+         echo "<script>window.location.href='editmyimages.php?mode=admin';</script>";
+     }
+    
     
     } else
 

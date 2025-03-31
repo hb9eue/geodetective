@@ -5,11 +5,31 @@
 
    if (isset($allcomments)) {
     echo'<button  onclick="window.location.href=\'admincomments.php\'">Nur nicht freigegebe Kommentare anzeigen</button>'; 
+    $sql="SELECT comment.id,filename,user.username,comment.submitted,comment.accepted,comment.text, admin.username adminname, comment.acceptedby 
+          FROM comment 
+          left join user on comment.userid=user.id 
+          left join user admin on comment.acceptedby=admin.id 
+          left join image on comment.imageid=image.id 
+          WHERE image.eventid='".$_SESSION['eventid']."'
+          order by comment.submitted desc";
+    $_SESSION['allcomments']=1;
     
-    $sql="SELECT comment.id,filename,username,comment.submitted,comment.accepted,comment.text FROM comment join user on comment.userid=user.id join image on comment.imageid=image.id order by comment.submitted desc";} 
+    
+  } 
+    
     else {
       echo'<button  onclick="window.location.href=\'admincomments.php?allcomments=1\'">Alle Kommentare anzeigen</button>';    
-   $sql="SELECT comment.id,filename,username,comment.submitted,comment.accepted,comment.text FROM comment join user on comment.userid=user.id join image on comment.imageid=image.id WHERE  comment.accepted=0 order by comment.submitted desc";
+      $sql="SELECT comment.id,filename,user.username,comment.submitted,comment.accepted,comment.text, admin.username adminname, comment.acceptedby 
+      FROM comment 
+      left join user on comment.userid=user.id 
+      left join user admin on comment.acceptedby=admin.id 
+      left join image on comment.imageid=image.id 
+      WHERE  comment.accepted=0 and comment.acceptedby=0
+      and image.eventid='".$_SESSION['eventid']."'
+      order by comment.submitted desc";
+      $_SESSION['allcomments']=0;
+   
+     
   }
 
   ?>
@@ -38,8 +58,22 @@ function wirklichloeschen() {
    echo ':</b><br>';
    
    echo $kommentar['text'];
-
-   echo '<br><br><button type="submit" id="accept" name="accept" value="'.$kommentar['id'].'">';
+   
+   if ($kommentar['accepted']==0 and $kommentar['acceptedby']==0) {
+    echo '<br><br><b>'.pleaseaccept.'</b>'; 
+  } else 
+  if ($kommentar['accepted']==0 and $kommentar['acceptedby']>0) {
+    echo '<br><br><font color=red><b>'.declinedby.' '.$kommentar['adminname'].' </b></font>'; 
+  } else {
+    if($kommentar['accepted']==1 and $kommentar['acceptedby']>0) {          
+   
+  echo '<br><br><font color=green><b>'.acceptedby.' '.$kommentar['adminname'].' </b></font>';          
+    }
+  }
+   
+   
+   
+      echo '<br><br><button type="submit" id="accept" name="accept" value="'.$kommentar['id'].'">';
    if($kommentar['accepted']==0) {echo editmyimagesaccept;}else{echo editmyimagesdecline;};  
    echo'</button> ';
 

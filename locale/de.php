@@ -48,8 +48,8 @@ define("adminmenugroup", "Gruppenverwaltung");
 define("adminmenuevent", "Eventverwaltung");
 define("adminmenuimages", "Bilderverwaltung");
 define("adminmenuback", "Hauptmenü");
-define("menuacceptcomments", "gesperrte Kommentare!");
-define("menuacceptcomment", "Ein gesperrter Kommentar!");
+define("menuacceptcomments", "neue Kommentare!");
+define("menuacceptcomment", "Ein neuer Kommentar!");
 define("menunoacceptcomments", "Keine neuen Kommentare!");
 
 
@@ -152,3 +152,6 @@ define("comment", "Kommentieren");
 define("commentbutton", "Kommentar absenden");  
 define("commentplaceholder", "Schreibe hier deinen Kommentar:");
 define("commentsaved", "Dein Kommentar wurde gespeichert, muss aber noch von einem Moderator freigegeben werden.");      
+define("acceptedby", "Freigegeben von:");
+define("declinedby", "Gesperrt von:");
+define("pleaseaccept", "Neu! Bitte freigeben oder Sperren!");

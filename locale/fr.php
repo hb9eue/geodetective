@@ -48,8 +48,8 @@ define("adminmenugroup", "Gestion des troupes");
 define("adminmenuevent", "Gestion des évènements");
 define("adminmenuimages", "Gestion des images");
 define("adminmenuback", "Menu principale");
-define("menuacceptcomments", "Commentaires bloqués!");
-define("menuacceptcomment", "Un commentaire bloqué !");
+define("menuacceptcomments", "Commentaires nouveaux!");
+define("menuacceptcomment", "Un commentaire nouveaux!");
 define("menunoacceptcomments", "Pas de nouveaux commentaires !");
 
 
@@ -150,6 +150,8 @@ define("comment", "Commentaire");
 define("commentbutton", "Soumettre un commentaire");  
 define("commentplaceholder", "Écrivez votre commentaire ici:");
 define("commentsaved", "Votre commentaire a été enregistré mais doit encore être approuvé par un modérateur.");      
-
+define("acceptedby", "Approuvé par:");
+define("declinededby", "Bloqué par:");
+define("pleaseaccept", "Nouveau! Veuillez approuver ou bloquer!");
 
 ?>

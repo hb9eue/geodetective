@@ -150,4 +150,7 @@ define("commenttitle", "Kommentare");
 define("comment", "Kommentieren");
 define("commentbutton", "Kommentar absenden");  
 define("commentplaceholder", "Schreibe hier deinen Kommentar:");
-define("commentsaved", "Dein Kommentar wurde gespeichert, muss aber noch von einem Moderator freigegeben werden.");      
+define("commentsaved", "Dein Kommentar wurde gespeichert, muss aber noch von einem Moderator freigegeben werden.");   
+define("acceptedby", "Freigegeben von:");
+define("declinededby", "Gesperrt von:");
+define("pleaseaccept", "Neu! Bitte freigeben oder Sperren!");   

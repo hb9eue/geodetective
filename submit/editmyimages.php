@@ -3,15 +3,22 @@
  
    include("../templateoben.php");  
    if(isset($mode) && $mode=='admin' && $_SESSION['role']=='admin') {
-   if (isset($allimages)) {
-    echo'<button  onclick="window.location.href=\'editmyimages.php?mode=admin\'">Nur nicht freigegebe Bilder anzeigen</button>'; 
-    $sql="SELECT * FROM image WHERE  eventid='".$_SESSION['eventid']."' order by ordernumber,submitted";} 
     
-    else {
-      echo'<button  onclick="window.location.href=\'editmyimages.php?mode=admin&allimages=1\'">Alle Bilder anzeigen</button>';    
-      $sql="SELECT * FROM image WHERE  eventid='".$_SESSION['eventid']."' and accepted=0 order by ordernumber,submitted";} 
+   if (isset($allimages)&& $allimages==1) {
+    echo' Angezeigt werden alle Bilder.<br><br>';  
+    echo'<button  onclick="window.location.href=\'editmyimages.php?mode=admin\'">Nur nicht freigegebe Bilder anzeigen</button>'; 
+    $sql="SELECT image.id id, user.id userid, image.filename,accepted,acceptedby,username FROM image join user on acceptedby=user.id WHERE  eventid='".$_SESSION['eventid']."'   order by ordernumber,submitted"; 
+    $_SESSION['allimages']=1;
   }
-   
+    else {
+      
+      echo' Angezeigt werden nur neue Bilder, die noch nicht freigegeben wurden!<br><br>';  
+      echo'<button  onclick="window.location.href=\'editmyimages.php?mode=admin&allimages=1\'">Alle Bilder anzeigen</button>';    
+      $sql="SELECT image.id id, user.id userid, image.filename,accepted,acceptedby,username FROM image left join user on acceptedby=user.id WHERE  eventid='".$_SESSION['eventid']."' and accepted=0 and acceptedby=0 order by ordernumber,submitted"; 
+      $_SESSION['allimages']=0;
+    
+    }
+  }
 
   ?>
                 
@@ -44,13 +51,17 @@ function wirklichloeschen() {
    $result = $conn->query($sql);
 
    $datensaetze = $result->fetch_all(MYSQLI_ASSOC);
+   
+   if((isset($mode) && $mode!='admin') || $_SESSION['role']!='admin') {
    if($result->num_rows==0)
    {
-      echo editmyimagesnomimages;
+    
+    echo editmyimagesnomimages;
    }
    else {
       echo editmyimagesclickimage;
-   }
+   }}
+
    foreach($datensaetze as $datensatz) {
     $filename=$datensatz['filename'];    
     $imageid=$datensatz['id'];     
@@ -63,12 +74,23 @@ function wirklichloeschen() {
     
     if (isset($mode) && $mode=='admin' && $_SESSION['role']=='admin') {
 
+      if ($datensatz['accepted']==0 and $datensatz['acceptedby']==0) {
+        echo '<br><br><b>'.pleaseaccept.'</b>'; 
+      } else 
+      if ($datensatz['accepted']==0 and $datensatz['acceptedby']>0) {
+        echo '<br><br><font color=red><b> '.declinedby.' '.$datensatz['username'].' </b></font>'; 
+      } else {
+        if($datensatz['accepted']==1 and $datensatz['acceptedby']>0) {          
+       
+      echo '<br><br><font color=green><b>'.acceptedby.' '.$datensatz['username'].' </b></font>';          
+        }
+      }
       echo '<br><br><button type="submit" id="accept" name="accept" value="'.$imageid.'">';
       if(!$datensatz['accepted']) {echo editmyimagesaccept;}else{echo editmyimagesdecline;};  
       echo'</button> ';
 
       echo'<button onclick="return wirklichloeschen()" id="delete" name="delete" value="'.$imageid.'">'.buttondelete.'</button>';
-      }
+    }
 
    
 

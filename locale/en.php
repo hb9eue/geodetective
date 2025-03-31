@@ -48,8 +48,8 @@ define("adminmenugroup", "Manage groups");
 define("adminmenuevent", "Manage events");
 define("adminmenuimages", "Manage images");
 define("adminmenuback", "Main menu");
-define("menuacceptcomments", "not accepted comments!");
-define("menuacceptcomment", "One not accepted comment!");
+define("menuacceptcomments", "new comments!");
+define("menuacceptcomment", "One new comment!");
 define("menunoacceptcomments", "No new comments!");
 
 #chooseguessimage
@@ -147,4 +147,7 @@ define("commenttitle", "Commentse");
 define("comment", "Comment");
 define("commentbutton", "Send commend");  
 define("commentplaceholder", "Type your comment here:");
-define("commentsaved", "Your comment has been send successfully, but must be aproved by a moderator.");      
+define("commentsaved", "Your comment has been send successfully, but must be aproved by a moderator."); 
+define("acceptedby", "Accepted by:");
+define("declinededby", "Declined by:");
+define("pleaseaccept", "New! Please accept or decline!");     
