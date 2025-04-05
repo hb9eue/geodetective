@@ -153,4 +153,5 @@ define("commentplaceholder", "Schreibe hier deinen Kommentar:");
 define("commentsaved", "Dein Kommentar wurde gespeichert, muss aber noch von einem Moderator freigegeben werden.");   
 define("acceptedby", "Freigegeben von:");
 define("declinededby", "Gesperrt von:");
-define("pleaseaccept", "Neu! Bitte freigeben oder Sperren!");   
+define("pleaseaccept", "Neu! Bitte freigeben oder Sperren!"); 
+define("alreadyingame", "Bereits im Spiel, Änderung führt zu reset der Deadline");  

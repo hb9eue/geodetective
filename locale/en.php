@@ -151,3 +151,4 @@ define("commentsaved", "Your comment has been send successfully, but must be apr
 define("acceptedby", "Accepted by:");
 define("declinededby", "Declined by:");
 define("pleaseaccept", "New! Please accept or decline!");     
+define("alreadyingame", "Already shown in game, changes will reset the image");

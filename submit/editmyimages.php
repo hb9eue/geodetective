@@ -7,14 +7,14 @@
    if (isset($allimages)&& $allimages==1) {
     echo' Angezeigt werden alle Bilder.<br><br>';  
     echo'<button  onclick="window.location.href=\'editmyimages.php?mode=admin\'">Nur nicht freigegebe Bilder anzeigen</button>'; 
-    $sql="SELECT image.id id, user.id userid, image.filename,accepted,acceptedby,username FROM image join user on acceptedby=user.id WHERE  eventid='".$_SESSION['eventid']."'   order by ordernumber,submitted"; 
+    $sql="SELECT image.id id, user.id userid, image.filename,accepted,acceptedby,username,deadline FROM image join user on acceptedby=user.id WHERE  eventid='".$_SESSION['eventid']."'   order by ordernumber,submitted"; 
     $_SESSION['allimages']=1;
   }
     else {
       
       echo' Angezeigt werden nur neue Bilder, die noch nicht freigegeben wurden!<br><br>';  
       echo'<button  onclick="window.location.href=\'editmyimages.php?mode=admin&allimages=1\'">Alle Bilder anzeigen</button>';    
-      $sql="SELECT image.id id, user.id userid, image.filename,accepted,acceptedby,username FROM image left join user on acceptedby=user.id WHERE  eventid='".$_SESSION['eventid']."' and accepted=0 and acceptedby=0 order by ordernumber,submitted"; 
+      $sql="SELECT image.id id, user.id userid, image.filename,accepted,acceptedby,username,deadline FROM image left join user on acceptedby=user.id WHERE  eventid='".$_SESSION['eventid']."' and accepted=0 and acceptedby=0 order by ordernumber,submitted"; 
       $_SESSION['allimages']=0;
     
     }
@@ -46,7 +46,7 @@ function wirklichloeschen() {
    echo'<H1>Administratormodus</H1>';
   }
   else {   
-   $sql="SELECT * FROM image WHERE userid='".$_SESSION['userid']."' and eventid='".$_SESSION['eventid']."' ";
+   $sql="SELECT * FROM image WHERE userid='".$_SESSION['userid']."' and eventid='".$_SESSION['eventid']."' and deadline='".hival."' order by ordernumber,submitted";
   }
    $result = $conn->query($sql);
 
@@ -85,6 +85,11 @@ function wirklichloeschen() {
       echo '<br><br><font color=green><b>'.acceptedby.' '.$datensatz['username'].' </b></font>';          
         }
       }
+      if($datensatz['deadline']!=hival) {
+        echo '<br><br><font color=red><b>'.alreadyingame.'</b></font>'; 
+      }
+
+
       echo '<br><br><button type="submit" id="accept" name="accept" value="'.$imageid.'">';
       if(!$datensatz['accepted']) {echo editmyimagesaccept;}else{echo editmyimagesdecline;};  
       echo'</button> ';

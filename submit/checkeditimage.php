@@ -21,7 +21,7 @@ if(isset($save)) {
     }else {
         
    //Bildbeschreibung speichern und zum Hauptmenü
-   $sql="update  image set description='".$imagedescription."',solutiontext='".$imagesolutiontext."' where id=".$_SESSION['imageid'];
+   $sql="update  image set description='".$imagedescription."',solutiontext='".$imagesolutiontext."',acceptedby=0,accepted=0,deadline='".hival."' where id=".$_SESSION['imageid'];
    echo $sql;
    $conn->query($sql);
    echo "<script>window.location.href='../menu/main.php';</script>"; 

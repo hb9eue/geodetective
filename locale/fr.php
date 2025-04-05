@@ -153,5 +153,5 @@ define("commentsaved", "Votre commentaire a été enregistré mais doit encore �
 define("acceptedby", "Approuvé par:");
 define("declinededby", "Bloqué par:");
 define("pleaseaccept", "Nouveau! Veuillez approuver ou bloquer!");
-
+define("alreadyingame", "Bereits im Spiel, Änderung führt zu reset der Deadline");
 ?>

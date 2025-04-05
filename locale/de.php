@@ -155,3 +155,4 @@ define("commentsaved", "Dein Kommentar wurde gespeichert, muss aber noch von ein
 define("acceptedby", "Freigegeben von:");
 define("declinedby", "Gesperrt von:");
 define("pleaseaccept", "Neu! Bitte freigeben oder Sperren!");
+define("alreadyingame", "Bereits im Spiel, Änderung führt zu reset der Deadline");

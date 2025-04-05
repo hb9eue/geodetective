@@ -23,6 +23,9 @@ $conn = mysqli_connect($server, $user, $pass,$dbase);
   foreach($_GET as $key => $val){$$key=$val;}
   foreach($_POST as $key => $val) {$$key=$val;}
   
+//globale Variablen
+define("hival", "2035-12-31 00:00:00");
+
   if (!isset($_SESSION['language'])) {
     $_SESSION['language']='de';
   }
