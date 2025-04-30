@@ -66,7 +66,7 @@ define("buttonuploaduntilstart", "Upload images");
 define("buttoneditimages", "Edit my guesses");
 
 #choosesolutionimage
-define("solutiontitle", "Solution");
+#define("solutiontitle", "Solution"); DUPLICATE!
 define("solutionimagdescription", "Image description");
 define("solutionnoresults", "There are no results yet.");
 define("solutionresults", "For the following images guessing is not possible anymore.<br>
@@ -74,7 +74,7 @@ Click the button below the image to view the results.<br>
 Click on an image to enlargen it:<br><br>");
     
 #guess
-define("guesstitle", "Examine the image closely for clues");
+#define("guesstitle", "Examine the image closely for clues"); DUPLICATE!
 
 #guessmap
 define("guessmaptitle", "Geodetective Location Picker");
