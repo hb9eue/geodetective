@@ -215,7 +215,7 @@ if (isset($chosenimage)) {
         <!--<input type="text" name="imagedescription" placeholder="Bildbeschreibung" value="<?=$beschreibung;?>"/>-->
         <textarea id="text" name="imagesolutiontext" rows="3" cols="40"><?=trim($solutiontext);?></textarea>
         <?php
-         if($msg!='') {
+         if(isset($msg)) {
          echo'<span style="color:red;">'.$msg.'<br></span>';
        }
        

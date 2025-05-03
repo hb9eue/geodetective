@@ -25,7 +25,7 @@ session_start();
         <label for="jid">Jid:</label> 
         <input type="text" name="jid" value="<?=$jid?>"><br>
         <?php
-        if($msg!='') {
+        if(isset($msg)) {
          echo'<span style="color:red;">'.$msg.'<br></span>';
        }
        ?>  

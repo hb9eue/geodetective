@@ -50,7 +50,7 @@ session_start();
         <label for="contact"><?=registergroupcontact?></label> 
         <input type="text" name="contact" value="<?=$groupdatensatz['contact']?>">  
         <?php
-        if($msg!='') {
+        if(isset($msg)) {
          echo'<span style="color:red;">'.$msg.'<br></span>';
        }
        ?>  

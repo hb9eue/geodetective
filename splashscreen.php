@@ -31,7 +31,7 @@
         <br>
         <?php
        
-        if($msg!='') {
+        if(isset($msg)) {
           echo'<span style="color:red;">'.errorwrongpassword.'<br></span>';
         }
         ?>   
