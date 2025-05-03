@@ -21,10 +21,9 @@
       Language:
     <select id="language" name="language" required>
               <option value="de" <?php if ($_SESSION['language'] =='de') {echo ' selected ';} ?>>Deutsch</option>
-              <option value="en" <?php if ($_SESSION['language'] =='en') {echo ' selected ';} ?>>English </option>
-              <option value="fr" <?php if ($_SESSION['language'] =='fr') {echo ' selected ';} ?>>Français  </option>
-              
-             
+              <option value="en" <?php if ($_SESSION['language'] =='en') {echo ' selected ';} ?>>English</option>
+              <option value="fr" <?php if ($_SESSION['language'] =='fr') {echo ' selected ';} ?>>Français</option>
+              <option value="nl" <?php if ($_SESSION['language'] =='nl') {echo ' selected ';} ?>>Nederlands</option>
         </select><br><br>
         <input type="text" name="username" placeholder="<?=username?>" ><br>
         <input type="password" name="password" placeholder="<?=password?>" >
