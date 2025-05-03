@@ -67,7 +67,7 @@ define("buttonuploaduntilstart", "Soumettre image");
 define("buttoneditimages", "Changer mes tentatives");
 
 #choosesolutionimage
-define("solutiontitle", "Solution"); DUPLICATE!
+#define("solutiontitle", "Solution"); DUPLICATE!
 define("solutionimagdescription", "Description d'image");
 define("solutionnoresults", "Il n'y a pas encore de solution.");
 define("solutionresults", "Pour l'image suivante, il n'est pas possible de déposer une suggestion.<br>
