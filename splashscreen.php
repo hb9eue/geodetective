@@ -26,8 +26,8 @@
               
              
         </select><br><br>
-        <input type="text" name="username" placeholder="Benutzername" ><br>
-        <input type="password" name="password" placeholder="Passwort" >
+        <input type="text" name="username" placeholder="<?=username?>" ><br>
+        <input type="password" name="password" placeholder="<?=password?>" >
         <br>
         <?php
        
