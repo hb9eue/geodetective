@@ -26,9 +26,17 @@ $conn = mysqli_connect($server, $user, $pass,$dbase);
 //globale Variablen
 define("hival", "2035-12-31 00:00:00");
 
+  //if (!isset($_SESSION['language'])) {
+  //  $_SESSION['language']='de';
+  //}
+
   if (!isset($_SESSION['language'])) {
-    $_SESSION['language']='de';
+    $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+    $acceptLang = ['fr', 'it', 'en', 'de', 'nl']; 
+    $lang = in_array($lang, $acceptLang) ? $lang : 'de';
+    $_SESSION['language']=$lang;
   }
+
 
   include('../locale/' . $_SESSION['language'] . '.php');
       
