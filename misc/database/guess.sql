@@ -10,4 +10,4 @@ CREATE TABLE `guess` (
   `comment` varchar(1000) COLLATE utf8mb4_de_pb_0900_ai_ci DEFAULT NULL,
   `guessedjid` varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_de_pb_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_de_pb_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_de_pb_0900_ai_ci;

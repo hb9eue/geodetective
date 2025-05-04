@@ -14,5 +14,6 @@ CREATE TABLE `image` (
   `filename` varchar(100) COLLATE utf8mb4_de_pb_0900_ai_ci DEFAULT NULL,
   `solutiontext` varchar(1000) COLLATE utf8mb4_de_pb_0900_ai_ci DEFAULT NULL,
   `deadline` timestamp NULL DEFAULT '2035-12-31 00:00:00' COMMENT 'Spielbar bis',
+  `ordernumber` int DEFAULT '10000' COMMENT 'Nummer zum Ändern der Reihenfolge der Bilder. Wenn 0 dann gilt das submitdatum als Ordungskriterium',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_de_pb_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_de_pb_0900_ai_ci;
