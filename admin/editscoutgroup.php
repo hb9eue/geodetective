@@ -2,7 +2,7 @@
 session_start();
  
    include("../templateoben.php");  
-   if ($_SESSION['role']!='admin' && $_SESSION['role']!='moderator') {
+   if ($_SESSION['role']!='admin' ) {
     echo "<script>window.location.href='../menu/main.php';</script>";
     exit(1);
  } 
