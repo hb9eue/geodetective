@@ -33,7 +33,7 @@
         <button type="submit"><?=buttoneditdata?></button>
         <button type="submit" name='abbrechen'><?=buttoncancel?></button>
    <?php
-         if($msg!='') {
+         if(isset($msg)) {
    echo'<br><br><span style="color:red;">'.constant($msg).'<br></span>';
  }
  ?>

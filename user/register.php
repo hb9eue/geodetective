@@ -18,7 +18,7 @@ session_start();
         <input type="password" name="password2" placeholder="<?=repeatpassword?>" required> 
         <button type="submit"><?=registerbutton?></button>
  <?php
-         if($msg!='') {
+         if(isset($msg)) {
           
          echo'<br><span style="color:red;">'.constant($msg).'<br></span>';
        }

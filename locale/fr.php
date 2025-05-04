@@ -67,7 +67,7 @@ define("buttonuploaduntilstart", "Soumettre image");
 define("buttoneditimages", "Changer mes tentatives");
 
 #choosesolutionimage
-define("solutiontitle", "Solution");
+define("solutiontitle", "Solution"); DUPLICATE!
 define("solutionimagdescription", "Description d'image");
 define("solutionnoresults", "Il n'y a pas encore de solution.");
 define("solutionresults", "Pour l'image suivante, il n'est pas possible de déposer une suggestion.<br>
@@ -75,7 +75,7 @@ Clique sur le bouton pour voir la solution de l'énigme:<br>
 Clique sur l'image pour l'agrandir:<br><br>");
 
 #guess
-define("guesstitle", "Analyse l'image de manière détaillée selon les indications");
+#define("guesstitle", "Analyse l'image de manière détaillée selon les indications"); DUPLICATE!
 
 #guessmap
 define("guessmaptitle", "Geodetective selection de localisation");

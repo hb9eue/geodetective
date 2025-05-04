@@ -80,7 +80,7 @@ if (isset($delete)) {
         <br><br>
         
         <?php
-        if($msg!='') {
+        if(isset($msg)) {
          echo'<span style="color:red;">'.$msg.'<br></span>';
        }
        ?>  

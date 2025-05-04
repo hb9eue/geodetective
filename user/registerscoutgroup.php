@@ -43,7 +43,7 @@ session_start();
         <input type="text" name="jid" placeholder="<?=registergroupjid?>">  
         <input type="text" name="contact" placeholder="<?=registergroupcontact?>">  
         <?php
-        if($msg!='') {
+        if(isset($msg)) {
          echo'<span style="color:red;">'.$msg.'<br></span>';
        }
        ?>  

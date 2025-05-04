@@ -66,7 +66,7 @@ define("uploaduntilstart", "Tot die tijd kun je foto's uploaden die in het spel 
 define("buttonuploaduntilstart", "Upload foto's ");
 define("buttoneditimages", "Bewerk mijn pogingen");
 
-#choosesolutionimage
+
 define("solutiontitle", "Oplossing");
 define("solutionimagdescription", "Fotobeschrijving");
 define("solutionnoresults", "Er zijn nog geen resultaten");
@@ -76,6 +76,7 @@ define("solutionresults", "Voor de volgende foto's is het niet meer mogelijk om 
 
 #guess
 define("guesstitle", "Bekijk de foto goed voor aanwijzingen");
+
 
 #guessmap
 define("guessmaptitle", "Geodetective Location Picker");
