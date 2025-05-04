@@ -2,7 +2,10 @@
 
  
    include("../templateoben.php");  
-
+   if ($_SESSION['role']!='admin' && $_SESSION['role']!='moderator') {
+    echo "<script>window.location.href='../menu/main.php';</script>";
+    exit(1);
+ } 
    if (isset($allcomments)) {
     echo'<button  onclick="window.location.href=\'admincomments.php\'">Nur nicht freigegebe Kommentare anzeigen</button>'; 
     $sql="SELECT comment.id,filename,user.username,comment.submitted,comment.accepted,comment.text, admin.username adminname, comment.acceptedby 

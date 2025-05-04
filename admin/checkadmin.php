@@ -2,7 +2,10 @@
 session_start();
  
    include("../templateoben.php");  
-
+   if ($_SESSION['role']!='admin' && $_SESSION['role']!='moderator') {
+     echo "<script>window.location.href='../menu/main.php';</script>";
+     exit(1);
+  } 
 
   
    if(isset($adminuser)) {

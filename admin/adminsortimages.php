@@ -1,6 +1,10 @@
 <?php
 include("../templateoben.php");  
 require_once('GeoImage.php');
+if ($_SESSION['role']!='admin' && $_SESSION['role']!='moderator') {
+  echo "<script>window.location.href='../menu/main.php';</script>";
+  exit(1);
+} 
 ?>
 
 <form action="savesortimages.php" method="post">

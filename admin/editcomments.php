@@ -1,6 +1,9 @@
 <?php
 include("../templateohne.php");  
- 
+if ($_SESSION['role']!='admin' && $_SESSION['role']!='moderator') {
+    echo "<script>window.location.href='../menu/main.php';</script>";
+    exit(1);
+ } 
 
 
 

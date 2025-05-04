@@ -10,7 +10,6 @@
   include("../templateoben.php");
   if ($_SESSION['role']!='admin' && $_SESSION['role']!='moderator') {
     echo "<script>window.location.href='../menu/main.php';</script>";
-    //header('location: ../menu/main.php');
     exit(1);
  } 
 //Anzahl der freizugebenen Bilder 
