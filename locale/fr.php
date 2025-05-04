@@ -54,7 +54,7 @@ define("menunoacceptcomments", "Pas de nouveaux commentaires !");
 
 
 #chooseguessimage
-define("guesstitle", "Tentative");
+define("guessmaintitle", "Tentative");
 define("guesssubmittedby", "Soumis par:");
 define("guesscontact", "Contact:");
 define("guessnoimages", "Pour le moment, pas d'image");
@@ -81,7 +81,7 @@ define("guesstitle", "Analyse l'image de manière détaillée selon les indicati
 define("guessmaptitle", "Geodetective selection de localisation");
 
 #solution
-define("solutiontitle", "Indicateur de carte avec éloignement");
+define("solutionmarkertitle", "Indicateur de carte avec éloignement");
 define("solutionheadline", "Solution");
 define("solutionlist", "Liste des soumissions");
 define("solutionjidcorrect", "Jid correctement devnié !!");

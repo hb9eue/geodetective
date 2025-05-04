@@ -55,7 +55,7 @@ define("menunoacceptcomments", "Keine neuen Kommentare!");
 
 
 #chooseguessimage
-define("guesstitle", "Tippabgabe");
+define("guessmaintitle", "Tippabgabe");
 define("guesscontact", "Kontakt:");
 define("guesssubmittedby", "Eingereicht von:");
 define("guessnoimages", "Im Moment gibt es keine Bilder");
@@ -83,7 +83,7 @@ define("guesstitle", "Untersuche das Bild genau nach Hinweisen");
 define("guessmaptitle", "Geodetective Location Picker");
 
 #solution
-define("solutiontitle", "Kartenmarker mit Entfernungen");
+define("solutionmarkertitle", "Kartenmarker mit Entfernungen");
 define("solutionheadline", "Auflösung");
 define("solutionlist", "Liste der Einsendungen");
 define("solutionjidcorrect", "Jid richtig geraten!!");

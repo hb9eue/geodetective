@@ -53,7 +53,7 @@ define("menuacceptcomment", "Een nieuwe opmerking!");
 define("menunoacceptcomments", "Geen nieuwe opmerkingen!");
 
 #chooseguessimage
-define("guesstitle", "Raden");
+define("guessmaintitle", "Raden");
 define("guesssubmittedby", "Ingezonden door:");
 define("guesscontact", "Contact:");
 define("guessnoimages", "Er zijn momenteel geen foto's");
@@ -81,7 +81,7 @@ define("guesstitle", "Bekijk de foto goed voor aanwijzingen");
 define("guessmaptitle", "Geodetective Location Picker");
 
 #solution
-define("solutiontitle", "Kaartmarkeringen met afstanden");
+define("solutionmarkertitle", "Kaartmarkeringen met afstanden");
 define("solutionheadline", "Oplossing");
 define("solutionlist", "Lijst van inzendingen");
 define("solutionjidcorrect", "Jid correct geraden!!");

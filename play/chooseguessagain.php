@@ -84,7 +84,7 @@ if ($startzeit<=$aktuellezeit )
 
  
  echo' 
- <h2>'.guesstitle.'</h2>
+ <h2>'.guessmaintitle.'</h2>
 
    
    <form action="guess.php" method="post">

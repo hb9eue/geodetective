@@ -53,7 +53,7 @@ define("menuacceptcomment", "One new comment!");
 define("menunoacceptcomments", "No new comments!");
 
 #chooseguessimage
-define("guesstitle", "Guess");
+define("guessmaintitle", "Guess");
 define("guesssubmittedby", "Submitted by:");
 define("guesscontact", "Contact:");
 define("guessnoimages", "There are no images at the moment");
@@ -80,7 +80,7 @@ define("guesstitle", "Examine the image closely for clues");
 define("guessmaptitle", "Geodetective Location Picker");
 
 #solution
-define("solutiontitle", "Mapmarkers with distances");
+define("solutionmarkertitle", "Mapmarkers with distances");
 define("solutionheadline", "Solution");
 define("solutionlist", "List of submissions");
 define("solutionjidcorrect", "Jid guessed correctly!!");
