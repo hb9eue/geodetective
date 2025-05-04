@@ -14,9 +14,12 @@ $conn = mysqli_connect($server, $user, $pass,$dbase);
   foreach($_POST as $key => $val) {$$key=$val;}
 
   if (!isset($_SESSION['language'])) {
-    $_SESSION['language']='de';
+    $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+    $acceptLang = ['fr', 'it', 'en', 'de', 'nl']; 
+    $lang = in_array($lang, $acceptLang) ? $lang : 'de';
+    $_SESSION['language']=$lang;
   }
-  
+
   include('locale/' . $_SESSION['language'] . '.php');
   
   ?>

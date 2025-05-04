@@ -17,7 +17,7 @@ define("buttonreset", "Center Image");
 #common
 define("reallydelete", "Do you really want to delete this record?");
 define("username", "Username");
-define("password", "Passwort");
+define("password", "Password");
 define("repeatpassword", "Repeat password");
 define("next", "Next");
 
