@@ -70,7 +70,7 @@ define("buttoneditimages", "Meine Tipps ändern");
 
 #choosesolutionimage
 define("solutionimagdescription", "Bildbeschreibung");
-#define("solutiontitle", "Auflösung"); DUPLICATE!
+define("solutiontitle", "Auflösung"); 
 define("solutionnoresults", "Es gibt noch keine Ergebnisse");
 define("solutionresults", "Für folgende Bilder ist keine Tippabgabe mehr möglich.<br>
    Klicke auf den Button unter dem Bild um die Ergebnisliste anzusehen.<br>
