@@ -86,7 +86,10 @@ session_start();
      //print_r($exif);
           //get the Hemisphere multiplier
           $LatM = 1; $LongM = 1;
-          
+
+	if (!isset($exif["GPSLatitudeRef"])) {
+		return false;
+	}          
           
           if($exif["GPSLatitudeRef"] == 'S')
           {
@@ -160,10 +163,15 @@ session_start();
         
         $json=triphoto_getGPS($_FILES["uploadedimage"]["tmp_name"]);
         
-        $koordinaten = json_decode($json);
+	if ($json === false)  {
+		$lat = 0;
+		$lon = 0;
+	} else {
+	        $koordinaten = json_decode($json);
         
-        $lat=$koordinaten->latitude;
-        $lon=$koordinaten->longitude;
+        	$lat=$koordinaten->latitude;
+	        $lon=$koordinaten->longitude;
+	}
 
         //TODO: GPSdaten aus uploadedimage entfernen und zu blob konvertieren
         

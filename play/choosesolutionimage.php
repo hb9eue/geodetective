@@ -9,6 +9,7 @@
       
       } 
   ?>
+   <center>
    <h2><?=solutiontitle?></h2>
    
    
@@ -125,7 +126,7 @@ Die Ergebnisse bleiben bis zum Eventende abrufbar.
 
 </form>
 <button  onclick="window.location.href='../menu/main.php'"><?=buttonback?></button>
-
+</center>
 
 
 

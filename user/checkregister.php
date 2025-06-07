@@ -12,19 +12,19 @@ $datensatz = $result->fetch_assoc();
 //$hash = password_hash($password, PASSWORD_DEFAULT);
 
 if ($result->num_rows)  {
-  echo "<script>window.location.href='register.php?msg=errorusername';</script>";
+  echo "<script>window.location.href='register.php?msg=errorusername&scoutgroup=$scoutgroup';</script>";
     //header("location: register.php?msg=".errorusername);
      exit(1);
 }
 
 if ($password!=$password2){
-    echo "<script>window.location.href='register.php?msg=errorpasswordidentity';</script>";
+    echo "<script>window.location.href='register.php?msg=errorpasswordidentity&scoutgroup=$scoutgroup';</script>";
     //header("location: register.php?msg=".errorpasswordidentity);
      exit(1);
 }
 
 if (strlen($password)<6){
-  echo "<script>window.location.href='register.php?msg=errorpasswordlength';</script>";
+  echo "<script>window.location.href='register.php?msg=errorpasswordlength&scoutgroup=$scoutgroup';</script>";
   //header("location: register.php?msg=".errorpasswordidentity);
    exit(1);
 }

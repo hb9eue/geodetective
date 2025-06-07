@@ -1,7 +1,9 @@
 <?php
 //Sprache
 declare(strict_types=1);
-session_start();
+
+if(session_status() !== PHP_SESSION_ACTIVE) session_start();
+
 //Wenn nicht angemeldet zurück zur Anmeldung
 if (!isset($_SESSION['userid'])) {
     session_destroy();

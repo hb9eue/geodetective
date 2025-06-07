@@ -1,5 +1,5 @@
 <?php
-session_start();
+if(session_status() !== PHP_SESSION_ACTIVE) session_start();
  
    include("../templatelogin.php");  
 
@@ -20,7 +20,7 @@ session_start();
        $result = $conn->query("SELECT * FROM scoutgroup");
        $datensaetze = $result->fetch_all(MYSQLI_ASSOC);
        foreach($datensaetze as $datensatz) {
-            echo '<option value = "'.$datensatz["id"].'">' .$datensatz["name"] .'" - "'.$datensatz["association"].'>';
+            echo '<option value = "'.$datensatz["id"].'">' .$datensatz["association"] .' - '.$datensatz["name"];
        }
        echo '</select><br><br>';
     ?>
