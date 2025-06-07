@@ -77,7 +77,7 @@ define("solutionresults", "Für folgende Bilder ist keine Tippabgabe mehr mögli
    Klicke auf ein Bild um es zu vergößern:<br><br>");
 
 #guess
-#define("guesstitle", "Untersuche das Bild genau nach Hinweisen"); DUPLICATE!
+define("guesstitle", "Untersuche das Bild genau nach Hinweisen");
 
 #guessmap
 define("guessmaptitle", "Geodetective Location Picker");
