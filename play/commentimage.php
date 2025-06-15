@@ -16,7 +16,13 @@
    
    <form action="checkcomment.php" id="commentform" name="commentform" method="post">
   
-<?php   
+<?php
+
+//Sicherheitscheck $GET-Parameter
+if (!isset($_GET['imageid']) || !is_numeric($_GET['imageid'])) {
+    echo "<script>window.location.href='../menu/main.php';</script>";
+    exit(1);
+}
    $imagesql="SELECT image.id,deadline,description,name,contact,filename,solutiontext FROM image join user on image.userid=user.id join scoutgroup on user.scoutgroup=scoutgroup.id WHERE image.id=".$_GET['imageid'];
    $imageresult = $conn->query($imagesql);
    $image=$imageresult->fetch_assoc();
@@ -61,7 +67,7 @@
     echo $kommentar['submitted'];
     echo ':</b><br>';
     
-    echo $kommentar['text'];
+    echo htmlspecialchars($kommentar['text']);
    }
    }
   ?>

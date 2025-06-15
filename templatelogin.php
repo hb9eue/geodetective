@@ -12,8 +12,8 @@ $conn = mysqli_connect($server, $user, $pass,$dbase);
 }
   
   //Alle GET Variablen einlesen
-  foreach($_GET as $key => $val){$$key=$val;}
-  foreach($_POST as $key => $val) {$$key=$val;}
+  foreach($_GET as $key => $val){$$key=htmlspecialchars($val);}
+  foreach($_POST as $key => $val) {$$key=htmlspecialchars($val);}
 
   if (!isset($_SESSION['language'])) {
     $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
