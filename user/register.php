@@ -10,6 +10,7 @@ session_start();
 
 
 <h1><?registertitle?></h1>
+
 <?=registerexplain?>
     <form action="checkregister.php" method="post">
         <input type="hidden" name="scoutgroup" value="<?=$scoutgroup?>" />

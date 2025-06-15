@@ -12,8 +12,7 @@ $result = $conn->query("SELECT * FROM user WHERE username='".$username."'");
 $datensatz = $result->fetch_assoc();
 
 if(isset($register)) {
-    echo "<script>window.location.href='chooselanguage.php';</script>";
-    //header('location: chooselanguage.php');
+    echo "<script>window.location.href='registerscoutgroup.php';</script>";
     exit(1);
 }
 

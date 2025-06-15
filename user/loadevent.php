@@ -1,5 +1,6 @@
 <?php
-session_start();
+
+if(session_status() !== PHP_SESSION_ACTIVE) session_start();
     
     //load event
     $eventresult = $conn->query("SELECT * FROM event WHERE curdate() between submitfrom and endtimestamp");

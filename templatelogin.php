@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
-session_start();
+
+if(session_status() !== PHP_SESSION_ACTIVE) session_start();
+
 include('credentials.php');
 
 $conn = mysqli_connect($server, $user, $pass,$dbase);

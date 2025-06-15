@@ -74,7 +74,7 @@ Click the button below the image to view the results.<br>
 Click on an image to enlargen it:<br><br>");
     
 #guess
-#define("guesstitle", "Examine the image closely for clues"); DUPLICATE!
+define("guesstitle", "Examine the image closely for clues");
 
 #guessmap
 define("guessmaptitle", "Geodetective Location Picker");

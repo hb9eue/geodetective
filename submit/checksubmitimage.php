@@ -31,7 +31,9 @@ session_start();
     }
     
     // Neues Bild ohne EXIF-Daten speichern
-    $newFilePath = '../uploads/' . basename($file['name']);
+    $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
+    $newFilePath = '../uploads/' . uniqid() . '.' . $ext;
+    //$newFilePath = '../uploads/' . basename($file['name']);
     switch ($imageType) {
     case IMAGETYPE_JPEG:
     imagejpeg($image, $newFilePath);
@@ -47,7 +49,7 @@ session_start();
     // Speicher freigeben
     imagedestroy($image);
     
-    return true;
+    return basename($newFilePath);
     } else {
     return false;
     }
@@ -86,7 +88,10 @@ session_start();
      //print_r($exif);
           //get the Hemisphere multiplier
           $LatM = 1; $LongM = 1;
-          
+
+	if (!isset($exif["GPSLatitudeRef"])) {
+		return false;
+	}          
           
           if($exif["GPSLatitudeRef"] == 'S')
           {
@@ -160,10 +165,15 @@ session_start();
         
         $json=triphoto_getGPS($_FILES["uploadedimage"]["tmp_name"]);
         
-        $koordinaten = json_decode($json);
+	if ($json === false)  {
+		$lat = 0;
+		$lon = 0;
+	} else {
+	        $koordinaten = json_decode($json);
         
-        $lat=$koordinaten->latitude;
-        $lon=$koordinaten->longitude;
+        	$lat=$koordinaten->latitude;
+	        $lon=$koordinaten->longitude;
+	}
 
         //TODO: GPSdaten aus uploadedimage entfernen und zu blob konvertieren
         
@@ -174,9 +184,9 @@ session_start();
 //echo $target_file;
           //Bild speichern
           //if (move_uploaded_file($_FILES["uploadedimage"]["tmp_name"], $target_file)) {
-            if (removeExifData($_FILES["uploadedimage"])){
+            if ($fname = removeExifData($_FILES["uploadedimage"])){
 
-               $conn->query("INSERT INTO image (eventid,filename,userid,lat,lon) VALUES ('".$_SESSION['eventid']."', '".$_FILES["uploadedimage"]["name"]."', '".$_SESSION['userid']."', '".$lat."', '".$lon."')");
+               $conn->query("INSERT INTO image (eventid,filename,userid,lat,lon) VALUES ('".$_SESSION['eventid']."', '".$fname."', '".$_SESSION['userid']."', '".$lat."', '".$lon."')");
           } else {
             echo'Fehler';
           }

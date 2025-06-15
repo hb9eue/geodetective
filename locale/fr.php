@@ -75,7 +75,7 @@ Clique sur le bouton pour voir la solution de l'énigme:<br>
 Clique sur l'image pour l'agrandir:<br><br>");
 
 #guess
-#define("guesstitle", "Analyse l'image de manière détaillée selon les indications"); DUPLICATE!
+define("guesstitle", "Analyse l'image de manière détaillée selon les indications");
 
 #guessmap
 define("guessmaptitle", "Geodetective selection de localisation");

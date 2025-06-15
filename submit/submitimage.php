@@ -27,6 +27,7 @@ if ($aktuellezeit>=$submitfrom && $aktuellezeit<=$submituntil) {
 
 <h1><?=submitimagetitle?></h1>
 <?=submitimageexplain?>
+    <hr>
     <form action="checksubmitimage.php" method="post" enctype="multipart/form-data">
     <img src="../images/photo.jpg" class="responsive">
     <br> 
