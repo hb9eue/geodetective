@@ -14,6 +14,7 @@
    //var openguesses= $result->num_rows
    //Anzahl der Aktiven Bilder für die der USer noch keinen Tipp abgegeben hat
    $sql="SELECT count(*) as openguesses FROM image left join guess on image.id=guess.imageid and guess.userid =".$_SESSION['userid']." WHERE image.eventid='".$_SESSION['eventid']."' and accepted=1  and deadline > CURRENT_TIMESTAMP() and guess.userid is null order by ordernumber,image.submitted limit ".$_SESSION['imagesperinterval'];   
+   
    $result = $conn->query($sql);
    $datensatz = $result->fetch_assoc();
    $openguesses=$datensatz['openguesses'];

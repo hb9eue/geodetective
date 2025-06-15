@@ -9,7 +9,7 @@ if(session_status() !== PHP_SESSION_ACTIVE) session_start();
 <center>
 
 
-<h1>Neuer Benutzer</h1>
+<h1><?=registertitle?></h1>
 
 <form action="register.php" method="post">
     <?=registergroupchoose?><br><br>
