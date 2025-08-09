@@ -1,5 +1,23 @@
 <?php
 declare(strict_types=1);
+#landing page
+define("landingtitle", "Alle informatie over JOTA / JOTI - het grootste scoutingevenement ter wereld!");
+define("geotitle", "GeoDetective Spel");
+define("geotext","Doe mee aan het GeoDetective-spel en vind de locaties van de foto's van andere scouts. 
+        Test je kennis van aardrijkskunde en scoutingvaardigheden! Gebruik het internet en je combinatievermogen om de oplossingen te vinden.
+        Het eigenlijke spel begint tijdens JOTA/JOTI, maar je kunt je nu al registreren
+        en eigen foto's uploaden. Zie ook de video's hieronder.");
+define("geobutton", "Speel GeoDetective nu");
+
+define("liveradiotitle", "Luister live naar de Radioscouts");
+define("liveradiotext", "Hier kun je live luisteren naar de uitzending van de Radioscouts via digitale amateurradio DMR.
+        Klik op PLAYER om de DMR livestream te starten.
+        Kijk in de kalender wanneer er activiteiten zijn.");
+define("liveradiobutton","Naar de DMR Livestream");
+        
+define("calendartitle","Kalender van activiteiten van de Radioscouts:");
+
+define("videotitle", "Video's");
 
 #Buttons
 define("buttonok", "OK");

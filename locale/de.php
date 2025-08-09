@@ -1,6 +1,26 @@
 <?php
 declare(strict_types=1);
 
+#landing page
+define("landingtitle", "Alle Informationen zu JOTA / JOTI - dem größten Pfadfinder-Event der Welt!");
+define ("geotitle", "GeoDetective Spiel");
+define("geotext","Nimm am GeoDetective-Spiel teil und finde die Standorte der Fotos anderer Pfadfinder. 
+        Dabei kannst du dein Wissen über Geografie und Pfadfinderfähigkeiten testen! Nutze dabei
+        das Internet und deine Kombinationsgabe zum Finden der Lösungen.
+        Das eigentliche Spiel startet zum JOTA/JOTI, aber du kannst dich schon jetzt registrieren
+        und eigene Fotos hoch laden. Siehe auch die Videos weiter unten.");
+
+define("geobutton", "Jetzt GeoDetective spielen");        
+
+define("liveradiotitle", "Höre den Radioscouts Live zu");
+define("liveradiotext", "Hier kannst du die Live-Übertragung der Radioscouts im digitalen Amateurfunk DMR hören.
+        Klicke auf PLAYER um den DMR Live-Stream zu starten.
+        Sehe im Kalender nach wann Aktivitäten stattfinden.");
+define("liveradiobutton","Zum DMR Livestream");
+        
+define("calendartitle","Kalender der Aktivitäten der Radioscouts:");
+
+define("videotitle", "Videos");
 #Buttons
 define("buttonok", "OK");
 define("buttoncancel", "Abbrechen");
