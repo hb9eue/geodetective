@@ -4,6 +4,7 @@ session_start();
    include("../templateoben.php");  
 
    if(isset($abbrechen)) {
+// 20250817wy: Funktioniert nicht!
     echo "<script>window.location.href='../menu/main.php';</script>";  
     //header("location: ../menu/main.php");
     exit(1);
@@ -161,7 +162,29 @@ session_start();
           //echo "File is not an image.";
         //  $uploadOk = 0;
         //}
+	if (!$_FILES) {
+		// Wenn wird post_max_size oder wie es heisst überschrieten, landen wir hier.
+		echo'<span style="color:red;">Something went terribly wrong!<br></span>';
+		exit(1);
+	}
+
+	$a_ulerror = array(
+        	0=>"There is no error, the file uploaded with success", 
+	        1=>"The uploaded file exceeds the upload_max_filesize directive in php.ini", 
+        	2=>"The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form",
+	        3=>"The uploaded file was only partially uploaded",
+        	4=>"No file was uploaded",
+	        6=>"Missing a temporary folder" 
+	);
+
+
         //print_r ($_FILES);
+
+	if ($_FILES["uploadedimage"]["error"]) {
+		echo "ERROR: " . $a_ulerror[$_FILES["uploadedimage"]["error"]];
+		exit(1);
+	}
+
         //echo 'name: '.$_FILES["uploadedimage"]["name"].'<br>';
         //echo 'tmp_name: '.$_FILES["uploadedimage"]["tmp_name"].'<br>';
         $json=triphoto_getGPS($_FILES["uploadedimage"]["tmp_name"]);
