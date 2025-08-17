@@ -83,7 +83,7 @@ session_start();
       function triphoto_getGPS($fileName, $assoc = false)
       {
           //get the EXIF
-          echo $fileName;
+          //echo $fileName;
           $exif = exif_read_data($fileName);
      //print_r($exif);
           //get the Hemisphere multiplier
@@ -162,7 +162,8 @@ session_start();
         //  $uploadOk = 0;
         //}
         //print_r ($_FILES);
-        
+        //echo 'name: '.$_FILES["uploadedimage"]["name"].'<br>';
+        //echo 'tmp_name: '.$_FILES["uploadedimage"]["tmp_name"].'<br>';
         $json=triphoto_getGPS($_FILES["uploadedimage"]["tmp_name"]);
         
 	if ($json === false)  {
@@ -197,7 +198,7 @@ $_SESSION['imageid'] = $conn->insert_id;
 $_SESSION['lat'] = $lat;
 $_SESSION['lon'] = $lon;
 //check if coordinates are present
-if ($lat>0) {
+if (!$lat==0) {
   echo "<script>window.location.href='editimage.php';</script>";  
   //header("location: editimage.php");
   exit(1);
