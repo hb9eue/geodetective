@@ -93,9 +93,9 @@ function wirklichloeschen() {
       echo '<br><br><button type="submit" id="accept" name="accept" value="'.$imageid.'">';
       if(!$datensatz['accepted']) {echo editmyimagesaccept;}else{echo editmyimagesdecline;};  
       echo'</button> ';
-
-      echo'<button onclick="return wirklichloeschen()" id="delete" name="delete" value="'.$imageid.'">'.buttondelete.'</button>';
     }
+      echo'<br><br><button onclick="return wirklichloeschen()" id="delete" name="delete" value="'.$imageid.'">'.buttondelete.'</button>';
+    
 
    
 

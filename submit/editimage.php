@@ -40,9 +40,12 @@ if (isset($delete)) {
         echo "<script>window.location.href='editmyimages.php?mode=admin&allimages=1';</script>";
      }
      else {
+        if ($_SESSION['role']=='admin') {
          echo "<script>window.location.href='editmyimages.php?mode=admin';</script>";
+        } else {
+         echo "<script>window.location.href='editmyimages.php';</script>";
      }
-    
+     }
     
     } else
 
