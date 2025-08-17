@@ -38,7 +38,21 @@
  <button type="submit" name="register">Register</button>
     </form>
 
-
+<hr>
+<div id="credits">
+<B>Credits:</B><BR>
+Spielidee:<BR>
+<li>Woody und JOTI/JOTA Team der PBS<BR>
+Entwicklung:<BR>
+<li>Ralf Lüsebrink / DO1EH<BR>
+<li>Benoît Panizzon / Woody / HB9EUE<BR>
+Übersetzungen:<BR>
+<li>NL: Sander Krul<BR>
+Tester:<BR>
+<li>Thomas Pfaff / Pepe / HB9EVT<BR>
+Source: <a href="https://github.com/do1eh/geodetective">https://github.com/do1eh/geodetective</a><BR>
+Impressum / Datenschutz: Es gilt das Impressum und die Datenschutzbestimmungen der jeweiligen Landesverbände: <a href="https://jota-joti.pbs.ch/de/impressum-datenschutzerklaerung/">Pfadibewegung Schweiz</a> die das Spiel organisieren.
+</div>
 
 </center>
 
