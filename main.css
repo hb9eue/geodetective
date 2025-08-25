@@ -110,20 +110,16 @@ input#file-upload2[type="file"] {
   background-color: #f2f2f2;
 }
 
-
-
-      
-  body {
-    
-    background-color:#ffffff;
-    font-family:arial;
-  }
+body {
+  background-color:#ffffff;
+  font-family:arial;
+}
   
-  
-
-  
-    
- 
-
-
-
+#credits {
+  color: black;
+  background: #E0E0E0;
+  padding: 10px;
+  text-align: left;
+  font-family: monospace;
+  width: 400px;
+}
