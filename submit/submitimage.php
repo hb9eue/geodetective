@@ -31,19 +31,17 @@ if ($aktuellezeit>=$submitfrom && $aktuellezeit<=$submituntil) {
     <form action="checksubmitimage.php" method="post" enctype="multipart/form-data">
     <img src="../images/photo.jpg" class="responsive">
     <br> 
-    <label for="uploadedimage"><?php echo "Limmit: " . ini_get('upload_max_filesize'); ?></label>
+    
     <?php if (!$submitok) {echo'<H2>'; echo submitdiabled; echo'</H2><br>';}?> 
    <input id="uploadedimage" type="file" accept="image/* , text/plain"  name="uploadedimage" 
    <?php if (!$submitok) {echo' disabled ';}; ?>
    
    />
-   <!--<input id="uploadedimage" type="file"  name="uploadedimage" />-->
    
-   
-    
-    
     <br />
     <br />
+    
+    
     <input type="submit" value="<?=buttonupload?>" <?php if (!$submitok) {echo' disabled ';}; ?>/>
     <input type="reset" name='abbrechen' value='<?=buttoncancel?>'/>
     </form>
