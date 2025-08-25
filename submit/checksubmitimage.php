@@ -30,7 +30,25 @@ session_start();
     default:
     return "Unsupported image type.";
     }
-    
+
+    $exif = exif_read_data($file['tmp_name']); # Get Orienation from temp file!
+    if (!empty($exif['Orientation'])) {
+	# Rotate generated image if file is rotated
+        switch ($exif['Orientation']) {
+            case 3:
+                $image = imagerotate($image, 180, 0);
+                break;
+            
+            case 6:
+                $image = imagerotate($image, -90, 0);
+                break;
+            
+            case 8:
+                $image = imagerotate($image, 90, 0);
+                break;
+        }
+    }
+
     // Neues Bild ohne EXIF-Daten speichern
     $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
     $newFilePath = '../uploads/' . uniqid() . '.' . $ext;
@@ -142,7 +160,6 @@ session_start();
       
           return json_encode($result);
       }
-
 
 
       //$target_dir ="../uploads/";
