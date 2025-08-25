@@ -124,6 +124,7 @@ define("editmyimagesclickimage", "Klik op de foto om deze te bewerken.<br>");
 define("editmyimagesaccept", "Accepteren");
 define("editmyimagesdecline", "Afwijzen");
 define("editmyimagesturn", "Foto draaien");
+define("editmyimage", "Bewerken");
 
 #map
 define("mapcoordtitle", "Klik op de kaart om coördinaten te definiëren.");

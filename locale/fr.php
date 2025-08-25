@@ -125,6 +125,7 @@ define("editmyimagesclickimage", "Clique sur l'image pour l'éditer.<br>");
 define("editmyimagesaccept", "libérer");
 define("editmyimagesdecline", "bloquer");
 define("editmyimagesturn", "tourner l'image");
+define("editmyimage", "Modifier");
 
 #map
 define("mapcoordtitle", "Clique sur la carte pour définir les coordonnées.");

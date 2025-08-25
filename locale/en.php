@@ -121,6 +121,7 @@ define("editmyimagesclickimage", "Click oń the image to edit<br>");
 define("editmyimagesaccept", "Accept");
 define("editmyimagesdecline", "Decline");
 define("editmyimagesturn", "Turn image");
+define("editmyimage", "Edit");
 
 #map
 define("mapcoordtitle", "Click on the map to define coordinates.");
