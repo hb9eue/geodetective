@@ -124,6 +124,7 @@ define("editmyimagesnomimages", "Tu n'as encore déposé aucune image.");
 define("editmyimagesclickimage", "Clique sur l'image pour l'éditer.<br>");
 define("editmyimagesaccept", "libérer");
 define("editmyimagesdecline", "bloquer");
+define("editmyimagesturn", "tourner l'image");
 
 #map
 define("mapcoordtitle", "Clique sur la carte pour définir les coordonnées.");

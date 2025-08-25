@@ -31,7 +31,6 @@ if (isset($delete)) {
 
     $sql="delete from guess  WHERE imageid='".$imageid."'";
     $conn->query($sql);
-
     $sql="delete from comment  WHERE imageid='".$imageid."'";
     $conn->query($sql);
     
@@ -49,10 +48,106 @@ if (isset($delete)) {
     
     } else
 
+    if(isset($turn)) {
+        $imageid=$_POST['turn'];
+        $_SESSION['imageid']=$imageid;
+         $sql="SELECT * FROM image WHERE id='".$imageid."'";
+         
+         $result = $conn->query($sql);
+         $datensatz = $result->fetch_assoc();
+         $filename=$datensatz['filename'];
+      $filenameneu=time().substr($filename, -4);
+
+    if (file_exists("../uploads/".$filename)) {
+    $imagePath = "../uploads/".$filename;
+    $imagePathneu = "../uploads/".$filenameneu;
+    $imageInfo = getimagesize($imagePath);
+    $mime = $imageInfo['mime'];
+
+    switch ($mime) {
+        case 'image/jpeg':
+            $img = imagecreatefromjpeg($imagePath);
+            break;
+        case 'image/png':
+            $img = imagecreatefrompng($imagePath);
+            break;
+        case 'image/gif':
+            $img = imagecreatefromgif($imagePath);
+            break;
+        default:
+            $img = false;
+    }
+
+    // EXIF-Daten auslesen
+    $exif = exif_read_data($filename);
+    $degrees = 0;
+
+    if (!empty($exif['Orientation'])) {
+        switch ($exif['Orientation']) {
+            case 3: // 180 Grad
+                $degrees = 180;
+                break;
+            case 6: // 90 Grad im Uhrzeigersinn (muss um 270 Grad gegen Uhrzeigersinn gedreht werden)
+                $degrees = 270;
+                break;
+            case 8: // 270 Grad im Uhrzeigersinn (muss um 90 Grad gegen Uhrzeigersinn gedreht werden)
+                $degrees = 90;
+                break;
+        }
+    }
+  
+    if ($degrees > 0) {
+        $img = imagerotate($img, $degrees, 0);
+    }
+
+    if ($img !== false) {
+        
+        $rotated = imagerotate($img, 90, 0);
+        switch ($mime) {
+            case 'image/jpeg':
+                imagejpeg($rotated, $imagePathneu,90);
+                
+                break;
+            case 'image/png':
+                imagepng($rotated, $imagePathneu);
+                break;
+            case 'image/gif':
+                imagegif($rotated, $imagePathneu);
+                break;
+        }
+
+
+     $sql="update image set filename='".$filenameneu."'WHERE id='".$imageid."'";
+    
+     $conn->query($sql);
+     unlink($imagePath);
+
+
+        imagedestroy($img);
+        imagedestroy($rotated);
+    }
+
+}
+if ($_SESSION['mode']=='admin' && $_SESSION['role']=='admin' && $_SESSION['allimages']==1) {
+    echo "<script>window.location.href='editmyimages.php?mode=admin&allimages=1';</script>";
+    } elseif ($_SESSION['mode']=='admin' && $_SESSION['role']=='admin') {
+        echo "<script>window.location.href='editmyimages.php?mode=admin';</script>";
+    } else {
+      echo "<script>window.location.href='editmyimages.php';</script>";
+    }
+    } else
+
 if (isset($chosenimage)) {
     
     $imageid=$_POST['chosenimage'];
     $_SESSION['imageid']=$imageid;
+    $sql="SELECT * FROM image WHERE id='".$imageid."'";
+   $result = $conn->query($sql);
+   $datensatz = $result->fetch_assoc();
+   $filename=$datensatz['filename'];
+
+
+
 }
 
 

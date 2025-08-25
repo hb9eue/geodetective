@@ -120,6 +120,7 @@ define("editmyimagesnomimages", "You did not upload an image yet.");
 define("editmyimagesclickimage", "Click oń the image to edit<br>");
 define("editmyimagesaccept", "Accept");
 define("editmyimagesdecline", "Decline");
+define("editmyimagesturn", "Turn image");
 
 #map
 define("mapcoordtitle", "Click on the map to define coordinates.");

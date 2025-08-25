@@ -126,6 +126,7 @@ define("editmyimagesnomimages", "Du hast bisher keine Bilder eingereicht.");
 define("editmyimagesclickimage", "Klicke auf ein Bild um es zu bearbeiten<br>");
 define("editmyimagesaccept", "freigeben");
 define("editmyimagesdecline", "sperren");
+define("editmyimagesturn", " Bild drehen");
 
 #map
 define("mapcoordtitle", "Klicke auf die Karte um die Koordinaten festzulegen.");

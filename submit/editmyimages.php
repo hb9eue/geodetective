@@ -73,7 +73,7 @@ function wirklichloeschen() {
     ';
     
     if (isset($mode) && $mode=='admin' && $_SESSION['role']=='admin') {
-
+      $_SESSION['mode']='admin';
       if ($datensatz['accepted']==0 and $datensatz['acceptedby']==0) {
         echo '<br><br><b>'.pleaseaccept.'</b>'; 
       } else 
@@ -94,7 +94,15 @@ function wirklichloeschen() {
       if(!$datensatz['accepted']) {echo editmyimagesaccept;}else{echo editmyimagesdecline;};  
       echo'</button> ';
     }
-      echo'<br><br><button onclick="return wirklichloeschen()" id="delete" name="delete" value="'.$imageid.'">'.buttondelete.'</button>';
+    else {
+      $_SESSION['mode']='';
+    }
+    
+    echo '<br><br><button type="submit" id="turn" name="turn" value="'.$imageid.'">';
+      echo editmyimagesturn;  
+      echo'</button> ';
+
+    echo'<button onclick="return wirklichloeschen()" id="delete" name="delete" value="'.$imageid.'">'.buttondelete.'</button>';
     
 
    

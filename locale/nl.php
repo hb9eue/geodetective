@@ -123,6 +123,7 @@ define("editmyimagesnomimages", "Je hebt nog geen foto's geüpload.");
 define("editmyimagesclickimage", "Klik op de foto om deze te bewerken.<br>");
 define("editmyimagesaccept", "Accepteren");
 define("editmyimagesdecline", "Afwijzen");
+define("editmyimagesturn", "Foto draaien");
 
 #map
 define("mapcoordtitle", "Klik op de kaart om coördinaten te definiëren.");
