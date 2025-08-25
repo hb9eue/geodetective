@@ -43,10 +43,10 @@ if ($aktuellezeit>=$submitfrom && $aktuellezeit<=$submituntil) {
     
     
     <input type="submit" value="<?=buttonupload?>" <?php if (!$submitok) {echo' disabled ';}; ?>/>
-    <input type="reset" name='abbrechen' value='<?=buttoncancel?>'/>
+    
     </form>
 
-
+<button  onclick="window.location.href='../menu/main.php'"><?=buttoncancel?></button>
 
 </center>
 

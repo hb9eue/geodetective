@@ -3,12 +3,7 @@ session_start();
  
    include("../templateoben.php");  
 
-   if(isset($abbrechen)) {
-// 20250817wy: Funktioniert nicht!
-    echo "<script>window.location.href='../menu/main.php';</script>";  
-    //header("location: ../menu/main.php");
-    exit(1);
-   }
+   
 
    function removeExifData($file) {
     // Überprüfen, ob die Datei existiert und ein Bild ist
