@@ -17,6 +17,27 @@ define("liveradiobutton","Naar de DMR Livestream");
         
 define("calendartitle","Kalender van activiteiten van de Radioscouts:");
 
+#Discord
+define("discordtitle", "Discord Server");
+define("discordtext", "Word lid van onze Discord-server om met andere scouts te chatten en informatie zoals JIDs uit te wisselen.<br>
+Er is een spraakchat en een tekstchat in het Nederlands, Duits en Engels.");
+
+define("discordbutton", "Word lid van de Discord-server");
+
+#GeoDetective Spelregels
+define("georulestitle", "GeoDetective Spelregels");
+define("georulestext", "De regels voor het GeoDetective-spel zijn eenvoudig: Vind de locatie van de foto en geef je gok door!<br><br>
+<ul>
+<li>Het spel begint tijdens JOTA/JOTI op 17 oktober 2025 om 18:00 uur en eindigt op zondag.</li>
+<li>Tussen 23:00 uur en 09:00 uur is het nachtrust en kan er geen gok worden gedaan.</li>
+<li>Elke 4 uur worden er nieuwe foto's vrijgegeven.</li>
+<li>Elke speler kan per foto slechts één gok doen. Deze kan worden aangepast zolang de huidige speelronde loopt en er nog geen nieuwe foto's zijn vrijgegeven.</li>
+<li>Na het verstrijken van de deadline worden de oplossing en de ranglijst voor deze foto gepubliceerd.<br>
+De speler die met zijn gok het dichtst bij de werkelijke locatie zit, wint.</li>
+<li>Bij een correct geraden JID-code krijg je een extra punt!</li>
+<li>Onder de ranglijst kunnen spelers opmerkingen achterlaten bij de foto en de oplossingen.<br>
+De opmerkingen worden gecontroleerd en goedgekeurd door moderators.</li>");
+
 define("videotitle", "Video's");
 
 #Buttons
@@ -65,6 +86,7 @@ define("adminmenuuser", "Gebruikersbeheer");
 define("adminmenugroup", "Groepsbeheer");
 define("adminmenuevent", "Evenementbeheer");
 define("adminmenuimages", "Fotobeheer");
+define("adminsort", "Afbeeldingen sorteren");
 define("adminmenuback", "Hoofdmenu");
 define("menuacceptcomments", "Nieuwe opmerkingen!");
 define("menuacceptcomment", "Een nieuwe opmerking!");

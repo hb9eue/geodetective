@@ -183,8 +183,57 @@ $conn = mysqli_connect($server, $user, $pass,$dbase);
         </center>    
             </div>
     </div>
-</div>
+
+            
+
+
+<div class="link-preview">
+        <h2>GeoDetective</h2>
+
+            <div>
+                <h3><?=georulestitle?></h3>
+                <p><?=georulestext?></p> 
+            </p>
             </div>
+        </a>
+        <center>
+              <a href="splashscreen.php" style="
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2a6f44;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        "><?=geobutton?></a>
+        </center>
+    </div> 
+
+    <div class="link-preview">
+        <h2>Discord</h2>
+
+            <div>
+                <h3><?=discordtitle?></h3>
+                <p><?=discordtext?></p> 
+                <br>
+            </p>
+            </div>
+        </a>
+        <center>
+              <a href="https://discord.gg/AuNRPvtE9v" style="
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2a6f44;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        "><?=discordbutton?></a>
+        </center>
+    </div> 
+
+</div>
+    </div>
     <hr>
 
     <div class="media-container">

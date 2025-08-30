@@ -69,7 +69,7 @@ if ($commenttoaccept=="1") {
  <button type="submit" name="images"><?=adminmenuimages?></button><br><br>
  <?=$imagetoaccepttext?>
 </div><br>
- <button type="submit" name="sortimages">Bilder sortieren</button><br><br>
+ <button type="submit" name="sortimages"><?=adminsort?></button><br><br>
  
  <?php
  if($commenttoaccept=="0")

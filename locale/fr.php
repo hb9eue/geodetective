@@ -19,6 +19,27 @@ define("liveradiobutton","Vers le livestream DMR");
         
 define("calendartitle","Calendrier des activités des Radioscouts :");
 
+#Discord
+define("discordtitle", "Serveur Discord");
+define("discordtext", "Rejoins notre serveur Discord pour discuter avec d'autres scouts et échanger des informations comme les JIDs.<br>
+Il y a un chat vocal ainsi qu'un chat texte en français, allemand et anglais.");
+
+define("discordbutton", "Rejoindre le serveur Discord");
+
+#GeoDetective Spielregeln
+define("georulestitle", "Règles du jeu GeoDetective");
+define("georulestext", "Les règles du jeu GeoDetective sont simples : trouve l'emplacement de la photo et soumets ta proposition !<br><br>
+<ul>
+<li>Le jeu commence lors du JOTA/JOTI le 17 octobre 2025 à 18h00 et se termine le dimanche.</li>
+<li>De 23h00 à 09h00, c'est la nuit, il n'est pas possible de soumettre de proposition.</li>
+<li>Toutes les 4 heures, de nouvelles images sont débloquées.</li>
+<li>Chaque joueur peut faire une seule proposition par image. Celle-ci peut être modifiée tant que la manche en cours n'est pas terminée et que de nouvelles images ne sont pas encore débloquées.</li>
+<li>À l'expiration du délai, la solution et le classement pour cette image seront affichés.<br>
+Le joueur dont la proposition est la plus proche du lieu réel de la prise de vue gagne.</li>
+<li>Un point bonus est attribué si le code JID est correctement deviné !</li>
+<li>Sous le classement, les joueurs peuvent laisser des commentaires sur l'image et les solutions.<br>
+Les commentaires sont vérifiés et validés par des modérateurs.</li>");
+
 define("videotitle", "Vidéos");
 
 #Buttons
@@ -67,6 +88,7 @@ define("adminmenuuser", "Gestion des utilisateurs");
 define("adminmenugroup", "Gestion des troupes");
 define("adminmenuevent", "Gestion des évènements");
 define("adminmenuimages", "Gestion des images");
+define("adminsort", "Trier les images");
 define("adminmenuback", "Menu principale");
 define("menuacceptcomments", "Commentaires nouveaux!");
 define("menuacceptcomment", "Un commentaire nouveaux!");

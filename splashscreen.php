@@ -24,6 +24,7 @@
               <option value="en" <?php if ($_SESSION['language'] =='en') {echo ' selected ';} ?>>English</option>
               <option value="fr" <?php if ($_SESSION['language'] =='fr') {echo ' selected ';} ?>>Français</option>
               <option value="nl" <?php if ($_SESSION['language'] =='nl') {echo ' selected ';} ?>>Nederlands</option>
+              <option value="it" <?php if ($_SESSION['language'] =='it') {echo ' selected ';} ?>>Italiano</option>
         </select><br><br>
         <input type="text" name="username" placeholder="<?=username?>" ><br>
         <input type="password" name="password" placeholder="<?=password?>" >

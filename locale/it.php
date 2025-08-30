@@ -1,6 +1,205 @@
 <?php
 declare(strict_types=1);
+# Traduzioni italiane
+#landing page
+define("landingtitle", "Tutte le informazioni su JOTA / JOTI - il più grande evento scout del mondo!");
+#geodetective
+define("geotitle", "Gioco GeoDetective");
+define("geotext", "Partecipa al gioco GeoDetective e trova le posizioni delle foto di altri scout.
+    Potrai mettere alla prova le tue conoscenze geografiche e le tue abilità scout! Usa
+    Internet e il tuo intuito per trovare le soluzioni.
+    Il gioco vero e proprio inizia durante JOTA/JOTI, ma puoi già registrarti
+    e caricare le tue foto. Guarda anche i video qui sotto.");
 
+define("geobutton", "Gioca ora a GeoDetective");
+#Hoseline
+define("liveradiotitle", "Ascolta i Radioscouts in diretta");
+define("liveradiotext", "Qui puoi ascoltare la trasmissione live dei Radioscouts sulla radio amatoriale digitale DMR.
+    Clicca su PLAYER per avviare lo streaming live DMR.
+    Consulta il calendario per sapere quando ci sono attività.");
+define("liveradiobutton", "Vai al Livestream DMR");
+#Kalender
+define("calendartitle", "Calendario delle attività dei Radioscouts:");
+
+#Discord
+define("discordtitle", "Server Discord");
+define("discordtext", "Unisciti al nostro server Discord per chattare con altri scout e scambiare informazioni come i JID.<br>
+C'è una chat vocale e una chat testuale in italiano e inglese.");
+
+define("discordbutton", "Unisciti al server Discord");
+
+#GeoDetective Spielregeln
+define("georulestitle", "Regole del gioco GeoDetective");
+define("georulestext", "Le regole del gioco GeoDetective sono semplici: trova la posizione della foto e inserisci il tuo suggerimento!<br><br>
+<ul>
+<li>Il gioco inizia durante JOTA/JOTI il 17 ottobre 2025 alle 18:00 e termina domenica.</li>
+<li>Dalle 23:00 alle 09:00 c'è il silenzio notturno, non è possibile inviare suggerimenti.</li>
+<li>Ogni 4 ore vengono sbloccate nuove foto.</li>
+<li>Ogni giocatore può dare solo un suggerimento per foto. Può essere modificato fino alla fine del turno e al rilascio delle nuove foto.</li>
+<li>Dopo la scadenza verranno pubblicate la soluzione e la classifica per quella foto.<br>
+Vince il giocatore il cui suggerimento è più vicino al luogo reale dello scatto.</li>
+<li>Se indovini il codice JID ottieni un punto extra!</li>
+<li>Sotto la classifica i giocatori possono lasciare commenti sulla foto e sulle soluzioni.<br>
+I commenti saranno controllati e approvati dai moderatori.</li>");
+
+#Videos
+define("videotitle", "Video");
+
+#Buttons
+define("buttonok", "OK");
+define("buttoncancel", "Annulla");
+define("buttonsave", "Salva");
+define("buttonback", "indietro");
+define("buttondelete", "elimina");
+define("buttonupload", "Carica");
+define("buttoneditdata", "Salva modifiche");
+define("buttoneditscoutgroup", "Modifica gruppo scout");
+define("buttonguesslocation", "Indovina posizione");
+define("buttonguessjid", "Indovina JID");
+define("buttonreset", "Centra immagine");
+
+#common
+define("reallydelete", "Vuoi davvero eliminare definitivamente il record?");
+define("username", "Nome utente");
+define("password", "Password");
+define("repeatpassword", "Ripeti password");
+define("next", "avanti");
+
+#errormessages
+define("errorgroupname", "Il nome del gruppo è già stato registrato, selezionalo dall'elenco.");
+define("errorjid", "Il codice JID deve essere di sei cifre.");
+define("errorusername", "Il nome utente è già in uso");
+define("errorpasswordidentity", "Le password non corrispondono");
+define("errorwrongpassword", "La password è errata");
+define("errorpasswordlength", "La password deve essere lunga almeno 6 caratteri");
+define("errormissingdescription", "Inserisci una descrizione dell'immagine");
+
+#Mainmenu
+define("menutitle", "Menu principale");
+define("menuadmin", "Admin");
+define("menuplay", "Gioca");
+define("menumyimages", "Le mie immagini");
+define("menusolution", "Soluzione");
+define("menuoptions", "Impostazioni");
+define("menulogout", "Disconnetti");
+define("menunewimages", "nuove immagini!");
+define("menunewimage", "Una nuova immagine!");
+define("menunonewimages", "Nessuna nuova immagine!");
+#Adminmenu
+define("adminmenuuser", "Gestione utenti");
+define("adminmenugroup", "Gestione gruppi");
+define("adminmenuevent", "Gestione eventi");
+define("adminmenuimages", "Gestione immagini");
+define("adminsort", "Ordinare le immagini");
+define("adminmenuback", "Menu principale");
+define("menuacceptcomments", "nuovi commenti!");
+define("menuacceptcomment", "Un nuovo commento!");
+define("menunoacceptcomments", "Nessun nuovo commento!");
+
+#chooseguessimage
+define("guessmaintitle", "Invio suggerimento");
+define("guesscontact", "Contatto:");
+define("guesssubmittedby", "Inviato da:");
+define("guessnoimages", "Al momento non ci sono immagini");
+define("guessexplain", "GeoDetective consiste nell'indovinare il più precisamente possibile la posizione del fotografo delle immagini.
+   Scegli prima un'immagine per cui vuoi indovinare la posizione:
+   Clicca su un'immagine per inviare un suggerimento.");
+define("guessuntil", "Puoi indovinare fino a:");
+define("gamestart", "Il gioco inizia: ");
+define("uploaduntilstart", "Fino ad allora puoi caricare immagini che saranno usate nel gioco.");
+define("buttonuploaduntilstart", "Invia immagini");
+define("buttoneditimages", "Modifica i miei suggerimenti");
+
+#choosesolutionimage
+define("solutionimagdescription", "Descrizione immagine");
+define("solutiontitle", "Soluzione");
+define("solutionnoresults", "Non ci sono ancora risultati");
+define("solutionresults", "Per le seguenti immagini non è più possibile inviare suggerimenti.<br>
+   Clicca sul pulsante sotto l'immagine per vedere la lista dei risultati.<br>
+   Clicca su un'immagine per ingrandirla:<br><br>");
+
+#guess
+define("guesstitle", "Esamina attentamente l'immagine per trovare indizi");
+
+#guessmap
+define("guessmaptitle", "GeoDetective Location Picker");
+
+#solution
+define("solutionmarkertitle", "Marcatori sulla mappa con distanze");
+define("solutionheadline", "Soluzione");
+define("solutionlist", "Lista degli invii");
+define("solutionjidcorrect", "JID indovinato correttamente!!");
+define("solution", "Soluzione");
+define("solutionguesses", "Suggerimenti");
+define("solutionmyguess", "il mio suggerimento");
+
+#editimage
+
+define("editimageeditcoord", "Modifica coordinate");
+define("editimageedescrition", "<br>Descrizione generale dell'immagine e eventuali suggerimenti:<br>
+    (può essere letta dai giocatori durante l'invio del suggerimento)<br>");
+define("editimagesolutiontext", "<br>Soluzione:<br>
+    Breve descrizione di cosa si vede e dove.<br>
+    (Verrà mostrata dopo la scadenza)<br>");
+define("editimagesavebutton", "Salva descrizione immagine");
+
+#editmyimages
+define("editmyimagesnomimages", "Non hai ancora inviato immagini.");
+define("editmyimagesclickimage", "Clicca su un'immagine per modificarla<br>");
+define("editmyimagesaccept", "approva");
+define("editmyimagesdecline", "blocca");
+define("editmyimagesturn", " Ruota immagine");
+define("editmyimage", "modifica");
+
+#map
+define("mapcoordtitle", "Clicca sulla mappa per impostare le coordinate.");
+
+#mypictures
+define("mypicturestitle", "Le mie immagini");
+define("mypicturesnew", "Invia nuova immagine");
+define("mypicturesedit", "Modifica le mie immagini");
+
+#submitimage
+define("submitimagetitle", "Invia immagine");
+define("submitimageexplain", "Clicca sul pulsante per caricare un'immagine.
+Assicurati che nell'immagine ci sia qualcosa di scout e che ci siano abbastanza
+indizi per poter indovinare il luogo dello scatto.");
+define("submitdiabled", "Al momento non è possibile inviare nuove immagini");
+
+#configure
+
+define("configuretitle", "Modifica account");
+define("configureexplain", "Compila il modulo per modificare i tuoi dati:");
+
+#register
+define("registertitle", "Nuovo utente");
+define("registerexplain", "Non sei ancora registrato. Compila il modulo per registrarti");
+define("registerbutton", "Registra nuovo utente");
+
+#registerscoutgroup
+
+define("registergroupchoose", "Seleziona qui il tuo gruppo scout:");
+define("registergroupor", "oppure");
+define("registergroupnew", "Se il tuo gruppo non è presente, compila i seguenti campi:");
+define("registergroupname", "Nome del tuo gruppo scout");
+define("registergroupassociation", "Nome della tua associazione scout");
+define("registergroupcity", "Da quale città venite?");
+define("registergroupcountry", "Paese");
+define("registergroupjid", "Qual è il vostro codice JID?");
+define("registergroupcontact", "Come siete raggiungibili durante JOTA/JOTI?");
+define("registergroupbutton", "Registra nuovo gruppo scout");
+define("changegroup", "Cambia gruppo");
+
+#comments
+define("commenttitle", "Commenti");
+define("comment", "Commenta");
+define("commentbutton", "Invia commento");
+define("commentplaceholder", "Scrivi qui il tuo commento:");
+define("commentsaved", "Il tuo commento è stato salvato, ma deve essere approvato da un moderatore.");
+define("acceptedby", "Approvato da:");
+define("declinedby", "Bloccato da:");
+define("pleaseaccept", "Nuovo! Approva o blocca!");
+define("alreadyingame", "Già nel gioco, la modifica comporta il reset della scadenza");
 #landing page
 define("landingtitle", "Alle Informationen zu JOTA / JOTI - dem größten Pfadfinder-Event der Welt!");
 #geodetective
@@ -40,8 +239,7 @@ define("georulestext", "Die Regeln für das GeoDetective Spiel sind einfach: Fin
 Es gewinnt der Spieler, der mit seinem Tipp am nächsten am tatsächlichen Aufnahmeort liegt.</li>
 <li>Bei richtig geratenem JID-Code gibt es einen Extrapunkt!</li>
 <li>Unter der Highscorliste können Spieler Kommentare zum Bild und den Lösungen hinterlassen.<br>
-Die Kommentare werden von Moderatoren geprüft und freigegeben.</li>
-");        
+Die Kommentare werden von Moderatoren geprüft und freigegeben.</li>");        
 
 #Videos
 define("videotitle", "Videos");
@@ -93,7 +291,6 @@ define("adminmenuuser", "Userverwaltung");
 define("adminmenugroup", "Gruppenverwaltung");
 define("adminmenuevent", "Eventverwaltung");
 define("adminmenuimages", "Bilderverwaltung");
-define("adminsort", "Bilder sortieren");
 define("adminmenuback", "Hauptmenü");
 define("menuacceptcomments", "neue Kommentare!");
 define("menuacceptcomment", "Ein neuer Kommentar!");

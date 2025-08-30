@@ -17,6 +17,28 @@ define("liveradiobutton", "To the DMR Livestream");
         
 define("calendartitle", "Calendar of Radioscouts activities:");
 
+#Discord
+define("discordtitle", "Discord Server");
+define("discordtext", "Join our Discord server to chat with other scouts and exchange information such as JIDs.<br>
+There is a voice chat as well as a text chat in both German and English.");
+
+define("discordbutton", "Join Discord Server");
+
+#GeoDetective Spielregeln
+define("georulestitle", "GeoDetective Game Rules");
+define("georulestext", "The rules for the GeoDetective game are simple: Find the location of the image and submit your guess!<br><br>
+<ul>
+<li>The game starts at JOTA/JOTI on October 17, 2025 at 6:00 pm and ends on Sunday.</li>
+<li>From 11:00 pm to 09:00 am is quiet time, no guesses can be submitted.</li>
+<li>Every 4 hours new images are unlocked.</li>
+<li>Each player can submit only one guess per image. This can be changed as long as the current game round is active and new images have not yet been unlocked.</li>
+<li>After the deadline, the solution and the highscore list for this image will be published.<br>
+The winner is the player whose guess is closest to the actual location.</li>
+<li>If the JID code is guessed correctly, you get an extra point!</li>
+<li>Below the highscore list, players can leave comments about the image and the solutions.<br>
+Comments are reviewed and approved by moderators.</li>
+");        
+
 define("videotitle", "Videos");
 
 #Buttons
@@ -65,6 +87,7 @@ define("adminmenuuser", "Manage users ");
 define("adminmenugroup", "Manage groups");
 define("adminmenuevent", "Manage events");
 define("adminmenuimages", "Manage images");
+define("adminsort", "Sort images");
 define("adminmenuback", "Main menu");
 define("menuacceptcomments", "new comments!");
 define("menuacceptcomment", "One new comment!");
