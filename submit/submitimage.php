@@ -43,7 +43,25 @@ if ($aktuellezeit>=$submitfrom && $aktuellezeit<=$submituntil) {
     
     
     <input type="submit" value="<?=buttonupload?>" <?php if (!$submitok) {echo' disabled ';}; ?>/>
-    
+   <script>
+   document.querySelector('form').addEventListener('submit', function() {
+      // Ladeanimation erzeugen
+      let loader = document.createElement('div');
+      loader.id = 'loader-animation';
+      loader.style.position = 'fixed';
+      loader.style.top = 0;
+      loader.style.left = 0;
+      loader.style.width = '100vw';
+      loader.style.height = '100vh';
+      loader.style.background = 'rgba(255,255,255,0.7)';
+      loader.style.display = 'flex';
+      loader.style.alignItems = 'center';
+      loader.style.justifyContent = 'center';
+      loader.style.zIndex = 9999;
+      loader.innerHTML = '<div style="border:8px solid #f3f3f3;border-top:8px solid #3498db;border-radius:50%;width:60px;height:60px;animation:spin 1s linear infinite;"></div><style>@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}</style>';
+      document.body.appendChild(loader);
+   });
+   </script>
     </form>
 
 <button  onclick="window.location.href='../menu/main.php'"><?=buttoncancel?></button>
