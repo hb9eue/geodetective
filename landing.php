@@ -232,7 +232,42 @@ $conn = mysqli_connect($server, $user, $pass,$dbase);
         </center>
     </div> 
 
-</div>
+
+
+<div class="link-preview">
+        <h2>DMR DL-Sked</h2>
+
+            <div>
+                <h3>TG 90710 um16 Uhr Küchenzeit</h3>
+                <p>Am Samstag den 18.Oktober findet der deutschsprachige DMR Sked statt.  
+                    Wir werden ein interaktives Spiel spielen alles was ihr braucht ist 
+                    ein Stift und den Spielplan.
+Bitte  bereitet eine kleine Vorstellung eurer Gruppe vor:
+<ul>
+<li>Wie heißt eure Gruppe?</li>
+<li>Wo kommt ihr her?</li>
+<li>Wieviele Personen sind anwesend?</li>
+<li>Wieviele Personen hatten schon ein QSO?</li>
+<li>Habt ihr Geodetective gespielt?</li>
+</ul>
+</p> 
+                <br>
+            </p>
+            </div>
+        </a>
+        <center>
+              <a href="./images/spielplan.pdf" style="
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #2a6f44;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        ">Spielplan anzeigen</a>
+        </center>
+    </div> 
+            </div>
     </div>
     <hr>
 
